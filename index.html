@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKCHALLY. — Make your business look like it actually should.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: #F2EDE6;
+  --fg: #0F0F0F;
+  --orange: #FF3D12;
+  --cream-2: #E9E2D6;
+  --white: #FFFBF5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg); color:var(--fg); font-family:'Space Grotesk', sans-serif; line-height:1.4; overflow-x:hidden}
+::selection{background:var(--orange); color:white}
+body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.035; z-index:9999; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");}
+h1,h2,h3{font-family:'Syne', sans-serif; text-transform:uppercase; line-height:.9; letter-spacing:-0.03em}
+.mono{font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700}
+a{color:inherit; text-decoration:none}
+.btn{display:inline-flex; align-items:center; gap:.75rem; border:1.5px solid var(--fg); padding:1rem 1.8rem; font-weight:700; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; transition:.25s ease; cursor:pointer}
+.btn-black{background:var(--fg); color:var(--bg)}
+.btn-black:hover{background:var(--orange); border-color:var(--orange); color:white; transform:translateY(-2px)}
+.btn-ghost:hover{background:var(--fg); color:var(--bg); transform:translateY(-2px)}
+nav{position:sticky; top:0; z-index:50; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 2.5vw; background:rgba(242,237,230,.88); backdrop-filter:blur(12px); border-bottom:1.5px solid var(--fg);}
+.logo{font-family:'Syne', sans-serif; font-weight:800; font-size:1.9rem; letter-spacing:-0.05em; line-height:1; text-transform:lowercase;}
+.logo .dot{display:inline-block; width:.38em; height:.38em; background:var(--orange); border-radius:50%; margin-left:.05em;}
+.nav-links{display:flex; gap:2rem; align-items:center}
+.nav-links a{font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; position:relative}
+.nav-links a::after{content:""; position:absolute; bottom:-4px; left:0; width:0; height:1.5px; background:var(--fg); transition:.3s}
+.nav-links a:hover::after{width:100%}
+.hamburger{display:none; font-size:1.5rem; cursor:pointer}
+.hero{padding:6vw 2.5vw 4vw; border-bottom:1.5px solid var(--fg); position:relative}
+.hero-top{display:flex; justify-content:space-between; align-items:flex-start; gap:4vw}
+.hero-left{flex:1.3}
+.hero h1{font-size:clamp(3.2rem, 8.2vw, 8.5rem); max-width:12ch; margin-bottom:2.5rem}
+.hero h1 .accent{color:var(--orange); font-family:'Instrument Serif', serif; font-style:italic; text-transform:lowercase; font-size:.95em; letter-spacing:-0.02em}
+.hero-copy{max-width:36ch; font-size:1.05rem; line-height:1.6}
+.hero-copy p{margin-bottom:1.2rem}
+.hero-actions{margin-top:3rem; display:flex; gap:1rem; flex-wrap:wrap}
+.hero-right{flex:.7; display:flex; flex-direction:column; gap:1rem; padding-top:1rem}
+.hero-note{border:1.5px solid var(--fg); padding:1.2rem; background:var(--white); font-size:.9rem; transform:rotate(.6deg)}
+.big-bg-text{position:absolute; right:-2vw; bottom:2vw; font-family:'Syne', sans-serif; font-size:28vw; line-height:.8; font-weight:800; color:var(--fg); opacity:.04; pointer-events:none; text-transform:lowercase;}
+.marquee{border-bottom:1.5px solid var(--fg); overflow:hidden; white-space:nowrap; padding:.9rem 0; background:var(--fg); color:var(--bg)}
+.marquee-inner{display:flex; animation:marq 28s linear infinite; gap:3rem}
+.marquee span{font-family:'Syne', sans-serif; font-weight:800; font-size:1.1rem; letter-spacing:.08em; text-transform:uppercase}
+.marquee span i{color:var(--orange); font-style:normal; margin:0 .5rem}
+@keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.sec-02{display:grid; grid-template-columns:1.1fr .9fr; border-bottom:1.5px solid var(--fg)}
+.sec-02-left{padding:5vw 2.5vw; border-right:1.5px solid var(--fg)}
+.sec-02-left h2{font-size:clamp(2.5rem, 5.5vw, 5rem); max-width:10ch}
+.sec-02-right{padding:5vw 3vw; display:flex; flex-direction:column; justify-content:center; gap:2rem; font-size:1.15rem; line-height:1.6}
+.cards{display:grid; grid-template-columns:repeat(3,1fr)}
+.card{padding:2.8vw 2.5vw; border-right:1.5px solid var(--fg); display:flex; flex-direction:column; min-height:680px; transition:.3s}
+.card:last-child{border-right:none}
+.card:hover{background:var(--white)}
+.card-num{font-family:'Instrument Serif', serif; font-size:1.4rem; margin-bottom:2rem; display:flex; justify-content:space-between}
+.card h3{font-size:clamp(2rem, 3vw, 3rem); margin-bottom:1.2rem}
+.card p{font-size:.95rem; line-height:1.6; margin-bottom:1rem; opacity:.85}
+.card ul{list-style:none; margin:1.5rem 0; display:flex; flex-direction:column; gap:.35rem}
+.card ul li{font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; display:flex; gap:.6rem}
+.card ul li::before{content:"→"; color:var(--orange)}
+.card-foot{margin-top:auto; padding-top:2rem}
+.price{font-family:'Syne', sans-serif; font-weight:800; font-size:1.1rem; margin-bottom:1.5rem}
+.sec-03{border-bottom:1.5px solid var(--fg)}
+.sec-03-head{padding:3vw 2.5vw; display:flex; justify-content:space-between; align-items:end; border-bottom:1.5px solid var(--fg)}
+.sec-03-head h2{font-size:clamp(2rem, 4.5vw, 4rem)}
+.lookover{background:var(--fg); color:var(--bg); display:grid; grid-template-columns:1.1fr .9fr; border-bottom:1.5px solid var(--fg)}
+.look-left{padding:5vw 2.5vw; border-right:1.5px solid rgba(255,255,255,.15)}
+.look-left .mono{color:var(--orange); margin-bottom:1.5rem; display:block}
+.look-left h2{font-size:clamp(2.8rem, 5.5vw, 5.5rem); color:var(--bg); line-height:.9}
+.look-price{font-family:'Instrument Serif', serif; font-size:8rem; line-height:.8; color:var(--orange); margin:2rem 0 1rem}
+.look-right{padding:4vw 3vw}
+.look-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:2rem 0 2.5rem}
+.look-item{border:1px solid rgba(255,255,255,.2); padding:1.2rem; background:rgba(255,255,255,.04)}
+.look-item b{display:block; font-family:'Syne', sans-serif; font-size:.9rem; letter-spacing:.08em; margin-bottom:.5rem; color:var(--orange)}
+.doover{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg); background:var(--cream-2)}
+.doover-left{padding:5vw 2.5vw}
+.doover-left h2{font-size:clamp(2.5rem, 5vw, 4.8rem)}
+.doover-right{padding:5vw 3vw; border-left:1.5px solid var(--fg)}
+.big-price{font-family:'Syne', sans-serif; font-weight:800; font-size:clamp(3rem, 6vw, 5rem); line-height:.9; margin:1.5rem 0}
+.big-price span{font-family:'Instrument Serif', serif; font-weight:400; font-style:italic; font-size:.55em; text-transform:none; display:block; opacity:.6}
+.how{border-bottom:1.5px solid var(--fg)}
+.how-head{padding:3vw 2.5vw; border-bottom:1.5px solid var(--fg); display:flex; justify-content:space-between; align-items:center}
+.how-head h2{font-size:clamp(2rem, 4vw, 3.5rem)}
+.steps{display:grid; grid-template-columns:repeat(5,1fr)}
+.step{padding:2.5vw 2vw; border-right:1.5px solid var(--fg)}
+.step:last-child{border-right:none}
+.step-num{font-family:'Instrument Serif', serif; font-size:3.5rem; line-height:1; margin-bottom:1.5rem; color:var(--orange)}
+.philo{padding:7vw 5vw; text-align:center; border-bottom:1.5px solid var(--fg)}
+.philo p{font-family:'Syne', sans-serif; font-size:clamp(1.8rem, 3.8vw, 3.4rem); line-height:1.05; max-width:22ch; margin:0 auto}
+.philo p i{font-family:'Instrument Serif', serif; color:var(--orange); text-transform:none}
+.work-head{padding:3vw 2.5vw; display:flex; justify-content:space-between; align-items:end; border-bottom:1.5px solid var(--fg)}
+.work-grid{display:grid; grid-template-columns:repeat(3,1fr); border-bottom:1.5px solid var(--fg)}
+.work-card{border-right:1.5px solid var(--fg); display:flex; flex-direction:column}
+.work-card:last-child{border-right:none}
+.work-img{aspect-ratio:4/3; background:#111; position:relative; overflow:hidden; border-bottom:1.5px solid var(--fg)}
+.work-img::before{content:""; position:absolute; inset:0; background:linear-gradient(135deg, #222 0%, #555 100%)}
+.work-img::after{content:"BEFORE → AFTER"; position:absolute; inset:0; display:grid; place-items:center; font-family:'Syne', sans-serif; font-weight:800; color:white; font-size:1rem; letter-spacing:.15em; opacity:.6}
+.work-info{padding:1.8rem 2vw}
+.final{padding:6vw 2.5vw; display:grid; grid-template-columns:1.1fr .9fr; gap:4vw; border-bottom:1.5px solid var(--fg)}
+.final h2{font-size:clamp(3rem, 6vw, 6rem); line-height:.9}
+.final h2 i{font-family:'Instrument Serif', serif; color:var(--orange); text-transform:none; display:block}
+footer{padding:3vw 2.5vw; display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:3vw; background:var(--white)}
+.foot-logo{font-family:'Syne', sans-serif; font-weight:800; font-size:2rem; letter-spacing:-0.05em; text-transform:lowercase}
+.foot-logo span{color:var(--orange)}
+.foot-bottom{grid-column:1 / -1; border-top:1.5px solid var(--fg); margin-top:2vw; padding-top:1.5vw; display:flex; justify-content:space-between; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; flex-wrap:wrap; gap:1rem}
+@media(max-width:980px){
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .hero-top, .sec-02, .lookover, .doover, .final, footer{grid-template-columns:1fr}
+  .cards, .steps, .work-grid{grid-template-columns:1fr}
+  .card, .step, .work-card{border-right:none; border-bottom:1.5px solid var(--fg); min-height:auto}
+  .big-bg-text{display:none}
+  .look-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">akchally<span class="dot"></span></div>
+  <div class="nav-links">
+    <a href="#web">Web</a>
+    <a href="#document">Document</a>
+    <a href="#video">Video</a>
+    <a href="#lookover">The Look-Over</a>
+    <a href="#work">Work</a>
+  </div>
+  <div style="display:flex; gap:1rem; align-items:center">
+    <a href="#contact" class="btn btn-black">Start Something →</a>
+    <div class="hamburger">☰</div>
+  </div>
+</nav>
+<div class="marquee"><div class="marquee-inner">
+  <span>WEB <i>•</i> DOCUMENT <i>•</i> VIDEO <i>•</i> REMOTE STUDIO <i>•</i> NO RETAINER BULLSHIT <i>•</i></span>
+  <span>WEB <i>•</i> DOCUMENT <i>•</i> VIDEO <i>•</i> REMOTE STUDIO <i>•</i> NO RETAINER BULLSHIT <i>•</i></span>
+  <span>WEB <i>•</i> DOCUMENT <i>•</i> VIDEO <i>•</i> REMOTE STUDIO <i>•</i> NO RETAINER BULLSHIT <i>•</i></span>
+  <span>WEB <i>•</i> DOCUMENT <i>•</i> VIDEO <i>•</i> REMOTE STUDIO <i>•</i> NO RETAINER BULLSHIT <i>•</i></span>
+</div></div>
+<section class="hero" id="start">
+  <div class="big-bg-text">akchally.</div>
+  <div class="mono" style="margin-bottom:2.5rem">Web · Document · Video</div>
+  <div class="hero-top">
+    <div class="hero-left">
+      <h1>Make your business look like it <span class="accent">actually</span> should.</h1>
+      <div class="hero-copy">
+        <p><strong>Your business might be brilliant.</strong></p>
+        <p>Your website might not be.<br>Your documents might be painful to send.<br>Your video might still be sitting somewhere between “we should make one” and a folder full of random footage.</p>
+        <p><strong>We fix that.</strong></p>
+        <p>AKCHALLY is a remote creative studio making websites, business documents and videos for businesses that need to show up properly.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-black">Start Something →</a>
+        <a href="#lookover" class="btn">Not sure what you need? Get a Look-Over →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-note"><span class="mono">No brief theatre</span><br><b>Show us what you've got.</b> The messy drive, the Word doc, the iPhone footage. Don't tidy it up for us first.</div>
+      <div class="hero-note" style="transform:rotate(-1deg); background:var(--fg); color:var(--bg)"><span class="mono" style="color:var(--orange)">Remote · International</span><br>All pricing in USD · No retainer attached to its ankle.</div>
+    </div>
+  </div>
+</section>
+<section class="sec-02">
+  <div class="sec-02-left"><span class="mono">Section 02 — Opinion</span><h2>You probably don't need an agency.<br><span style="color:var(--orange); font-family:'Instrument Serif', serif; font-style:italic; text-transform:none">You need the thing done properly.</span></h2></div>
+  <div class="sec-02-right">
+    <p>We don't do everything.<br><br>We do three things:<br><strong style="font-family:'Syne',sans-serif; font-size:1.8rem">WEB. DOCUMENT. VIDEO.</strong></p>
+    <p>And we handle the thinking around them too — structure, words, design and production.</p>
+    <p>You don't need to arrive with a creative brief, wireframe, finished copy or perfectly organised folder.<br><br><strong>Show us what you've got. Tell us what you're trying to do. We'll take it from there.</strong></p>
+  </div>
+</section>
+<section class="sec-03">
+  <div class="sec-03-head"><div><span class="mono">What we make</span><h2>Pick the thing that's bothering you.</h2></div><p class="mono" style="max-width:24ch; opacity:.6">No forced bundles. Just the thing, done right.</p></div>
+  <div class="cards">
+    <div class="card" id="web"><div class="card-num">01 / WEB <span>→</span></div><h3>A website that looks like the business behind it.</h3><p>Clean, credible business websites built around what people actually need to understand, trust and do next.</p><p>From single-page sites to complete 7-page business websites.</p><ul><li>Responsive design</li><li>Copy refinement</li><li>SEO foundations</li><li>Metadata</li><li>Google setup</li><li>Launch</li></ul><div class="card-foot"><div class="price">Websites from $750</div><a href="#" class="btn btn-black" style="width:100%; justify-content:space-between">Explore Web →</a></div></div>
+    <div class="card" id="document"><div class="card-num">02 / DOCUMENT <span>→</span></div><h3>Send us the Word monstrosity.</h3><p>Company profiles, presentations, proposals, pitch decks, capability statements, brochures and reports.</p><p>Already have the content? We'll make it better.</p><p>Have the information but no idea how to turn it into the finished thing? We'll make it for you.</p><div class="card-foot"><div class="price">Document work from $350</div><a href="#" class="btn" style="width:100%; justify-content:space-between">Explore Document →</a></div></div>
+    <div class="card" id="video"><div class="card-num">03 / VIDEO <span>→</span></div><h3>You've got the footage. Or the idea.</h3><p>We produce business video remotely from footage, photographs, brand assets and existing material.</p><p>Or tell us what you're trying to make and we'll help work out the concept, structure and content before producing the final edit.</p><ul><li>Promotional videos</li><li>Website video</li><li>Company profiles</li><li>Service videos</li><li>Short-form business edits</li></ul><div class="card-foot"><div class="price">Video from $300</div><a href="#" class="btn" style="width:100%; justify-content:space-between">Explore Video →</a></div></div>
+  </div>
+</section>
+<section class="lookover" id="lookover">
+  <div class="look-left"><span class="mono">Section 04 — Don't know what's wrong?</span><h2>Let us Look-Over the whole thing.</h2><div class="look-price">$250</div><p style="max-width:38ch; opacity:.85">Sometimes you know the business isn't presenting properly. You just don't know why.</p><br><a href="#" class="btn" style="background:var(--orange); border-color:var(--orange); color:white">Get the $250 Look-Over →</a><p class="mono" style="margin-top:1.5rem; opacity:.5; text-transform:none; letter-spacing:.02em">Proceed with a qualifying Do-Over within 30 days and we'll credit the $250 toward your project.</p></div>
+  <div class="look-right">
+    <p style="font-size:1.1rem;">We'll review how your business shows up externally — website, branding, messaging, documents, imagery, search presence and video where relevant — and look at whether everything actually belongs together.</p><p style="margin-top:1rem; font-weight:700">Then we'll tell you:</p>
+    <div class="look-grid"><div class="look-item"><b>KEEP.</b><p>What's working.</p></div><div class="look-item"><b>FIX.</b><p>What's weakening the presentation.</p></div><div class="look-item"><b>INCONSISTENT.</b><p>What doesn't belong together.</p></div><div class="look-item"><b>MISSING.</b><p>What's obviously absent.</p></div><div class="look-item" style="grid-column:1 / -1; border-color:var(--orange)"><b style="color:white">FIX FIRST.</b><p>What we'd prioritise.</p></div></div>
+    <p class="mono" style="opacity:.5; text-transform:none; letter-spacing:0">You get a concise Business Presence & Cohesion Review. No giant strategy report. No obligation to hire us afterward. No pretending everything needs replacing just so we can sell it to you.</p>
+  </div>
+</section>
+<section class="doover">
+  <div class="doover-left"><span class="mono">Section 05 — Do-Over</span><h2>More than one thing?<br><span style="font-family:'Instrument Serif', serif; font-style:italic; text-transform:none; color:var(--orange)">Maybe it needs a Do-Over.</span></h2></div>
+  <div class="doover-right"><p>Sometimes it isn't the website.</p><br><p>It's the website and the company profile. Or the messaging. Or the visual identity. Or the video. Or all of them have been made at different times by different people and the business now looks like five businesses wearing the same logo.</p><br><p><strong>That's what the Do-Over is for.</strong></p><br><p>We identify the combination that actually needs fixing and build the project around that.<br>No forced bundle. The scope follows the problem.</p><div class="big-price"><span>The Do-Over</span>from $3,500</div><a href="#" class="btn btn-black">Talk to us about a Do-Over →</a></div>
+</section>
+<section class="how">
+  <div class="how-head"><h2>No creative-brief theatre.</h2><span class="mono">Start with what you've got. → 5 steps, done.</span></div>
+  <div class="steps">
+    <div class="step"><div class="step-num">01</div><h4>Show us.</h4><p>The current website. The ugly PDF. The logo. The raw footage. The notes. The idea.<br><br><strong>Don't tidy it up for us first.</strong></p></div>
+    <div class="step"><div class="step-num">02</div><h4>Tell us.</h4><p>Tell us about the business, who needs to see this and what you need it to accomplish.</p></div>
+    <div class="step"><div class="step-num">03</div><h4>We work it out.</h4><p>Structure. Words. Design. Production. We determine what the agreed output actually needs.</p></div>
+    <div class="step"><div class="step-num">04</div><h4>We make it.</h4><p>We build, design, edit, configure, test and finish it.</p></div>
+    <div class="step" style="background:var(--orange); color:white"><div class="step-num" style="color:white">05</div><h4>Done.</h4><p>You get the finished thing. No compulsory retainer attached to its ankle.</p></div>
+  </div>
+</section>
+<section class="philo"><span class="mono" style="margin-bottom:2rem; display:block">Section 07 — Philosophy</span><p>Good businesses shouldn't look <i>accidental.</i> A customer doesn't know how good your business is before they work with you. They see the website. They open the proposal. They watch the video. They Google you. <i>They form an opinion from what you've put in front of them.</i><br><br><span style="font-size:.55em; opacity:.6; letter-spacing:.05em; text-transform:uppercase; font-family:'Space Grotesk', sans-serif">AKCHALLY exists to make sure those things represent the business properly. Not bigger than it is. Not trendier than it is. Not buried under agency bullshit. Just how it actually should.</span></p></section>
+<section id="work"><div class="work-head"><div><span class="mono">Section 08 — Work</span><h2 style="font-size:clamp(2rem,4vw,3.5rem)">Some things we've made better.</h2><p class="mono" style="text-transform:none; letter-spacing:0; opacity:.6; margin-top:.5rem">Before is useful. After is better.</p></div><a href="#" class="btn btn-black">See More Work →</a></div><div class="work-grid"><div class="work-card"><div class="work-img"></div><div class="work-info"><span class="mono">Web</span><h4>[Project Name]</h4><p>[Very short project description.]</p><br><a href="#" style="font-weight:700; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase">View →</a></div></div><div class="work-card"><div class="work-img" style="filter:hue-rotate(15deg)"></div><div class="work-info"><span class="mono">Document</span><h4>[Project Name]</h4><p>[Very short project description.]</p><br><a href="#" style="font-weight:700; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase">View →</a></div></div><div class="work-card"><div class="work-img" style="filter:hue-rotate(35deg)"></div><div class="work-info"><span class="mono">Video</span><h4>[Project Name]</h4><p>[Very short project description.]</p><br><a href="#" style="font-weight:700; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase">Watch →</a></div></div></div></section>
+<section class="final" id="contact"><div><span class="mono">Final CTA — Right then.</span><h2>What needs <i>sorting out?</i></h2></div><div class="final-right"><p>A website? A document? A video? Or are you looking at the whole bloody business thinking: “Something isn't right.”</p><p style="font-weight:700">Either way, start there.</p><div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem"><a href="#" class="btn btn-black" style="font-size:1rem; padding:1.3rem 2.2rem">I know what I need →</a><a href="#lookover" class="btn" style="font-size:1rem; padding:1.3rem 2.2rem">I need a Look-Over →</a></div></div></section>
+<footer><div><div class="foot-logo">akchally<span>.</span></div><p style="margin-top:1rem; font-weight:500">Make your business look like it actually should.</p><p class="mono">Web · Document · Video</p><p style="margin-top:2rem; font-size:.8rem; opacity:.6">Remote studio · Working internationally<br>All pricing in USD</p></div><div><span class="mono">Navigate</span><a href="#web">Web</a><a href="#document">Document</a><a href="#video">Video</a><a href="#lookover">The Look-Over</a><a href="#work">Work</a><a href="#contact">Start Something</a></div><div><span class="mono">Contact / Assets</span><p>hello@akchally.studio<br>Remote studio</p><br><p>Put logo at<br><code>assets/akchally_logo.png</code></p></div><div class="foot-bottom"><span>© 2026 AKCHALLY.</span><span>No retainer bullshit · No brief theatre · Just done properly.</span></div></footer>
+<script>
+document.querySelector('.hamburger').addEventListener('click', ()=>{
+  const links = document.querySelector('.nav-links');
+  const isFlex = getComputedStyle(links).display === 'flex';
+  links.style.display = isFlex ? 'none' : 'flex';
+  if(!isFlex){
+    links.style.flexDirection='column'; links.style.position='absolute'; links.style.top='68px'; links.style.left='0'; links.style.right='0';
+    links.style.background='var(--bg)'; links.style.padding='2rem'; links.style.borderBottom='1.5px solid var(--fg)'; links.style.zIndex='100';
+  }
+})
+</script>
+</body>
+</html>
