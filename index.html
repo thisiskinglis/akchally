@@ -127,6 +127,24 @@ footer{padding:3vw 2.5vw; display:grid; grid-template-columns:1.5fr 1fr 1fr; gap
   .big-bg-text{display:none}
   .look-grid{grid-template-columns:1fr}
 }
+  :root{
+  --page-max: 1120px; /* make smaller if you want tighter, like 1020px */
+}
+
+/* wrap everything */
+main, header, section, footer {
+  max-width: var(--page-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+/* slightly smaller overall */
+body {
+  font-size: 15px;
+}
 </style>
 </head>
 <body>
