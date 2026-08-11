@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIDEO / 03 — AKCHALLY.</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2EDE6;--fg:#0E0E0E;--orange:#FF3D12;--oxblood:#120605;--cream:#EDE3D3;--paper:#FFF8EC;--white:#FFFBF5}
+*{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+body{background:var(--bg); color:var(--fg); font-family:'Space Grotesk',sans-serif; line-height:1.45; overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Syne',sans-serif; text-transform:uppercase; line-height:.9; letter-spacing:-.03em}
+.mono{font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700}
+a{color:inherit; text-decoration:none}
+.btn{display:inline-flex; align-items:center; gap:.7rem; border:1.5px solid var(--fg); padding:1rem 1.8rem; font-weight:700; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; transition:.25s}
+.btn-black{background:var(--fg); color:var(--bg)} .btn-black:hover{background:var(--orange); border-color:var(--orange); color:white; transform:translateY(-2px)}
+.btn-orange{background:var(--orange); border-color:var(--orange); color:white} .btn-orange:hover{background:var(--fg); border-color:var(--fg)}
+.btn-cream{background:var(--cream); color:var(--fg)} .btn-cream:hover{background:var(--fg); color:var(--cream)}
+nav{position:sticky; top:0; z-index:60; display:flex; justify-content:space-between; align-items:center; padding:1rem 2.5vw; background:rgba(14,14,14,.92); backdrop-filter:blur(12px); border-bottom:1.5px solid var(--fg); color:var(--bg)}
+nav .logo{font-family:'Syne',sans-serif; font-weight:800; font-size:1.9rem; letter-spacing:-.05em; text-transform:lowercase; color:var(--bg)} .dot{width:.38em;height:.38em;background:var(--orange);border-radius:50%;display:inline-block;margin-left:.05em}
+nav a.mono{color:var(--bg); opacity:.7} nav a.mono.active{opacity:1; border-bottom:1.5px solid var(--orange)}
+
+/* HERO - DARKEST, OXBLOOD / NEAR-BLACK */
+.hero{background:var(--oxblood); color:var(--paper); padding:5vw 2.5vw 3vw; position:relative; overflow:hidden; border-bottom:1.5px solid var(--fg)}
+.hero::before{content:""; position:absolute; inset:0; background:radial-gradient(80% 80% at 20% 20%, rgba(255,61,18,.18), transparent), radial-gradient(60% 60% at 80% 80%, rgba(255,61,18,.12), transparent); pointer-events:none}
+.hero-top{display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,248,236,.15); padding-bottom:1.2rem; margin-bottom:3vw; position:relative}
+.hero h1{font-size:clamp(3.5rem,9vw,9rem); line-height:.85; max-width:14ch; position:relative}
+.hero h1 i{font-family:'Instrument Serif',serif; font-style:italic; text-transform:none; color:var(--orange); display:block}
+.hero-copy{max-width:52ch; font-size:1.1rem; line-height:1.6; opacity:.9; position:relative}
+.hero-copy p{margin-bottom:1rem}
+.hero-price{font-family:'Syne',sans-serif; font-weight:800; font-size:2.5rem; margin:2rem 0 1rem; color:var(--orange)}
+.crop-marks{position:absolute; top:1.5vw; right:2.5vw; font-family:monospace; font-size:.6rem; letter-spacing:.2em; opacity:.4; text-align:right; line-height:1.2}
+.crop-marks span{display:block}
+
+/* FOOTAGE REEL - FULL BLEED MOVING */
+.reel{height:38vh; background:#000; border-bottom:1.5px solid var(--fg); position:relative; overflow:hidden; display:flex; align-items:center}
+.reel-track{display:flex; gap:1.5px; animation:reelMove 40s linear infinite; will-change:transform}
+.reel-item{flex:0 0 28vw; aspect-ratio:16/9; background:linear-gradient(135deg,#222,#444); position:relative; border:1px solid rgba(255,255,255,.15); display:grid; place-items:center; color:white; font-family:'Syne',sans-serif; font-weight:800; font-size:.8rem; letter-spacing:.15em}
+.reel-item::before{content:""; position:absolute; left:0; top:0; bottom:0; width:12px; background:repeating-linear-gradient(to bottom, transparent 0 8px, rgba(255,255,255,.8) 8px 16px); opacity:.6}
+.reel-item::after{content:attr(data-time); position:absolute; bottom:.5rem; right:.7rem; font-family:monospace; font-size:.6rem; opacity:.7}
+@keyframes reelMove{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* WHAT WE DO */
+.what{padding:5vw 2.5vw; display:grid; grid-template-columns:.8fr 1.2fr; gap:4vw; border-bottom:1.5px solid var(--fg); background:var(--paper)}
+.what h2{font-size:clamp(2.2rem,4vw,3.8rem)}
+.what p{margin-bottom:1rem; line-height:1.6}
+.what .concept-line{margin-top:2rem; font-family:'Syne',sans-serif; font-weight:800; letter-spacing:.08em; font-size:.85rem; border-top:1.5px solid var(--fg); padding-top:1rem}
+
+/* TWO WAYS - DRAMATIC SPLIT */
+.two-head{padding:2vw 2.5vw; background:var(--fg); color:var(--bg); display:flex; justify-content:space-between; border-bottom:1.5px solid var(--fg)}
+.split{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg); min-height:700px}
+.split-left{background:var(--cream); padding:3.5vw 2.5vw; border-right:1.5px solid var(--fg); display:flex; flex-direction:column}
+.split-right{background:var(--fg); color:var(--paper); padding:3.5vw 2.5vw; display:flex; flex-direction:column}
+.split-num{font-family:'Instrument Serif',serif; font-size:5rem; line-height:.8; color:var(--orange)}
+.split h3{font-size:clamp(2rem,3.5vw,3rem); margin:1rem 0}
+.split ul{list-style:none; margin:1.5rem 0} .split li{padding:.5rem 0; border-bottom:1px solid rgba(0,0,0,.1); font-size:.9rem; display:flex; gap:.6rem}
+.split-right li{border-bottom-color:rgba(255,248,236,.12)}
+.split li::before{content:"→"; color:var(--orange)}
+
+/* PRICING - CREAM */
+.pricing{background:var(--cream); border-bottom:1.5px solid var(--fg); padding:3vw 2.5vw}
+.pricing-head{display:flex; justify-content:space-between; align-items:end; margin-bottom:3vw}
+.pricing-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; background:var(--fg); border:1.5px solid var(--fg)}
+.price-card{background:var(--paper); padding:2.2vw; display:flex; flex-direction:column; position:relative; overflow:hidden}
+.price-card::after{content:"◫"; position:absolute; top:.8rem; right:.8rem; font-size:.8rem; opacity:.3}
+.price-card h4{font-size:1.1rem; margin-bottom:.5rem}
+.price-card .from{font-family:'Instrument Serif',serif; font-style:italic; font-size:1.6rem; margin-bottom:1rem}
+.price-card p{font-size:.85rem; line-height:1.5; opacity:.8; margin-bottom:.6rem}
+.price-card .btn{margin-top:auto}
+
+/* NOT JUST EDITING */
+.timeline{background:var(--fg); color:var(--bg); padding:5vw 2.5vw; display:grid; grid-template-columns:1fr 1fr; gap:4vw; border-bottom:1.5px solid var(--fg)}
+.timeline h2{font-size:clamp(2rem,4vw,3.8rem); color:var(--bg)}
+.timeline ul{list-style:none; margin-top:1.5rem} .timeline li{padding:.6rem 0; border-bottom:1px solid rgba(255,255,255,.12); display:flex; gap:1rem; font-size:.95rem}
+.timeline li::before{content:"?"; color:var(--orange); font-weight:800}
+
+/* HANDLE / PHONE / REMOTE */
+.triple{display:grid; grid-template-columns:repeat(3,1fr); border-bottom:1.5px solid var(--fg)}
+.tri-col{padding:2.5vw; border-right:1.5px solid var(--fg)} .tri-col:last-child{border-right:none}
+.tri-col h4{font-size:1rem; margin-bottom:1rem; letter-spacing:.06em}
+.tri-col ul{list-style:none} .tri-col li{font-size:.85rem; padding:.35rem 0; opacity:.85}
+.tri-col.highlight{background:var(--orange); color:white}
+
+/* WEB + VIDEO */
+.webvideo{background:var(--paper); padding:4vw 2.5vw; display:grid; grid-template-columns:.9fr 1.1fr; gap:4vw; border-bottom:1.5px solid var(--fg)}
+.webvideo ul{list-style:none; margin-top:1rem} .webvideo li{padding:.5rem 0; border-bottom:1px solid rgba(0,0,0,.08); display:flex; gap:.6rem}
+.webvideo li::before{content:"→"; color:var(--orange)}
+
+/* SOURCE MATERIAL */
+.source{background:var(--oxblood); color:var(--paper); padding:5vw 2.5vw; display:grid; grid-template-columns:1fr 1fr; gap:4vw; border-bottom:1.5px solid var(--fg); position:relative}
+.source h2{font-size:clamp(2.5rem,4.5vw,4rem); color:var(--paper)}
+.file-list{display:flex; flex-wrap:wrap; gap:.6rem; margin:1.5rem 0}
+.file-tag{border:1px solid rgba(255,248,236,.25); padding:.5rem .9rem; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase}
+.file-tag.final{border-color:var(--orange); color:var(--orange); background:rgba(255,61,18,.1)}
+
+/* PROCESS */
+.process{border-bottom:1.5px solid var(--fg); background:var(--white)}
+.process-head{padding:2vw 2.5vw; display:flex; justify-content:space-between; border-bottom:1.5px solid var(--fg)}
+.steps{display:grid; grid-template-columns:repeat(6,1fr)}
+.step{padding:2vw; border-right:1.5px solid var(--fg)} .step:last-child{border-right:none}
+.step-num{font-family:'Instrument Serif',serif; font-size:3rem; color:var(--orange); line-height:1}
+
+/* BOUNDARIES + WORK */
+.bound{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg)}
+.b-col{padding:3vw 2.5vw} .b-col:first-child{border-right:1.5px solid var(--fg); background:var(--white)}
+.b-col ul{list-style:none; margin-top:1rem} .b-col li{padding:.5rem 0; border-bottom:1px solid rgba(0,0,0,.08); font-size:.9rem; display:flex; gap:.6rem}
+.b-col li::before{content:"→"; color:var(--orange)}
+
+.work{background:var(--fg); color:var(--bg); padding:4vw 2.5vw; border-bottom:1.5px solid var(--fg)}
+.work-head{display:flex; justify-content:space-between; align-items:end; margin-bottom:3vw}
+.work-grid{display:grid; grid-template-columns:1fr 1fr; gap:2vw}
+.work-card{background:#111; border:1px solid rgba(255,255,255,.15); padding:0; position:relative}
+.work-embed{aspect-ratio:16/9; background:linear-gradient(135deg,#1a1a1a,#333); display:grid; place-items:center; position:relative}
+.work-embed::before{content:"▶"; font-size:3rem; color:white; opacity:.8; width:70px; height:70px; border:1.5px solid white; border-radius:50%; display:grid; place-items:center; line-height:1}
+.work-embed::after{content:"00:00 / 01:00  •  REC  •  AKCHALLY VIDEO"; position:absolute; bottom:.8rem; left:.8rem; right:.8rem; display:flex; justify-content:space-between; font-family:monospace; font-size:.55rem; letter-spacing:.1em; opacity:.6}
+.work-info{padding:1.5vw}
+.work-meta{display:flex; gap:.5rem; flex-wrap:wrap; margin:1rem 0}
+.work-meta span{font-size:.6rem; border:1px solid rgba(255,255,255,.2); padding:.2rem .5rem; text-transform:uppercase; letter-spacing:.1em}
+
+/* FAQ */
+.faq{background:var(--cream); padding:4vw 2.5vw; border-bottom:1.5px solid var(--fg)}
+.faq-grid{display:grid; grid-template-columns:1fr 1fr; gap:2rem 4vw; margin-top:2rem}
+.faq-item{padding-bottom:1.5rem; border-bottom:1px solid rgba(0,0,0,.12)} .faq-item b{display:block; font-family:'Syne',sans-serif; text-transform:uppercase; margin-bottom:.4rem; font-size:.95rem} .faq-item p{font-size:.9rem; opacity:.8; line-height:1.5}
+
+/* FINAL CTA */
+.final{background:var(--paper); padding:6vw 2.5vw; display:grid; grid-template-columns:1fr 1fr; gap:4vw; border-bottom:1.5px solid var(--fg)}
+.final h2{font-size:clamp(3rem,6vw,5.5rem)} .final h2 i{color:var(--orange); font-family:'Instrument Serif',serif; text-transform:none; display:block}
+footer{padding:2vw 2.5vw; display:flex; justify-content:space-between; font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; background:var(--oxblood); color:var(--paper)}
+
+@media(max-width:980px){
+  .what, .split, .pricing-grid, .timeline, .triple, .webvideo, .source, .steps, .bound, .work-grid, .faq-grid, .final{grid-template-columns:1fr}
+  .tri-col, .b-col, .step{border-right:none; border-bottom:1.5px solid var(--fg)}
+  .reel-item{flex:0 0 70vw}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">akchally<span class="dot"></span></a>
+  <div style="display:flex; gap:1.2rem"><a href="index.html" class="mono">Home</a><a href="web.html" class="mono">Web / 01</a><a href="document.html" class="mono">Document / 02</a><span class="mono active">Video / 03</span></div>
+  <a href="#make" class="btn btn-orange">Make my video →</a>
+</nav>
+
+<section class="hero">
+  <div class="crop-marks"><span>+  —  —  —  —  +</span><span>|  00:00:12:04  |</span><span>|  AKCH_VID_03 |</span><span>+  —  —  —  —  +</span></div>
+  <div class="hero-top"><span class="mono">Video / 03 — Business Video</span><span class="mono">Remote production · From $300</span></div>
+  <h1>You've got the footage. <i>Or the idea.</i></h1>
+  <div style="display:grid; grid-template-columns:1.2fr .8fr; gap:4vw; margin-top:2.5vw">
+    <div class="hero-copy">
+      <p>Maybe you've already filmed something.</p>
+      <p>Maybe you've got photographs, old footage, product shots and brand assets scattered across twelve folders.</p>
+      <p>Maybe you have absolutely none of that and just keep saying:</p>
+      <p><strong>“We really need a video.”</strong></p>
+      <p>Good enough.</p>
+      <p>AKCHALLY creates business video remotely — from what you already have, or from an idea we help you shape.</p>
+      <div class="hero-price">Video from $300</div>
+      <a href="#make" class="btn btn-orange" style="font-size:1rem; padding:1.2rem 2.2rem">Make my video →</a>
+    </div>
+    <div style="border:1px solid rgba(255,248,236,.2); padding:1.2rem; background:rgba(0,0,0,.3); height:fit-content">
+      <span class="mono" style="color:var(--orange)">Concept · Structure · Edit · Sound · Motion · Finish</span><br><br>
+      <p style="font-size:.9rem; opacity:.8">All produced remotely. No film crew at 6am.</p>
+    </div>
+  </div>
+</section>
+
+<div class="reel">
+  <div class="reel-track">
+    <div class="reel-item" data-time="00:02:14">HERO_BG_01.MP4</div><div class="reel-item" data-time="00:04:31">PRODUCT_04.MOV</div><div class="reel-item" data-time="00:00:08">FOUNDER_TAKE_2.MP4</div><div class="reel-item" data-time="00:12:05">OFFICE_BROLL_09.MP4</div><div class="reel-item" data-time="00:01:22">BRAND_ASSETS</div><div class="reel-item" data-time="00:03:18">SCREEN_REC_03.MP4</div>
+    <div class="reel-item" data-time="00:02:14">HERO_BG_01.MP4</div><div class="reel-item" data-time="00:04:31">PRODUCT_04.MOV</div><div class="reel-item" data-time="00:00:08">FOUNDER_TAKE_2.MP4</div><div class="reel-item" data-time="00:12:05">OFFICE_BROLL_09.MP4</div><div class="reel-item" data-time="00:01:22">BRAND_ASSETS</div><div class="reel-item" data-time="00:03:18">SCREEN_REC_03.MP4</div>
+  </div>
+</div>
+
+<section class="what">
+  <div><span class="mono">Section 02 — What we do</span><h2 style="margin-top:1rem">Remote video production</h2><p style="margin-top:1rem; font-weight:700">You don't need a film crew following you around.</p></div>
+  <div>
+    <p>Not every business video needs cameras, lighting rigs and a production team arriving at 6am.</p><p>Sometimes the ingredients already exist.</p><p style="font-family:'Syne',sans-serif; font-weight:800; letter-spacing:.05em">Footage. Photographs. Products. Screens. People. Brand assets. Music. Words. An idea.</p><p>We bring those pieces together into something intentional.</p>
+    <div class="concept-line">Concept · Structure · Edit · Sound · Motion · Finish — All produced remotely.</div>
+  </div>
+</section>
+
+<div class="two-head"><h2>Start where you are.</h2><span class="mono">Section 03 — Two ways in — Footage or no footage</span></div>
+<section class="split" id="make">
+  <div class="split-left">
+    <div class="split-num">01</div>
+    <h3>I have the stuff.</h3>
+    <p>Perfect.</p><p>Send us your:</p>
+    <ul><li>Raw footage</li><li>Phone footage</li><li>Professional footage</li><li>Photographs</li><li>Product imagery</li><li>Logo</li><li>Brand assets</li><li>Existing videos</li><li>Screen recordings</li><li>Graphics</li><li>Voice-over where applicable</li></ul>
+    <p>Tell us what you're trying to accomplish. We'll work out what belongs, what doesn't and how to turn it into the finished piece.</p>
+    <a href="#" class="btn btn-black" style="margin-top:auto">Use what I've got →</a>
+  </div>
+  <div class="split-right">
+    <div class="split-num" style="color:var(--orange)">02</div>
+    <h3>I have an idea.</h3>
+    <p>Also perfect.</p><p>You know you need a video. You might even know what you want people to feel or understand.</p><p>You just don't know:</p>
+    <ul style="opacity:.8"><li>what to film,</li><li>what to say,</li><li>how to structure it,</li><li>what assets you'll need,</li><li>or how any of it becomes an actual video.</li></ul>
+    <p>We can help develop the concept and give you a clear asset/footage plan before production begins.</p>
+    <a href="#" class="btn" style="border-color:var(--paper); color:var(--paper); margin-top:auto">Help me work it out →</a>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="pricing-head"><h2>What are we making?</h2><span class="mono">Section 04 — Simple starting points</span></div>
+  <div class="pricing-grid">
+    <div class="price-card"><h4>Short Edit</h4><span style="font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; opacity:.6">Business / Social Edit</span><div class="from">from $300</div><p>A concise branded edit using supplied footage and assets.</p><p><strong>Useful for:</strong> Announcements, Business updates, Short showcases, Social content, Event recaps, Short-form brand material</p><a href="#" class="btn btn-black">Start a short edit →</a></div>
+    <div class="price-card"><h4>Website</h4><span style="font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; opacity:.6">Website Hero Video</span><div class="from">from $450</div><p>A short, largely visual piece designed specifically to live on your website. Movement without turning the homepage into a cinema.</p><p>Suitable for: Hero backgrounds, Product sequences, Atmosphere, Company environments, Service visuals</p><a href="#" class="btn btn-black">Make a hero video →</a></div>
+    <div class="price-card"><h4>Promotional</h4><span style="font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; opacity:.6">30–60 Second Promotional Video</span><div class="from">from $500</div><p>A focused promotional piece designed around one clear message, service, product or business proposition.</p><a href="#" class="btn btn-black">Make a promo →</a></div>
+    <div class="price-card"><h4>Business</h4><span style="font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; opacity:.6">60–90 Second Business / Service Video</span><div class="from">from $750</div><p>More room for a story. Suitable for: Service explanations, Business introductions, Campaign pieces, Product/service showcases, Founder-led content, Customer-facing explainers</p><a href="#" class="btn btn-black">Make a business video →</a></div>
+    <div class="price-card" style="background:var(--fg); color:var(--bg)"><h4>Company</h4><span style="font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; opacity:.6">Company / Profile Video</span><div class="from" style="color:var(--orange)">from $950</div><p>A more substantial piece introducing the business, its work, people, environment or proposition. The exact format depends on the assets available and what the video needs to accomplish.</p><a href="#" class="btn" style="border-color:var(--bg); color:var(--bg)">Make a company video →</a></div>
+    <div class="price-card"><h4>More Versions</h4><span style="font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; opacity:.6">Additional Cuts & Formats</span><div class="from">from $200</div><p>Already made the main video? We can create additional agreed versions for different placements, lengths or formats.</p><a href="#" class="btn btn-black">Ask about versions →</a></div>
+  </div>
+</section>
+
+<section class="timeline">
+  <div><span class="mono" style="color:var(--orange)">Section 05 — Not just editing</span><h2 style="margin-top:1rem">The timeline isn't the thinking.</h2><p style="margin-top:1rem">A good edit starts before the first cut. Video isn't simply: put clips together + add music + export.</p></div>
+  <div>
+    <p>Before editing, we need to understand:</p>
+    <ul><li>Who is watching?</li><li>Where will they see it?</li><li>What should they understand?</li><li>What should they remember?</li><li>What should happen afterward?</li></ul>
+    <p style="margin-top:1.5rem">Then we decide what the video actually needs.</p><p><strong>Because 47 beautiful clips arranged randomly are still 47 beautiful clips arranged randomly.</strong></p>
+  </div>
+</section>
+
+<section class="triple">
+  <div class="tri-col"><span class="mono">Section 06 — What we can handle</span><h4 style="margin-top:1rem">Depending on the project. From raw assets to finished piece.</h4><p style="font-size:.9rem">AKCHALLY video projects can include:</p><ul><li>Concept development</li><li>Content structure</li><li>Basic scripting / copy</li><li>Shot and asset guidance</li><li>Footage selection</li><li>Editing</li><li>Pacing</li><li>Transitions</li><li>Titles</li><li>Text overlays</li><li>Brand application</li><li>Sound design</li><li>Licensed music selection where included</li><li>Basic motion graphics</li><li>Image integration</li><li>Colour refinement</li><li>Final formatting</li><li>Multiple agreed outputs</li></ul><p style="margin-top:1rem; font-size:.75rem; opacity:.6">Your quote will specify exactly what's included.</p></div>
+  <div class="tri-col highlight"><span class="mono" style="color:white">Section 07 — Your phone</span><h4 style="color:white; margin-top:1rem">Your phone isn't necessarily the problem.</h4><p style="font-size:.9rem; color:white">Bad footage and imperfect footage aren't the same thing. Modern phones can capture perfectly usable material for many business applications.</p><p style="font-size:.9rem; color:white; margin-top:1rem"><strong>What matters is how it's captured.</strong></p><p style="font-size:.85rem; color:white; margin-top:1rem">If we're developing a video from an idea, we can give you practical guidance on:</p><ul style="color:white"><li>What to film</li><li>Orientation</li><li>Framing</li><li>Lighting</li><li>Audio considerations</li><li>Clip length</li><li>Backgrounds</li><li>Additional detail shots</li><li>How to send the files</li></ul><p style="font-size:.8rem; color:white; margin-top:1rem">So you don't discover after filming everything that none of it can actually be used.</p></div>
+  <div class="tri-col"><span class="mono">Section 08 — What remote means</span><h4 style="margin-top:1rem">A useful distinction.</h4><p>We produce remotely.</p><p>AKCHALLY does not currently position itself as an on-location film crew.</p><p>That means we are not flying internationally with cameras to film your office.</p><p>You or your local team capture the required footage — or provide existing assets — and we handle the agreed creative and production work remotely.</p><p>If a project genuinely requires specialist local filming, we'll tell you.</p><p><strong>We would rather define the boundary properly than pretend otherwise.</strong></p></div>
+</section>
+
+<section class="webvideo">
+  <div><span class="mono">Section 09 — Video for your website</span><h2 style="font-size:clamp(2rem,3.5vw,3rem); margin-top:1rem">Web + Video<br><span style="font-family:'Instrument Serif',serif; font-style:italic; text-transform:none; color:var(--orange)">These two rather like each other.</span></h2></div>
+  <div>
+    <p>If we're already building your AKCHALLY website, video can be developed as part of the same visual system.</p><p>That might mean:</p>
+    <ul><li>A hero video</li><li>Product/service footage</li><li>Founder introduction</li><li>Short company profile</li><li>Motion assets</li><li>Background loops</li></ul>
+    <p>Instead of building a website and then trying to stuff a completely unrelated video into it afterward, we can design them to belong together.</p><br><a href="#" class="btn btn-black">Ask about Web + Video →</a>
+  </div>
+</section>
+
+<section class="source">
+  <div><span class="mono" style="color:var(--orange)">Section 10 — The Source Material</span><h2>Send us what you've got.</h2><p style="margin-top:1rem">Yes. Even that.</p><p>You don't need to decide what's usable before sending it.</p><p style="margin-top:1rem">If you've got:</p></div>
+  <div>
+    <div class="file-list"><span class="file-tag">three polished clips,</span><span class="file-tag">twenty phone videos,</span><span class="file-tag">four hundred photographs,</span><span class="file-tag">an old company video,</span><span class="file-tag">a logo animation,</span><span class="file-tag">random product footage,</span><span class="file-tag final">FINAL_FINAL_VIDEO_v7_ACTUALFINAL.mp4 😂</span></div>
+    <p>Send the relevant material. We'll assess what can actually be used.</p>
+  </div>
+</section>
+
+<div style="padding:2vw 2.5vw; display:flex; justify-content:space-between; background:var(--white); border-bottom:1.5px solid var(--fg)"><h2>How it works</h2><span class="mono">Section 11 — From folder full of stuff to finished video</span></div>
+<section class="process">
+  <div class="steps">
+    <div class="step"><div class="step-num">01</div><h4>The purpose</h4><p>Tell us what you're trying to make and where the video will be used.</p></div>
+    <div class="step"><div class="step-num">02</div><h4>The material</h4><p>You provide the available footage and assets. Or, if you're starting from an idea, we define what needs to be captured.</p></div>
+    <div class="step"><div class="step-num">03</div><h4>The direction</h4><p>We agree the concept, structure and intended output.</p></div>
+    <div class="step"><div class="step-num">04</div><h4>The edit</h4><p>We build the video. Sequence. Pacing. Sound. Words. Brand. Movement.</p></div>
+    <div class="step"><div class="step-num">05</div><h4>You review</h4><p>Two consolidated revision rounds are included unless otherwise stated.</p></div>
+    <div class="step" style="background:var(--orange); color:white"><div class="step-num" style="color:white">06</div><h4>Final export</h4><p>Approved. Formatted. Exported for the agreed use. Done.</p></div>
+  </div>
+</section>
+
+<section class="bound">
+  <div class="b-col"><span class="mono">Section 12 — What we don't do</span><h3 style="margin-top:1rem">Boundaries again.</h3><p style="margin-top:1rem">Not every video belongs here. AKCHALLY is built for business video.</p><p style="margin-top:1rem"><strong>We're a strong fit for:</strong></p><ul><li>Business profiles</li><li>Promotional content</li><li>Service videos</li><li>Website video</li><li>Product showcases</li><li>Professional social content</li><li>Founder/business introductions</li><li>Existing-footage edits</li></ul></div>
+  <div class="b-col" style="background:var(--cream)"><p><strong>We're probably not the right fit for:</strong></p><ul><li>Feature films</li><li>Music videos</li><li>Large commercial film shoots</li><li>Wedding films</li><li>Complex 3D animation</li><li>Large-scale VFX</li><li>Broadcast production requiring specialist crews</li><li>On-location international filming</li></ul><p style="margin-top:1rem"><strong>If the job needs a completely different production model, we'll say so.</strong></p></div>
+</section>
+
+<section class="work">
+  <div class="work-head"><div><span class="mono" style="color:var(--orange)">Section 13 — Video / Selected Work</span><h2 style="font-size:clamp(2rem,4vw,3.5rem)">Press play.</h2><p class="mono" style="text-transform:none; letter-spacing:0; opacity:.6">This section should actually play the work. No laptop mockup with a static thumbnail pretending to be a portfolio.</p></div></div>
+  <div class="work-grid">
+    <div class="work-card"><div class="work-embed">VIDEO EMBED</div><div class="work-info"><span class="mono" style="color:var(--orange)">[Project / Client]</span><p style="margin-top:1rem; font-size:.9rem"><b>What they had</b><br>Raw footage + brand assets.</p><p style="font-size:.9rem"><b>What they needed</b><br>[One sentence.]</p><p style="font-size:.9rem"><b>What we made</b><br>60-second promotional video.</p><div class="work-meta"><span>Concept</span><span>Structure</span><span>Edit</span><span>Production</span></div><a href="#" class="mono" style="border-bottom:1px solid">Watch →</a></div></div>
+    <div class="work-card"><div class="work-embed" style="filter:hue-rotate(15deg)">VIDEO EMBED</div><div class="work-info"><span class="mono" style="color:var(--orange)">[Project / Client]</span><p style="margin-top:1rem; font-size:.9rem"><b>What they had</b><br>An idea.</p><p style="font-size:.9rem"><b>What we made</b><br>[One sentence.]</p><a href="#" class="mono" style="border-bottom:1px solid; margin-top:1rem; display:inline-block">Watch →</a></div></div>
+  </div>
+</section>
+
+<section class="faq"><span class="mono">Section 14 — FAQ</span><h2 style="font-size:clamp(2rem,4vw,3rem); margin-top:1rem">Before you send 14GB of footage.</h2>
+  <div class="faq-grid">
+    <div class="faq-item"><b>Can you work with phone footage?</b><p>Yes, depending on quality and intended use. If you're filming specifically for the project, we'll provide practical capture guidance where included in scope.</p></div>
+    <div class="faq-item"><b>Do you film the footage?</b><p>AKCHALLY currently works remotely. Clients provide existing footage or capture footage locally according to the agreed project requirements.</p></div>
+    <div class="faq-item"><b>Can you help with the script?</b><p>Yes. Basic scripting and content structure can be included depending on the project.</p></div>
+    <div class="faq-item"><b>Can you source music?</b><p>Where required, licensed music can be incorporated subject to the agreed scope and any third-party licensing costs.</p></div>
+    <div class="faq-item"><b>Can you make different versions for Instagram, LinkedIn and the website?</b><p>Yes. Additional cuts and formats can be included or quoted separately.</p></div>
+    <div class="faq-item"><b>How many revisions are included?</b><p>Two consolidated revision rounds are standard unless your quote states otherwise.</p></div>
+    <div class="faq-item"><b>Can you fix terrible footage?</b><p>Sometimes. We can improve and work around many imperfections. We cannot recreate information that wasn't captured. If the source material genuinely isn't usable, we'll tell you.</p></div>
+  </div>
+</section>
+
+<section class="final"><div><span class="mono">Final CTA — Video / Akchally</span><h2>That video you've been meaning to make? <i>This is your sign to stop meaning to make it.</i></h2><p style="margin-top:1.5rem; font-family:'Syne',sans-serif; font-weight:800; font-size:1.5rem">Video from $300.</p></div><div style="display:flex; flex-direction:column; justify-content:center; gap:1rem"><a href="#" class="btn btn-orange" style="font-size:1.1rem; padding:1.4rem 2rem; justify-content:space-between">I have the footage →</a><a href="#" class="btn btn-black" style="font-size:1.1rem; padding:1.4rem 2rem; justify-content:space-between">I have the idea →</a></div></section>
+
+<footer><span>© 2026 AKCHALLY. — Video / 03 — Darkest & most kinetic</span><span>Remote production · No crew at 6am</span></footer>
+</body>
+</html>
