@@ -9,6 +9,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
 :root{
+  --page-max: 1280px; /* was stretching to 100% before */
+}
+nav, .hero, .section-label, .what, .packages, .what-make, footer {
+  padding-left: max(2.5vw, calc((100vw - var(--page-max))/2));
+  padding-right: max(2.5vw, calc((100vw - var(--page-max))/2));
+}
+h1{ font-size: clamp(3rem, 6.5vw, 6.5rem) !important; } /* was 9vw */
+:root{
   --bg: #F2EDE6;
   --fg: #0F0F0F;
   --orange: #FF3D12;
