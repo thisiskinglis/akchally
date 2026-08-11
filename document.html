@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOCUMENT / 02 — AKCHALLY.</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2EDE6;--fg:#0F0F0F;--orange:#FF3D12;--oxblood:#3A0F0B;--oxblood-2:#5C1A12;--cream:#EDE3D3;--paper:#FFF8EC;--white:#FFFBF5}
+*{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+body{background:var(--bg); color:var(--fg); font-family:'Space Grotesk',sans-serif; line-height:1.45; overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Syne',sans-serif; text-transform:uppercase; line-height:.9; letter-spacing:-.03em}
+.mono{font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700}
+a{color:inherit; text-decoration:none}
+.btn{display:inline-flex; align-items:center; gap:.7rem; border:1.5px solid var(--fg); padding:1rem 1.8rem; font-weight:700; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; transition:.25s; cursor:pointer}
+.btn-black{background:var(--fg); color:var(--bg)} .btn-black:hover{background:var(--orange); border-color:var(--orange); color:white; transform:translateY(-2px)}
+.btn-orange{background:var(--orange); border-color:var(--orange); color:white} .btn-orange:hover{background:var(--fg); border-color:var(--fg)}
+.btn-paper{background:var(--paper); color:var(--fg)} .btn-paper:hover{background:var(--fg); color:var(--paper)}
+nav{position:sticky; top:0; z-index:50; display:flex; justify-content:space-between; align-items:center; padding:1.1rem 2.5vw; background:rgba(242,237,230,.92); backdrop-filter:blur(12px); border-bottom:1.5px solid var(--fg)}
+.logo{font-family:'Syne',sans-serif; font-weight:800; font-size:1.9rem; letter-spacing:-.05em; text-transform:lowercase} .dot{width:.38em;height:.38em;background:var(--orange);border-radius:50%;display:inline-block;margin-left:.05em}
+
+/* HERO - CREAM ENORMOUS */
+.hero{background:var(--cream); padding:6vw 2.5vw 3vw; border-bottom:1.5px solid var(--fg); position:relative}
+.hero-top{display:flex; justify-content:space-between; border-bottom:1.5px solid var(--fg); padding-bottom:1.5rem; margin-bottom:3vw}
+.hero h1{font-size:clamp(4rem,11vw,14rem); line-height:.82; letter-spacing:-.06em; max-width:12ch}
+.hero h1 em{font-family:'Instrument Serif',serif; font-style:italic; text-transform:none; color:var(--orange); display:block; font-size:.85em}
+.hero-copy{max-width:52ch; font-size:1.15rem; line-height:1.6; margin-top:2rem}
+.hero-cta{margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap}
+.big-watermark{position:absolute; right:-1vw; top:6vw; font-family:'Syne',sans-serif; font-size:30vw; opacity:.03; line-height:.8; pointer-events:none; text-transform:lowercase}
+
+/* TWO WAYS IN - SPLIT SCREEN ORANGE VS OXBLOOD */
+.two-ways{border-bottom:1.5px solid var(--fg)}
+.two-head{padding:2vw 2.5vw; display:flex; justify-content:space-between; background:var(--white); border-bottom:1.5px solid var(--fg)}
+.two-head h2{font-size:clamp(2rem,4vw,3.5rem)}
+.split{display:grid; grid-template-columns:1fr 1fr; min-height:900px}
+.split-left{background:var(--orange); color:white; padding:3.5vw 2.5vw; display:flex; flex-direction:column; border-right:1.5px solid var(--fg)}
+.split-right{background:var(--oxblood); color:var(--paper); padding:3.5vw 2.5vw; display:flex; flex-direction:column}
+.split-label{font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700; margin-bottom:2rem; opacity:.8; border:1px solid currentColor; display:inline-block; padding:.4rem .8rem; width:fit-content}
+.split h3{font-size:clamp(2.8rem,5vw,4.5rem); line-height:.9; margin-bottom:1rem}
+.split h3 i{font-family:'Instrument Serif',serif; font-style:italic; text-transform:none; display:block; font-size:.9em}
+.split p{line-height:1.6; margin-bottom:1rem; opacity:.9}
+.split .pricing{margin:2rem 0; border-top:1px solid rgba(255,255,255,.3); padding-top:1.5rem}
+.price-row{display:flex; justify-content:space-between; padding:.7rem 0; border-bottom:1px solid rgba(255,255,255,.15); font-size:.9rem}
+.price-row b{font-family:'Syne',sans-serif}
+.split .btn{margin-top:auto; width:100%; justify-content:space-between; border-color:white; color:white}
+.split-left .btn{background:white; color:var(--orange); border-color:white}
+.split-left .btn:hover{background:var(--fg); color:white; border-color:var(--fg)}
+.split-right .btn{border-color:var(--paper); color:var(--paper)}
+.split-right .btn:hover{background:var(--paper); color:var(--oxblood)}
+
+/* WHAT WE MAKE - WARM PAPER */
+.what-make{background:var(--paper); border-bottom:1.5px solid var(--fg); padding:4vw 2.5vw}
+.what-make h2{font-size:clamp(2.5rem,5vw,4.5rem); margin-bottom:1rem}
+.doc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; background:var(--fg); border:1.5px solid var(--fg); margin-top:3vw}
+.doc-card{background:var(--cream); padding:2.2vw}
+.doc-card h4{font-size:1.2rem; margin-bottom:.8rem; letter-spacing:.02em}
+.doc-card p{font-size:.9rem; line-height:1.6; opacity:.85}
+
+/* REAL PROBLEM - GIANT BLACK STATEMENT */
+.real-problem{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg); background:var(--white)}
+.real-left{padding:4vw 2.5vw; border-right:1.5px solid var(--fg)}
+.real-left h2{font-size:clamp(2rem,3.8vw,3.5rem)}
+.real-right{padding:4vw 2.5vw}
+.real-right ul{list-style:none; margin:1.5rem 0}
+.real-right li{padding:.6rem 0; border-bottom:1px solid rgba(0,0,0,.1); display:flex; gap:.8rem}
+.real-right li::before{content:"→"; color:var(--orange)}
+.giant-statement{background:var(--fg); color:var(--bg); padding:6vw 2.5vw; border-bottom:1.5px solid var(--fg); text-align:center}
+.giant-statement p{font-family:'Syne',sans-serif; font-size:clamp(2rem,5.5vw,5.5rem); line-height:.95; max-width:18ch; margin:0 auto}
+.giant-statement p i{font-family:'Instrument Serif',serif; color:var(--orange); text-transform:none}
+
+/* WHAT WE DO */
+.what-we-do{border-bottom:1.5px solid var(--fg); display:grid; grid-template-columns:repeat(4,1fr)}
+.wwd-col{padding:2.5vw; border-right:1.5px solid var(--fg)} .wwd-col:last-child{border-right:none}
+.wwd-col h4{font-size:.85rem; letter-spacing:.12em; margin-bottom:1.5rem; color:var(--orange)}
+.wwd-col ul{list-style:none} .wwd-col li{font-size:.85rem; padding:.3rem 0; line-height:1.4; opacity:.8}
+
+/* BEFORE / FROM SCRATCH */
+.mess{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg)}
+.mess-left{padding:4vw 2.5vw; background:var(--orange); color:white}
+.mess-right{padding:4vw 2.5vw; background:var(--paper)}
+.mess h3{font-size:clamp(2rem,3.5vw,3rem); margin-bottom:1rem}
+.mess ul{columns:2; list-style:none; margin-top:1rem} .mess li{font-size:.9rem; padding:.3rem 0}
+
+/* BRAND TIDY-UP - OXBLOOD INTERRUPTION */
+.tidy{display:grid; grid-template-columns:1fr 1fr; background:var(--oxblood); color:var(--paper); border-bottom:1.5px solid var(--fg)}
+.tidy-left{padding:5vw 2.5vw; border-right:1.5px solid rgba(255,248,236,.15)}
+.tidy-left h2{font-size:clamp(2.5rem,5vw,4.5rem); color:var(--paper)}
+.tidy-price{font-family:'Instrument Serif',serif; font-size:6rem; line-height:.9; color:var(--orange); margin:1.5rem 0}
+.tidy-right{padding:4vw 2.5vw}
+.tidy-grid{display:flex; flex-wrap:wrap; gap:.6rem; margin:1.5rem 0}
+.tidy-tag{border:1px solid rgba(255,248,236,.3); padding:.4rem .9rem; font-size:.75rem; letter-spacing:.1em; text-transform:uppercase}
+
+/* PROCESS */
+.process{border-bottom:1.5px solid var(--fg)}
+.process-head{padding:2vw 2.5vw; border-bottom:1.5px solid var(--fg); display:flex; justify-content:space-between; background:var(--white)}
+.steps{display:grid; grid-template-columns:repeat(5,1fr)}
+.step{padding:2.2vw; border-right:1.5px solid var(--fg)} .step:last-child{border-right:none}
+.step-num{font-family:'Instrument Serif',serif; font-size:3.5rem; color:var(--orange); line-height:1}
+
+/* RECEIVE / BOUNDARIES */
+.receive{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg)}
+.rec-col{padding:3vw 2.5vw} .rec-col:first-child{border-right:1.5px solid var(--fg); background:var(--white)}
+.rec-col ul{list-style:none; margin-top:1rem} .rec-col li{padding:.5rem 0; border-bottom:1px solid rgba(0,0,0,.08); font-size:.9rem; display:flex; gap:.6rem}
+.rec-col li::before{content:"→"; color:var(--orange)}
+
+/* WORK - FLOATING SPREADS */
+.work{border-bottom:1.5px solid var(--fg); background:var(--cream); padding:4vw 2.5vw}
+.work-head{display:flex; justify-content:space-between; align-items:end; margin-bottom:3vw}
+.work-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2vw}
+.work-card{background:var(--white); border:1.5px solid var(--fg); padding:0; transform:rotate(var(--rot)); transition:.3s}
+.work-card:hover{transform:rotate(0deg) translateY(-6px); box-shadow:12px 12px 0 var(--fg)}
+.work-spread{aspect-ratio:16/11; background:linear-gradient(135deg,#ddd,#bbb); border-bottom:1.5px solid var(--fg); position:relative; display:grid; place-items:center; font-family:'Syne',sans-serif; font-weight:800}
+.work-spread::after{content:"SPREAD PREVIEW"; opacity:.4; letter-spacing:.1em}
+.work-info{padding:1.5vw}
+.work-meta{display:flex; gap:.5rem; margin:1rem 0}
+.work-meta span{font-size:.65rem; letter-spacing:.1em; text-transform:uppercase; border:1px solid var(--fg); padding:.2rem .5rem}
+
+/* FAQ - CREAM */
+.faq{background:var(--cream); padding:4vw 2.5vw; border-bottom:1.5px solid var(--fg)}
+.faq-grid{display:grid; grid-template-columns:1fr 1fr; gap:2rem 4vw; margin-top:2rem}
+.faq-item{padding-bottom:1.5rem; border-bottom:1px solid rgba(0,0,0,.12)}
+.faq-item b{display:block; font-family:'Syne',sans-serif; text-transform:uppercase; margin-bottom:.4rem; font-size:.95rem}
+.faq-item p{font-size:.9rem; opacity:.8; line-height:1.5}
+
+/* FINAL CTA - ORANGE/BLACK */
+.final{background:var(--fg); color:var(--bg); padding:6vw 2.5vw; display:grid; grid-template-columns:1fr 1fr; gap:4vw; border-bottom:1.5px solid var(--fg)}
+.final h2{font-size:clamp(3rem,6vw,6rem); color:var(--bg)} .final h2 i{color:var(--orange); font-family:'Instrument Serif',serif; text-transform:none; display:block}
+.final .btn{border-color:var(--bg); color:var(--bg)} .final .btn-orange{border-color:var(--orange); background:var(--orange); color:white}
+footer{padding:2vw 2.5vw; display:flex; justify-content:space-between; font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; background:var(--paper)}
+
+@media(max-width:980px){
+  .split, .doc-grid, .real-problem, .what-we-do, .mess, .tidy, .steps, .receive, .work-grid, .faq-grid, .final{grid-template-columns:1fr}
+  .wwd-col, .step, .rec-col{border-right:none; border-bottom:1.5px solid var(--fg)}
+  .work-card{transform:none !important}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">akchally<span class="dot"></span></a>
+  <div style="display:flex; gap:2rem; align-items:center"><a href="index.html" class="mono">Home</a><a href="web.html" class="mono">Web / 01</a><span class="mono" style="border-bottom:1.5px solid var(--fg)">Document / 02</span></div>
+  <a href="#start" class="btn btn-black">Start a Document →</a>
+</nav>
+
+<section class="hero" id="start">
+  <div class="big-watermark">akchally.</div>
+  <div class="hero-top"><span class="mono">Document / 02 — Business Documents</span><span class="mono">From $350 · No Word monstrosity left behind</span></div>
+  <h1>Send us the <em>Word monstrosity.</em></h1>
+  <div style="display:grid; grid-template-columns:1.2fr .8fr; gap:4vw">
+    <div class="hero-copy">
+      <p>The company profile nobody wants to attach.</p>
+      <p>The presentation with seventeen fonts.</p>
+      <p>The proposal that's technically finished but somehow still looks unfinished.</p>
+      <p>The report containing excellent work that nobody can actually navigate.</p>
+      <p><strong>We'll sort it out.</strong></p>
+      <p>AKCHALLY creates and redesigns professional business documents that are clear, coherent and worth putting your name on.</p>
+      <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:2rem; margin-top:2rem">Documents from $350</div>
+      <div class="hero-cta"><a href="#options" class="btn btn-black">Start a Document →</a><span class="mono" style="align-self:center; opacity:.6">Seriously. Send it as-is.</span></div>
+    </div>
+    <div style="border:1.5px solid var(--fg); background:var(--paper); padding:1.5rem; height:fit-content; transform:rotate(1deg)">
+      <span class="mono">Recurring line</span><br><br>
+      <p style="font-family:'Syne',sans-serif; font-size:1.8rem; line-height:1">SEND US THE WORD MONSTROSITY.</p><br>
+      <p style="font-size:.9rem; opacity:.7">It's memorable, it tells customers they don't need to make their problem presentable before approaching you.</p>
+    </div>
+  </div>
+</section>
+
+<div class="two-head" id="options"><h2>Does the document already exist?</h2><span class="mono">Section 02 — Two ways in</span></div>
+<section class="two-ways">
+  <div class="split">
+    <!-- MAKE IT BETTER -->
+    <div class="split-left">
+      <span class="split-label">Option 01</span>
+      <h3>Make it <i>Better.</i></h3>
+      <p>The content exists.</p>
+      <p>Send us the existing document. We'll look at structure, hierarchy, language, layout and visual consistency — then turn it into something that actually represents the business.</p>
+      <p style="font-size:.8rem; opacity:.8"><strong>This isn't just:</strong> change font → add logo → export PDF. We may restructure sections, tighten copy, improve hierarchy, remove repetition and rethink how information is presented.</p>
+      <div class="pricing">
+        <div class="price-row"><span>Business Document — up to 5 pages</span><b>from $350</b></div>
+        <div class="price-row"><span>Company Profile / Brochure — 6–10 pages</span><b>from $650</b></div>
+        <div class="price-row"><span>Presentation — up to 10 slides</span><b>from $550</b></div>
+        <div class="price-row"><span>Presentation — 11–20 slides</span><b>from $850</b></div>
+        <div class="price-row"><span>Longer Reports / Publications</span><b>Custom quote</b></div>
+      </div>
+      <a href="#" class="btn">Make mine better →</a>
+    </div>
+    <!-- MAKE IT FOR ME -->
+    <div class="split-right">
+      <span class="split-label">Option 02</span>
+      <h3>Make it <i>For Me.</i></h3>
+      <p>The information exists. The document doesn't.</p>
+      <p>Perfect.</p>
+      <p>Give us what you've got. Notes. Old documents. Website links. Emails. Presentations. Business information. Reference material. Existing brand assets.</p>
+      <p>We'll work out what belongs where, what needs saying and how the finished document should function. Then we build it.</p>
+      <div class="pricing">
+        <div class="price-row"><span>Capability Statement</span><b>from $650</b></div>
+        <div class="price-row"><span>Proposal / Sales Document</span><b>from $750</b></div>
+        <div class="price-row"><span>Company Profile</span><b>from $950</b></div>
+        <div class="price-row"><span>Presentation / Pitch Deck</span><b>from $1,200</b></div>
+        <div class="price-row"><span>Report / Business Publication</span><b>from $1,250</b></div>
+      </div>
+      <p style="font-size:.8rem; opacity:.7">Larger or more complex documents quoted individually.</p>
+      <a href="#" class="btn">Make mine for me →</a>
+    </div>
+  </div>
+</section>
+
+<section class="what-make">
+  <span class="mono">Section 03 — What we make</span>
+  <h2>Business documents.<br><span style="font-family:'Instrument Serif',serif; font-style:italic; text-transform:none; color:var(--orange)">The things businesses actually send.</span></h2>
+  <div class="doc-grid">
+    <div class="doc-card"><h4>Company Profiles</h4><p>Who you are. What you do. Why it matters. Why somebody should trust you. Structured properly and designed like something you'd actually want a prospective client to open.</p></div>
+    <div class="doc-card"><h4>Capability Statements</h4><p>Shorter, sharper credentials documents for businesses that need to communicate capability quickly. Useful for introductions, procurement, tenders, partnerships and business development.</p></div>
+    <div class="doc-card"><h4>Proposals</h4><p>Commercial documents designed to help somebody understand: the problem → the offer → the scope → the value → the next step. Not twenty pages of corporate throat-clearing.</p></div>
+    <div class="doc-card"><h4>Presentations & Pitch Decks</h4><p>Slides are not Word documents turned sideways. We create hierarchy, pacing and visual structure so the presentation works as a presentation.</p></div>
+    <div class="doc-card"><h4>Reports</h4><p>Long-form information needs architecture. We design reports and business publications so readers can understand where they are, what matters and how the information connects.</p></div>
+    <div class="doc-card"><h4>Brochures & Collateral</h4><p>Professional business collateral for digital distribution or print. If customers, investors, partners or stakeholders are going to see it, it should look intentional.</p></div>
+  </div>
+</section>
+
+<section class="real-problem">
+  <div class="real-left"><span class="mono">Section 04 — The Real Problem</span><h2 style="margin-top:1rem">It's not always ugly.</h2><p style="margin-top:1rem; font-weight:700">Sometimes the document simply doesn't know what it's trying to say.</p></div>
+  <div class="real-right">
+    <p>A beautiful document with bad information architecture is still a bad document.</p><p>So before we worry about colours and photographs, we look at:</p>
+    <ul><li>What is this document for?</li><li>Who will read it?</li><li>What do they need to understand?</li><li>What matters most?</li><li>What's repeated?</li><li>What's missing?</li><li>What can disappear entirely?</li></ul>
+    <p><strong>Then we design.</strong></p>
+  </div>
+</section>
+
+<section class="giant-statement">
+  <p>Making a confusing document prettier just gives you a <i>beautiful confusing document.</i></p>
+  <p style="font-size:1rem; margin-top:2rem; letter-spacing:.15em; text-transform:uppercase; opacity:.6">Structure before decoration.</p>
+</section>
+
+<section class="what-we-do" style="background:var(--white)">
+  <div class="wwd-col"><h4>Direction</h4><ul><li>Purpose</li><li>Audience</li><li>Information architecture</li><li>Section hierarchy</li><li>Content sequencing</li><li>Format recommendation</li></ul></div>
+  <div class="wwd-col"><h4>Words</h4><ul><li>Copy refinement</li><li>Editing</li><li>Headlines</li><li>Section introductions</li><li>Content restructuring</li><li>Removing repetition</li><li>Developing copy from supplied source material</li></ul></div>
+  <div class="wwd-col"><h4>Design</h4><ul><li>Typography</li><li>Layout</li><li>Colour</li><li>Imagery</li><li>Tables</li><li>Data presentation</li><li>Visual hierarchy</li><li>Page composition</li></ul></div>
+  <div class="wwd-col"><h4>Production</h4><ul><li>Document build</li><li>Image preparation</li><li>Page formatting</li><li>Interactive links where required</li><li>Digital optimisation</li><li>Print-ready export where agreed</li><li>Final PDF preparation</li></ul></div>
+</section>
+
+<section class="mess">
+  <div class="mess-left"><span class="mono">Section 06 — The Before</span><h3>You don't have to clean it up.</h3><p><strong>Please don't redesign it before sending it to us. Seriously.</strong></p><p>If you've got:</p><ul><li>a dreadful old PDF,</li><li>an ugly Word document,</li><li>a PowerPoint somebody started in 2019,</li><li>three different versions of the company profile,</li><li>notes scattered everywhere,</li><li>or something the CEO made personally and everybody is too frightened to criticise...</li></ul><p style="margin-top:1.5rem"><strong>Send it.</strong> Seeing the current state helps us understand what happened.</p></div>
+  <div class="mess-right"><span class="mono">Section 07 — From Scratch</span><h3>“I don't have a document.”</h3><p><strong>You don't need one.</strong></p><p>If we're creating from scratch, you don't need to write the finished thing first. We need the source information.</p><p>That might include:</p><ul><li>Your website</li><li>Business background</li><li>Service information</li><li>Existing marketing material</li><li>Notes</li><li>Previous proposals</li><li>Team information</li><li>Credentials</li><li>Project examples</li><li>Product information</li><li>Relevant data</li><li>Brand assets</li></ul><p style="margin-top:1.5rem">We'll tell you what we need for the specific project. Then we turn the source material into the agreed document.</p></div>
+</section>
+
+<section class="tidy">
+  <div class="tidy-left"><span class="mono" style="color:var(--orange)">Section 08 — Brand</span><h2>What if our branding is a bit...<br><span style="font-family:'Instrument Serif',serif; font-style:italic; text-transform:none">questionable?</span></h2><div class="tidy-price">$650</div><p>That's fine.</p><p>If the document is exposing inconsistencies in your existing visual identity, we can work within what you have or recommend a focused Tidy-Up.</p></div>
+  <div class="tidy-right">
+    <h3 style="font-size:2rem; color:var(--paper)">The Tidy-Up</h3><p style="margin-top:1rem">For businesses that don't necessarily need a dramatic rebrand. They just need their:</p>
+    <div class="tidy-grid"><span class="tidy-tag">Logo</span><span class="tidy-tag">Colours</span><span class="tidy-tag">Typography</span><span class="tidy-tag">Digital variants</span></div>
+    <p>and general visual behaviour to stop arguing with each other.</p><br><a href="#" class="btn" style="border-color:var(--paper); color:var(--paper)">Explore the Tidy-Up →</a>
+  </div>
+</section>
+
+<div style="padding:2vw 2.5vw; display:flex; justify-content:space-between; background:var(--white); border-bottom:1.5px solid var(--fg)"><h2>How it works</h2><span class="mono">Section 09 — From business debris to finished document</span></div>
+<section class="process">
+  <div class="steps">
+    <div class="step"><div class="step-num">01</div><h4>Send it</h4><p>Existing document or raw source material. Whatever state it's in.</p></div>
+    <div class="step"><div class="step-num">02</div><h4>We define it</h4><p>Purpose. Audience. Structure. Scope. Format.</p></div>
+    <div class="step"><div class="step-num">03</div><h4>We build</h4><p>Content hierarchy. Words. Design. Production.</p></div>
+    <div class="step"><div class="step-num">04</div><h4>You review</h4><p>Standard projects include two consolidated revision rounds unless your quote states otherwise. You collect the feedback. You send it once. We make the changes. This is considerably more efficient than receiving: “Just one tiny thing...” seventeen times across six days.</p></div>
+    <div class="step" style="background:var(--orange); color:white"><div class="step-num" style="color:white">05</div><h4>We finish it</h4><p>Final checks. Final files. Digital and/or print-ready outputs as agreed. Done.</p></div>
+  </div>
+</section>
+
+<section class="receive">
+  <div class="rec-col"><span class="mono">Section 10 — What you receive</span><h3 style="margin-top:1rem">Finished means finished.</h3><p style="margin-top:1rem">Your deliverables depend on the project, but may include:</p><ul><li>High-resolution PDF</li><li>Screen-optimised PDF</li><li>Print-ready PDF</li><li>Editable source file where included in scope</li><li>Presentation file</li><li>Linked/interactively navigable PDF</li><li>Supporting image assets</li></ul><p style="margin-top:1rem; font-size:.8rem; opacity:.6">Your quote will specify exactly what is included.</p></div>
+  <div class="rec-col" style="background:var(--cream)"><span class="mono">Section 11 — What we don't do</span><h3 style="margin-top:1rem">Useful boundaries.</h3><p style="margin-top:1rem">We're not a typing service. AKCHALLY is a good fit when the document needs thinking and making.</p><p style="margin-top:1rem"><strong>We're probably not the right fit if you simply need:</strong></p><ul><li>Bulk data entry</li><li>Routine word processing</li><li>Hundreds of pages reformatted mechanically</li><li>Academic assignments</li><li>Legal drafting</li><li>Technical content requiring specialist subject-matter authorship</li><li>Someone available indefinitely to make tiny edits</li></ul><p style="margin-top:1rem"><strong>And if you need us to create claims, figures or facts that the business cannot substantiate: also no.</strong></p><p>We make the information work. We don't manufacture the information.</p></div>
+</section>
+
+<section class="work">
+  <div class="work-head"><div><span class="mono">Section 12 — Document / Selected Work</span><h2 style="font-size:clamp(2rem,4vw,3.5rem)">Have a look.</h2><p class="mono" style="text-transform:none; letter-spacing:0; opacity:.6">Show actual spreads/pages, not a tiny document cover floating inside a laptop mockup.</p></div><a href="#" class="btn btn-black">See more work →</a></div>
+  <div class="work-grid">
+    <div class="work-card" style="--rot:-1.5deg"><div class="work-spread"></div><div class="work-info"><span class="mono">Company Profile</span><h4 style="margin-top:.5rem">[Client]</h4><p style="font-size:.85rem; margin-top:1rem"><b>What came in</b><br>Existing 14-page company profile with fragmented content and inconsistent visual structure.</p><p style="font-size:.85rem; margin-top:.8rem"><b>What went out</b><br>A concise, professionally structured company profile designed for client-facing use.</p><div class="work-meta"><span>Structure</span><span>Copy Refinement</span><span>Design</span><span>Production</span></div><a href="#" class="mono" style="border-bottom:1px solid">View project →</a></div></div>
+    <div class="work-card" style="--rot:1.2deg"><div class="work-spread" style="filter:hue-rotate(10deg)"></div><div class="work-info"><span class="mono">Presentation</span><h4 style="margin-top:.5rem">[Client]</h4><p style="font-size:.85rem; margin-top:1rem"><b>What came in</b><br>[One sentence.]</p><p style="font-size:.85rem; margin-top:.8rem"><b>What went out</b><br>[One sentence.]</p><a href="#" class="mono" style="border-bottom:1px solid; margin-top:1rem; display:inline-block">View project →</a></div></div>
+    <div class="work-card" style="--rot:-.8deg"><div class="work-spread" style="filter:hue-rotate(20deg)"></div><div class="work-info"><span class="mono">Report</span><h4 style="margin-top:.5rem">[Client]</h4><p style="font-size:.85rem; margin-top:1rem"><b>What came in</b><br>[One sentence.]</p><p style="font-size:.85rem; margin-top:.8rem"><b>What went out</b><br>[One sentence.]</p><a href="#" class="mono" style="border-bottom:1px solid; margin-top:1rem; display:inline-block">View project →</a></div></div>
+  </div>
+</section>
+
+<section class="faq"><span class="mono">Section 13 — FAQ</span><h2 style="font-size:clamp(2rem,4vw,3rem); margin-top:1rem">Before you send the monstrosity.</h2>
+  <div class="faq-grid">
+    <div class="faq-item"><b>Can you rewrite the content?</b><p>Yes. Copy refinement and restructuring can form part of the project. If substantial from-scratch writing is required, we'll define that in the quote.</p></div>
+    <div class="faq-item"><b>Do I need professional photographs?</b><p>Not necessarily. We'll assess the assets you have and tell you if additional imagery is actually required.</p></div>
+    <div class="faq-item"><b>Can you follow our existing brand guidelines?</b><p>Absolutely. If you have established brand guidelines, we'll work within them.</p></div>
+    <div class="faq-item"><b>What if we don't have brand guidelines?</b><p>We can work from the existing visual identity or recommend a Tidy-Up if the inconsistencies are substantial enough to affect the project.</p></div>
+    <div class="faq-item"><b>Can you make it print-ready?</b><p>Yes, where print production is part of the agreed scope.</p></div>
+    <div class="faq-item"><b>Will I receive an editable version?</b><p>That depends on the project and software used. Your quote will state the final file formats and whether editable source files are included.</p></div>
+    <div class="faq-item"><b>How many revisions are included?</b><p>Two consolidated revision rounds are standard unless otherwise stated.</p></div>
+    <div class="faq-item"><b>Can you work with confidential business material?</b><p>Yes. Confidentiality requirements can be agreed before material is supplied.</p></div>
+  </div>
+</section>
+
+<section class="final"><div><span class="mono" style="color:var(--orange)">Document / Akchally — Final CTA</span><h2>Send us the <i>monstrosity.</i></h2><p style="margin-top:1.5rem; font-size:1.2rem; opacity:.8">Seriously. You don't need to fix it first. That's rather the point.</p><p style="margin-top:1rem; font-family:'Syne',sans-serif; font-weight:800; font-size:1.5rem">Document work from $350.</p></div><div style="display:flex; flex-direction:column; justify-content:center; gap:1rem"><a href="#" class="btn btn-orange" style="font-size:1.1rem; padding:1.4rem 2rem; justify-content:space-between">Make it better →</a><a href="#" class="btn" style="font-size:1.1rem; padding:1.4rem 2rem; justify-content:space-between">Make it for me →</a><p class="mono" style="opacity:.5; margin-top:1rem">Document / Akchally — Send us the Word monstrosity.</p></div></section>
+
+<footer><span>© 2026 AKCHALLY. — Document / 02</span><span>Structure before decoration.</span></footer>
+</body>
+</html>
