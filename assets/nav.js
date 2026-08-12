@@ -1,14 +1,20 @@
-document.write(`
-<nav style="display:flex;justify-content:space-between;align-items:center;padding:1rem 2.5vw;background:rgba(242,237,230,.92);backdrop-filter:blur(12px);border-bottom:1.5px solid #0F0F0F;position:sticky;top:0;z-index:50">
+document.addEventListener('DOMContentLoaded', () => {
+  const navHTML = `
+<nav>
   <a href="index.html" class="logo">akchally<span class="dot"></span></a>
-  <div class="nav-links" style="display:flex;gap:2rem">
-    <a href="index.html">Home</a>
-    <a href="web.html">Web / 01</a>
-    <a href="document.html">Document / 02</a>
-    <a href="video.html">Video / 03</a>
-    <a href="lookover.html">Look-Over</a>
-    <a href="index.html#work">Work</a>
+  <div class="nav-links">
+    <a href="index.html">HOME</a>
+    <a href="web.html">WEB / 01</a>
+    <a href="document.html">DOCUMENT / 02</a>
+    <a href="video.html">VIDEO / 03</a>
+    <a href="lookover.html">LOOK-OVER</a>
+    <a href="index.html#work">WORK</a>
   </div>
-  <a href="#" class="btn btn-black">Start Something →</a>
+  <div style="display:flex; gap:1rem; align-items:center">
+    <a href="index.html#contact" class="btn btn-black" style="padding:.8rem 1.2rem; font-size:.75rem">START SOMETHING →</a>
+    <div class="hamburger">☰</div>
+  </div>
 </nav>
-`);
+  `;
+  document.body.insertAdjacentHTML('afterbegin', navHTML);
+});
