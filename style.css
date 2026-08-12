@@ -81,10 +81,32 @@ nav{position:sticky; top:0; z-index:50; display:flex; justify-content:space-betw
   margin-right:calc(50% - 50vw);
   display:block;
 }
-.marquee-inner{display:flex; animation:marq 28s linear infinite; gap:2.55rem; width:max-content}
-.marquee span{font-family:'Syne', sans-serif; font-weight:800; font-size:0.935rem; letter-spacing:.08em; text-transform:uppercase}
+.marquee-inner{
+  display:flex; 
+  animation:marq 28s linear infinite; 
+  gap:2.55rem; 
+  width:max-content;
+  will-change:transform;
+  transform:translateZ(0);
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+.marquee span{
+  font-family:'Syne', sans-serif; 
+  font-weight:800; 
+  font-size:0.935rem; 
+  letter-spacing:.08em; 
+  text-transform:uppercase;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:geometricPrecision;
+  transform:translateZ(0);
+}
 .marquee span i{color:var(--orange); font-style:normal; margin:0 0.425rem}
-@keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes marq{
+  0%{transform:translate3d(0,0,0)}
+  100%{transform:translate3d(-50%,0,0)}
+}
 
 .sec-02{display:grid; grid-template-columns:1.1fr .9fr; border-bottom:1.5px solid var(--fg)}
 .sec-02-left{padding:3.4vw var(--gutter); border-right:1.5px solid var(--fg)}
