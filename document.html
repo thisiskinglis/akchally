@@ -4,21 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DOCUMENT / 02 — AKCHALLY.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-  <a href="index.html" class="logo">akchally<span class="dot"></span></a>
-  <div style="display:flex; gap:2rem; align-items:center"><a href="index.html" class="mono">Home</a><a href="web.html" class="mono">Web / 01</a><span class="mono" style="border-bottom:1.5px solid var(--fg)">Document / 02</span></div>
-  <a href="#start" class="btn btn-black">Start a Document →</a>
-</nav>
+<script src="assets/nav.js"></script>
 
 <section class="hero" id="start">
-  <div class="big-watermark">akchally.</div>
+  <div class="big-bg-text">akchally.</div>
   <div class="hero-top"><span class="mono">Document / 02 — Business Documents</span><span class="mono">From $350 · No Word monstrosity left behind</span></div>
   <h1>Send us the <em>Word monstrosity.</em></h1>
-  <div style="display:grid; grid-template-columns:1.2fr .8fr; gap:4vw">
+  <div class="hero-grid">
     <div class="hero-copy">
       <p>The company profile nobody wants to attach.</p>
       <p>The presentation with seventeen fonts.</p>
@@ -26,8 +24,8 @@
       <p>The report containing excellent work that nobody can actually navigate.</p>
       <p><strong>We'll sort it out.</strong></p>
       <p>AKCHALLY creates and redesigns professional business documents that are clear, coherent and worth putting your name on.</p>
-      <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:2rem; margin-top:2rem">Documents from $350</div>
-      <div class="hero-cta"><a href="#options" class="btn btn-black">Start a Document →</a><span class="mono" style="align-self:center; opacity:.6">Seriously. Send it as-is.</span></div>
+      <div class="hero-price"><span>Documents</span>from $350</div>
+      <div class="hero-cta"><a href="#options" class="btn btn-black">Start a Document →</a><span class="mono" style="opacity:.6">Seriously. Send it as-is.</span></div>
     </div>
     <div style="border:1.5px solid var(--fg); background:var(--paper); padding:1.5rem; height:fit-content; transform:rotate(1deg)">
       <span class="mono">Recurring line</span><br><br>
@@ -40,13 +38,11 @@
 <div class="two-head" id="options"><h2>Does the document already exist?</h2><span class="mono">Section 02 — Two ways in</span></div>
 <section class="two-ways">
   <div class="split">
-    <!-- MAKE IT BETTER -->
     <div class="split-left">
       <span class="split-label">Option 01</span>
       <h3>Make it <i>Better.</i></h3>
       <p>The content exists.</p>
       <p>Send us the existing document. We'll look at structure, hierarchy, language, layout and visual consistency — then turn it into something that actually represents the business.</p>
-      <p style="font-size:.8rem; opacity:.8"><strong>This isn't just:</strong> change font → add logo → export PDF. We may restructure sections, tighten copy, improve hierarchy, remove repetition and rethink how information is presented.</p>
       <div class="pricing">
         <div class="price-row"><span>Business Document — up to 5 pages</span><b>from $350</b></div>
         <div class="price-row"><span>Company Profile / Brochure — 6–10 pages</span><b>from $650</b></div>
@@ -54,16 +50,13 @@
         <div class="price-row"><span>Presentation — 11–20 slides</span><b>from $850</b></div>
         <div class="price-row"><span>Longer Reports / Publications</span><b>Custom quote</b></div>
       </div>
-      <a href="#" class="btn">Make mine better →</a>
+      <a href="index.html#contact" class="btn btn-black">Make mine better →</a>
     </div>
-    <!-- MAKE IT FOR ME -->
     <div class="split-right">
       <span class="split-label">Option 02</span>
       <h3>Make it <i>For Me.</i></h3>
       <p>The information exists. The document doesn't.</p>
-      <p>Perfect.</p>
       <p>Give us what you've got. Notes. Old documents. Website links. Emails. Presentations. Business information. Reference material. Existing brand assets.</p>
-      <p>We'll work out what belongs where, what needs saying and how the finished document should function. Then we build it.</p>
       <div class="pricing">
         <div class="price-row"><span>Capability Statement</span><b>from $650</b></div>
         <div class="price-row"><span>Proposal / Sales Document</span><b>from $750</b></div>
@@ -71,8 +64,7 @@
         <div class="price-row"><span>Presentation / Pitch Deck</span><b>from $1,200</b></div>
         <div class="price-row"><span>Report / Business Publication</span><b>from $1,250</b></div>
       </div>
-      <p style="font-size:.8rem; opacity:.7">Larger or more complex documents quoted individually.</p>
-      <a href="#" class="btn">Make mine for me →</a>
+      <a href="index.html#contact" class="btn btn-black">Make mine for me →</a>
     </div>
   </div>
 </section>
@@ -81,19 +73,19 @@
   <span class="mono">Section 03 — What we make</span>
   <h2>Business documents.<br><span style="font-family:'Instrument Serif',serif; font-style:italic; text-transform:none; color:var(--orange)">The things businesses actually send.</span></h2>
   <div class="doc-grid">
-    <div class="doc-card"><h4>Company Profiles</h4><p>Who you are. What you do. Why it matters. Why somebody should trust you. Structured properly and designed like something you'd actually want a prospective client to open.</p></div>
-    <div class="doc-card"><h4>Capability Statements</h4><p>Shorter, sharper credentials documents for businesses that need to communicate capability quickly. Useful for introductions, procurement, tenders, partnerships and business development.</p></div>
-    <div class="doc-card"><h4>Proposals</h4><p>Commercial documents designed to help somebody understand: the problem → the offer → the scope → the value → the next step. Not twenty pages of corporate throat-clearing.</p></div>
+    <div class="doc-card"><h4>Company Profiles</h4><p>Who you are. What you do. Why it matters. Structured properly and designed like something you'd actually want a prospective client to open.</p></div>
+    <div class="doc-card"><h4>Capability Statements</h4><p>Shorter, sharper credentials documents for businesses that need to communicate capability quickly.</p></div>
+    <div class="doc-card"><h4>Proposals</h4><p>Commercial documents designed to help somebody understand: the problem → the offer → the scope → the value → the next step.</p></div>
     <div class="doc-card"><h4>Presentations & Pitch Decks</h4><p>Slides are not Word documents turned sideways. We create hierarchy, pacing and visual structure so the presentation works as a presentation.</p></div>
-    <div class="doc-card"><h4>Reports</h4><p>Long-form information needs architecture. We design reports and business publications so readers can understand where they are, what matters and how the information connects.</p></div>
-    <div class="doc-card"><h4>Brochures & Collateral</h4><p>Professional business collateral for digital distribution or print. If customers, investors, partners or stakeholders are going to see it, it should look intentional.</p></div>
+    <div class="doc-card"><h4>Reports</h4><p>Long-form information needs architecture. We design reports so readers can understand where they are, what matters and how the information connects.</p></div>
+    <div class="doc-card"><h4>Brochures & Collateral</h4><p>Professional business collateral for digital distribution or print.</p></div>
   </div>
 </section>
 
 <section class="real-problem">
   <div class="real-left"><span class="mono">Section 04 — The Real Problem</span><h2 style="margin-top:1rem">It's not always ugly.</h2><p style="margin-top:1rem; font-weight:700">Sometimes the document simply doesn't know what it's trying to say.</p></div>
   <div class="real-right">
-    <p>A beautiful document with bad information architecture is still a bad document.</p><p>So before we worry about colours and photographs, we look at:</p>
+    <p>A beautiful document with bad information architecture is still a bad document.</p>
     <ul><li>What is this document for?</li><li>Who will read it?</li><li>What do they need to understand?</li><li>What matters most?</li><li>What's repeated?</li><li>What's missing?</li><li>What can disappear entirely?</li></ul>
     <p><strong>Then we design.</strong></p>
   </div>
@@ -105,66 +97,43 @@
 </section>
 
 <section class="what-we-do" style="background:var(--white)">
-  <div class="wwd-col"><h4>Direction</h4><ul><li>Purpose</li><li>Audience</li><li>Information architecture</li><li>Section hierarchy</li><li>Content sequencing</li><li>Format recommendation</li></ul></div>
-  <div class="wwd-col"><h4>Words</h4><ul><li>Copy refinement</li><li>Editing</li><li>Headlines</li><li>Section introductions</li><li>Content restructuring</li><li>Removing repetition</li><li>Developing copy from supplied source material</li></ul></div>
-  <div class="wwd-col"><h4>Design</h4><ul><li>Typography</li><li>Layout</li><li>Colour</li><li>Imagery</li><li>Tables</li><li>Data presentation</li><li>Visual hierarchy</li><li>Page composition</li></ul></div>
-  <div class="wwd-col"><h4>Production</h4><ul><li>Document build</li><li>Image preparation</li><li>Page formatting</li><li>Interactive links where required</li><li>Digital optimisation</li><li>Print-ready export where agreed</li><li>Final PDF preparation</li></ul></div>
+  <div class="wwd-col"><h4>Direction</h4><ul><li>Purpose</li><li>Audience</li><li>Information architecture</li><li>Section hierarchy</li></ul></div>
+  <div class="wwd-col"><h4>Words</h4><ul><li>Copy refinement</li><li>Editing</li><li>Headlines</li><li>Content restructuring</li></ul></div>
+  <div class="wwd-col"><h4>Design</h4><ul><li>Typography</li><li>Layout</li><li>Colour</li><li>Visual hierarchy</li></ul></div>
+  <div class="wwd-col"><h4>Production</h4><ul><li>Document build</li><li>Image preparation</li><li>Final PDF preparation</li></ul></div>
 </section>
 
 <section class="mess">
-  <div class="mess-left"><span class="mono">Section 06 — The Before</span><h3>You don't have to clean it up.</h3><p><strong>Please don't redesign it before sending it to us. Seriously.</strong></p><p>If you've got:</p><ul><li>a dreadful old PDF,</li><li>an ugly Word document,</li><li>a PowerPoint somebody started in 2019,</li><li>three different versions of the company profile,</li><li>notes scattered everywhere,</li><li>or something the CEO made personally and everybody is too frightened to criticise...</li></ul><p style="margin-top:1.5rem"><strong>Send it.</strong> Seeing the current state helps us understand what happened.</p></div>
-  <div class="mess-right"><span class="mono">Section 07 — From Scratch</span><h3>“I don't have a document.”</h3><p><strong>You don't need one.</strong></p><p>If we're creating from scratch, you don't need to write the finished thing first. We need the source information.</p><p>That might include:</p><ul><li>Your website</li><li>Business background</li><li>Service information</li><li>Existing marketing material</li><li>Notes</li><li>Previous proposals</li><li>Team information</li><li>Credentials</li><li>Project examples</li><li>Product information</li><li>Relevant data</li><li>Brand assets</li></ul><p style="margin-top:1.5rem">We'll tell you what we need for the specific project. Then we turn the source material into the agreed document.</p></div>
+  <div class="mess-left"><span class="mono">Section 06 — The Before</span><h3>You don't have to clean it up.</h3><p><strong>Please don't redesign it before sending it to us.</strong></p><ul><li>a dreadful old PDF,</li><li>an ugly Word document,</li><li>a PowerPoint somebody started in 2019,</li><li>three different versions of the company profile,</li></ul><p><strong>Send it.</strong></p></div>
+  <div class="mess-right"><span class="mono">Section 07 — From Scratch</span><h3>“I don't have a document.”</h3><p><strong>You don't need one.</strong></p><p>If we're creating from scratch, you don't need to write the finished thing first. We need the source information.</p><ul><li>Your website</li><li>Business background</li><li>Service information</li><li>Notes</li><li>Brand assets</li></ul></div>
 </section>
 
 <section class="tidy">
-  <div class="tidy-left"><span class="mono" style="color:var(--orange)">Section 08 — Brand</span><h2>What if our branding is a bit...<br><span style="font-family:'Instrument Serif',serif; font-style:italic; text-transform:none">questionable?</span></h2><div class="tidy-price">$650</div><p>That's fine.</p><p>If the document is exposing inconsistencies in your existing visual identity, we can work within what you have or recommend a focused Tidy-Up.</p></div>
+  <div class="tidy-left"><span class="mono" style="color:var(--orange)">Section 08 — Brand</span><h2>What if our branding is a bit...<br><span style="font-family:'Instrument Serif',serif; font-style:italic; text-transform:none">questionable?</span></h2><div class="tidy-price">$650</div></div>
   <div class="tidy-right">
-    <h3 style="font-size:2rem; color:var(--paper)">The Tidy-Up</h3><p style="margin-top:1rem">For businesses that don't necessarily need a dramatic rebrand. They just need their:</p>
+    <h3 style="font-size:2rem; color:var(--paper)">The Tidy-Up</h3>
     <div class="tidy-grid"><span class="tidy-tag">Logo</span><span class="tidy-tag">Colours</span><span class="tidy-tag">Typography</span><span class="tidy-tag">Digital variants</span></div>
-    <p>and general visual behaviour to stop arguing with each other.</p><br><a href="#" class="btn" style="border-color:var(--paper); color:var(--paper)">Explore the Tidy-Up →</a>
   </div>
 </section>
 
-<div style="padding:2vw 2.5vw; display:flex; justify-content:space-between; background:var(--white); border-bottom:1.5px solid var(--fg)"><h2>How it works</h2><span class="mono">Section 09 — From business debris to finished document</span></div>
+<div class="section-label"><h2>How it works</h2><span class="mono">Section 09 — From business debris to finished document</span></div>
 <section class="process">
-  <div class="steps">
-    <div class="step"><div class="step-num">01</div><h4>Send it</h4><p>Existing document or raw source material. Whatever state it's in.</p></div>
-    <div class="step"><div class="step-num">02</div><h4>We define it</h4><p>Purpose. Audience. Structure. Scope. Format.</p></div>
-    <div class="step"><div class="step-num">03</div><h4>We build</h4><p>Content hierarchy. Words. Design. Production.</p></div>
-    <div class="step"><div class="step-num">04</div><h4>You review</h4><p>Standard projects include two consolidated revision rounds unless your quote states otherwise. You collect the feedback. You send it once. We make the changes. This is considerably more efficient than receiving: “Just one tiny thing...” seventeen times across six days.</p></div>
-    <div class="step" style="background:var(--orange); color:white"><div class="step-num" style="color:white">05</div><h4>We finish it</h4><p>Final checks. Final files. Digital and/or print-ready outputs as agreed. Done.</p></div>
+  <div class="process-steps">
+    <div class="pstep"><div class="pstep-num">01</div><h4>Send it</h4><p>Existing document or raw source material.</p></div>
+    <div class="pstep"><div class="pstep-num">02</div><h4>We define it</h4><p>Purpose. Audience. Structure. Scope. Format.</p></div>
+    <div class="pstep"><div class="pstep-num">03</div><h4>We build</h4><p>Content hierarchy. Words. Design. Production.</p></div>
+    <div class="pstep"><div class="pstep-num">04</div><h4>You review</h4><p>Two consolidated revision rounds.</p></div>
+    <div class="pstep" style="background:var(--orange); color:white"><div class="pstep-num" style="color:white">05</div><h4>We finish it</h4><p>Final files. Done.</p></div>
   </div>
 </section>
 
 <section class="receive">
-  <div class="rec-col"><span class="mono">Section 10 — What you receive</span><h3 style="margin-top:1rem">Finished means finished.</h3><p style="margin-top:1rem">Your deliverables depend on the project, but may include:</p><ul><li>High-resolution PDF</li><li>Screen-optimised PDF</li><li>Print-ready PDF</li><li>Editable source file where included in scope</li><li>Presentation file</li><li>Linked/interactively navigable PDF</li><li>Supporting image assets</li></ul><p style="margin-top:1rem; font-size:.8rem; opacity:.6">Your quote will specify exactly what is included.</p></div>
-  <div class="rec-col" style="background:var(--cream)"><span class="mono">Section 11 — What we don't do</span><h3 style="margin-top:1rem">Useful boundaries.</h3><p style="margin-top:1rem">We're not a typing service. AKCHALLY is a good fit when the document needs thinking and making.</p><p style="margin-top:1rem"><strong>We're probably not the right fit if you simply need:</strong></p><ul><li>Bulk data entry</li><li>Routine word processing</li><li>Hundreds of pages reformatted mechanically</li><li>Academic assignments</li><li>Legal drafting</li><li>Technical content requiring specialist subject-matter authorship</li><li>Someone available indefinitely to make tiny edits</li></ul><p style="margin-top:1rem"><strong>And if you need us to create claims, figures or facts that the business cannot substantiate: also no.</strong></p><p>We make the information work. We don't manufacture the information.</p></div>
+  <div class="rec-col"><span class="mono">Section 10 — What you receive</span><h3>Finished means finished.</h3><ul><li>High-resolution PDF</li><li>Screen-optimised PDF</li><li>Print-ready PDF</li><li>Editable source file</li></ul></div>
+  <div class="rec-col" style="background:var(--cream)"><span class="mono">Section 11 — What we don't do</span><h3>Useful boundaries.</h3><p>We're not a typing service.</p><ul><li>Bulk data entry</li><li>Routine word processing</li><li>Academic assignments</li></ul></div>
 </section>
 
-<section class="work">
-  <div class="work-head"><div><span class="mono">Section 12 — Document / Selected Work</span><h2 style="font-size:clamp(2rem,4vw,3.5rem)">Have a look.</h2><p class="mono" style="text-transform:none; letter-spacing:0; opacity:.6">Show actual spreads/pages, not a tiny document cover floating inside a laptop mockup.</p></div><a href="#" class="btn btn-black">See more work →</a></div>
-  <div class="work-grid">
-    <div class="work-card" style="--rot:-1.5deg"><div class="work-spread"></div><div class="work-info"><span class="mono">Company Profile</span><h4 style="margin-top:.5rem">[Client]</h4><p style="font-size:.85rem; margin-top:1rem"><b>What came in</b><br>Existing 14-page company profile with fragmented content and inconsistent visual structure.</p><p style="font-size:.85rem; margin-top:.8rem"><b>What went out</b><br>A concise, professionally structured company profile designed for client-facing use.</p><div class="work-meta"><span>Structure</span><span>Copy Refinement</span><span>Design</span><span>Production</span></div><a href="#" class="mono" style="border-bottom:1px solid">View project →</a></div></div>
-    <div class="work-card" style="--rot:1.2deg"><div class="work-spread" style="filter:hue-rotate(10deg)"></div><div class="work-info"><span class="mono">Presentation</span><h4 style="margin-top:.5rem">[Client]</h4><p style="font-size:.85rem; margin-top:1rem"><b>What came in</b><br>[One sentence.]</p><p style="font-size:.85rem; margin-top:.8rem"><b>What went out</b><br>[One sentence.]</p><a href="#" class="mono" style="border-bottom:1px solid; margin-top:1rem; display:inline-block">View project →</a></div></div>
-    <div class="work-card" style="--rot:-.8deg"><div class="work-spread" style="filter:hue-rotate(20deg)"></div><div class="work-info"><span class="mono">Report</span><h4 style="margin-top:.5rem">[Client]</h4><p style="font-size:.85rem; margin-top:1rem"><b>What came in</b><br>[One sentence.]</p><p style="font-size:.85rem; margin-top:.8rem"><b>What went out</b><br>[One sentence.]</p><a href="#" class="mono" style="border-bottom:1px solid; margin-top:1rem; display:inline-block">View project →</a></div></div>
-  </div>
-</section>
+<section class="final"><div><span class="mono" style="color:var(--orange)">Document / Akchally — Final CTA</span><h2>Send us the <i>monstrosity.</i></h2></div><div style="display:flex; flex-direction:column; justify-content:center; gap:1rem"><a href="index.html#contact" class="btn btn-orange" style="font-size:1.1rem; padding:1.4rem 2rem;">Make it better →</a><a href="index.html#contact" class="btn" style="font-size:1.1rem; padding:1.4rem 2rem;">Make it for me →</a></div></section>
 
-<section class="faq"><span class="mono">Section 13 — FAQ</span><h2 style="font-size:clamp(2rem,4vw,3rem); margin-top:1rem">Before you send the monstrosity.</h2>
-  <div class="faq-grid">
-    <div class="faq-item"><b>Can you rewrite the content?</b><p>Yes. Copy refinement and restructuring can form part of the project. If substantial from-scratch writing is required, we'll define that in the quote.</p></div>
-    <div class="faq-item"><b>Do I need professional photographs?</b><p>Not necessarily. We'll assess the assets you have and tell you if additional imagery is actually required.</p></div>
-    <div class="faq-item"><b>Can you follow our existing brand guidelines?</b><p>Absolutely. If you have established brand guidelines, we'll work within them.</p></div>
-    <div class="faq-item"><b>What if we don't have brand guidelines?</b><p>We can work from the existing visual identity or recommend a Tidy-Up if the inconsistencies are substantial enough to affect the project.</p></div>
-    <div class="faq-item"><b>Can you make it print-ready?</b><p>Yes, where print production is part of the agreed scope.</p></div>
-    <div class="faq-item"><b>Will I receive an editable version?</b><p>That depends on the project and software used. Your quote will state the final file formats and whether editable source files are included.</p></div>
-    <div class="faq-item"><b>How many revisions are included?</b><p>Two consolidated revision rounds are standard unless otherwise stated.</p></div>
-    <div class="faq-item"><b>Can you work with confidential business material?</b><p>Yes. Confidentiality requirements can be agreed before material is supplied.</p></div>
-  </div>
-</section>
-
-<section class="final"><div><span class="mono" style="color:var(--orange)">Document / Akchally — Final CTA</span><h2>Send us the <i>monstrosity.</i></h2><p style="margin-top:1.5rem; font-size:1.2rem; opacity:.8">Seriously. You don't need to fix it first. That's rather the point.</p><p style="margin-top:1rem; font-family:'Syne',sans-serif; font-weight:800; font-size:1.5rem">Document work from $350.</p></div><div style="display:flex; flex-direction:column; justify-content:center; gap:1rem"><a href="#" class="btn btn-orange" style="font-size:1.1rem; padding:1.4rem 2rem; justify-content:space-between">Make it better →</a><a href="#" class="btn" style="font-size:1.1rem; padding:1.4rem 2rem; justify-content:space-between">Make it for me →</a><p class="mono" style="opacity:.5; margin-top:1rem">Document / Akchally — Send us the Word monstrosity.</p></div></section>
-
-<footer><span>© 2026 AKCHALLY. — Document / 02</span><span>Structure before decoration.</span></footer>
+<footer><div><div class="foot-logo">akchally<span>.</span></div><p class="mono">Web · Document · Video</p></div><div><span class="mono">Navigate</span><a href="web.html">Web</a><a href="document.html">Document</a><a href="video.html">Video</a><a href="lookover.html">The Look-Over</a></div><div><span class="mono">Contact</span><p>hello@akchally.studio</p></div><div class="foot-bottom"><span>© 2026 AKCHALLY. — DOCUMENT / 02</span></div></footer>
 </body>
 </html>
