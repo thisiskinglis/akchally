@@ -454,6 +454,8 @@ footer a{display:block; margin:0.255rem 0; font-size:0.765rem}
   .output-block h3{font-size:15.3vw}
   .ex-grid{grid-template-columns:1fr}
 }
+
+
 /* Image support for work cards - FIXED no blow-up */
 .work-grid{grid-template-columns:repeat(3, minmax(0, 1fr))}
 .work-card{min-width:0}
@@ -472,8 +474,5 @@ footer a{display:block; margin:0.255rem 0; font-size:0.765rem}
   object-position:center center; 
   display:block;
 }
-
-
-/* Image support for work cards - add your images */
-.work-img img, .work-spread img, .work-embed img{width:100%; height:100%; object-fit:cover; display:block}
-.work-img{ background:#111; } /* fallback if no image */
+/* If your source image is portrait and looks blown up, change to this: */
+/* .work-img img{object-fit:contain; background:#111} */
