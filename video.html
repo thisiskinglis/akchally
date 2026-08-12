@@ -3,35 +3,570 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="akchally.">
-<meta property="og:title" content="akchally. — Make your business look like it actually should.">
-<meta property="og:description" content="Web · Document · Video. Remote studio. No retainer bollocks. No brief theatre. Just done properly.">
-<meta property="og:image" content="assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://akchally.com/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="akchally. — Make your business look like it actually should.">
-<meta name="twitter:description" content="Web · Document · Video. Remote studio. No retainer bollocks. No brief theatre. Just done properly.">
-<meta name="twitter:image" content="assets/og-image.png">
-<title>VIDEO / 03 — Business Video — akchally.</title>
+<title>VIDEO / 03 — akchally.</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 <style>
-  .pricing-grid.tight-6{grid-template-columns:repeat(3,1fr)}
-  @media(max-width:1000px){.pricing-grid.tight-6{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:600px){.pricing-grid.tight-6{grid-template-columns:1fr}}
-  .include-list{display:grid; grid-template-columns:repeat(3,1fr); border-top:1.5px solid var(--fg); border-bottom:1.5px solid var(--fg)}
-  .include-list li{list-style:none; font-size:.75rem; padding:.6rem var(--gutter); border-right:1.5px solid rgba(0,0,0,.12); border-bottom:1px solid rgba(0,0,0,.08)}
-  .include-list li::before{content:"→ "; color:var(--orange)}
-  @media(max-width:800px){.include-list{grid-template-columns:1fr}.include-list li{border-right:none}}
+:root{
+  --page-max: 1310px;
+  --gutter: 27px;
+  --bg: #F2EDE6;
+  --fg: #0F0F0F;
+  --orange: #FF3D12;
+  --cream: #E9E2D6;
+  --cream-2: #E9E2D6;
+  --paper: #FFFBF5;
+  --white: #FFFBF5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg); color:var(--fg); font-family:'Space Grotesk', sans-serif; line-height:1.45; overflow-x:hidden; font-size:13px}
+::selection{background:var(--orange); color:white}
+body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.035; z-index:9999; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");}
+h1,h2,h3{font-family:'Syne', sans-serif; text-transform:uppercase; line-height:.9; letter-spacing:-0.03em}
+h1{ font-size: clamp(2.55rem, 5.1vw, 4.42rem) !important; }
+.mono{font-size:0.612rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700}
+a{color:inherit; text-decoration:none}
+.btn{display:inline-flex; align-items:center; gap:0.637rem; border:1.5px solid var(--fg); padding:0.85rem 1.53rem; font-weight:700; font-size:0.697rem; letter-spacing:.08em; text-transform:uppercase; transition:.25s ease; cursor:pointer}
+.btn-black{background:var(--fg); color:var(--bg)}
+.btn-black:hover{background:var(--orange); border-color:var(--orange); color:white; transform:translateY(-2px)}
+.btn-ghost:hover{background:var(--fg); color:var(--bg); transform:translateY(-2px)}
+
+nav, .hero, .sec-02, .cards, .sec-03-head, .lookover, .doover, .how-head, .steps, .philo, .work-head, .work-grid, .final, footer,
+.hero-eyebrow, .hero-grid, .section-label, .what, .packages, .refresh, .included, .seo, .domain, .copy-sec, .process, .boundary, .faq{
+  max-width: var(--page-max);
+  margin-left:auto;
+  margin-right:auto;
+  width:100%;
+}
+
+nav{position:sticky; top:0; z-index:50; display:flex; justify-content:space-between; align-items:center; padding:0.935rem var(--gutter); background:rgba(242,237,230,.92); backdrop-filter:blur(10px); border-bottom:1.5px solid var(--fg);}
+.logo{font-family:'Syne', sans-serif; font-weight:800; font-size:1.445rem; letter-spacing:-0.05em; line-height:1; text-transform:lowercase;}
+.logo .dot{display:inline-block; width:.38em; height:.38em; background:var(--orange); border-radius:50%; margin-left:.05em;}
+.nav-links{display:flex; gap:1.7rem; align-items:center}
+.nav-links a{font-size:0.663rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; position:relative}
+.nav-links a::after{content:""; position:absolute; bottom:-3.4px; left:0; width:0; height:1.5px; background:var(--fg); transition:.3s}
+.nav-links a:hover::after{width:100%}
+.hamburger{display:none; font-size:1.275rem; cursor:pointer}
+
+.hero{padding:4.25vw var(--gutter) 3.4vw; border-bottom:1.5px solid var(--fg); position:relative; overflow:hidden; isolation:isolate}
+.hero-top{display:flex; justify-content:space-between; align-items:flex-start; gap:5.1vw; position:relative; z-index:1}
+.hero-left{flex:1.15}
+.hero h1{max-width:13ch; margin-bottom:1.7rem}
+.hero h1 .accent{color:var(--orange); font-family:'Instrument Serif', serif; font-style:italic; text-transform:lowercase; font-size:.95em; letter-spacing:-0.02em}
+.hero-copy{max-width:48ch; font-size:0.85rem; line-height:1.6}
+.hero-copy p{margin-bottom:1.02rem}
+.hero-actions{margin-top:2.125rem; display:flex; gap:0.85rem; flex-wrap:wrap}
+.hero-right{flex:.85; display:flex; flex-direction:column; gap:0.85rem; padding-top:0.85rem}
+.hero-note{border:1.5px solid var(--fg); padding:1.02rem; background:var(--white); font-size:0.722rem; transform:rotate(.6deg)}
+.big-bg-text{
+  position:absolute; 
+  top:52%; left:50%;
+  transform:translate(-50%,-50%);
+  font-family:'Syne', sans-serif; 
+  font-size:clamp(10.2rem, 23.8vw, 25.5rem);
+  line-height:.8; 
+  font-weight:800; 
+  color:var(--fg); 
+  opacity:.035; 
+  pointer-events:none; 
+  text-transform:lowercase;
+  z-index:0;
+  white-space:nowrap;
+  letter-spacing:-0.06em;
+}
+
+.marquee{
+  border-top:1.5px solid var(--fg);
+  border-bottom:1.5px solid var(--fg);
+  overflow:hidden;
+  white-space:nowrap;
+  padding:0.765rem 0;
+  background:var(--fg);
+  color:var(--bg);
+  width:100vw;
+  max-width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  display:block;
+}
+.marquee-inner{
+  display:flex; 
+  animation:marq 28s linear infinite; 
+  gap:2.55rem; 
+  width:max-content;
+  will-change:transform;
+  transform:translateZ(0);
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+.marquee span{
+  font-family:'Syne', sans-serif; 
+  font-weight:800; 
+  font-size:0.935rem; 
+  letter-spacing:.08em; 
+  text-transform:uppercase;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:geometricPrecision;
+  transform:translateZ(0);
+}
+.marquee span i{color:var(--orange); font-style:normal; margin:0 0.425rem}
+@keyframes marq{
+  0%{transform:translate3d(0,0,0)}
+  100%{transform:translate3d(-50%,0,0)}
+}
+
+.sec-02{display:grid; grid-template-columns:1.1fr .9fr; border-bottom:1.5px solid var(--fg)}
+.sec-02-left{padding:3.4vw var(--gutter); border-right:1.5px solid var(--fg)}
+.sec-02-left h2{font-size:clamp(1.87rem, 3.825vw, 3.4rem); max-width:10ch}
+.sec-02-right{padding:3.4vw var(--gutter); display:flex; flex-direction:column; justify-content:center; gap:1.275rem; font-size:0.892rem; line-height:1.6}
+
+.cards{display:grid; grid-template-columns:repeat(3,1fr); align-items:stretch; border-bottom:1.5px solid var(--fg)}
+.card{padding:1.87rem 1.53rem; border-right:1.5px solid var(--fg); display:flex; flex-direction:column; min-height:527px; transition:.3s}
+.card:last-child{border-right:none}
+.card:hover{background:var(--white)}
+.card-num{font-family:'Instrument Serif', serif; font-size:1.02rem; margin-bottom:1.53rem; display:flex; justify-content:space-between}
+.card h3{font-size:clamp(1.36rem, 1.87vw, 1.87rem); margin-bottom:0.85rem; min-height:3.2em}
+.card p{font-size:0.748rem; line-height:1.6; margin-bottom:0.85rem; opacity:.85}
+.card ul{list-style:none; margin:1.02rem 0; display:flex; flex-direction:column; gap:0.297rem}
+.card ul li{font-size:0.637rem; letter-spacing:.06em; text-transform:uppercase; display:flex; gap:0.51rem}
+.card ul li::before{content:"→"; color:var(--orange)}
+.card-foot{margin-top:auto; padding-top:2.125rem}
+.price{font-family:'Syne', sans-serif; font-weight:800; font-size:0.85rem; margin-bottom:1.02rem}
+
+.sec-03{border-bottom:1.5px solid var(--fg)}
+.sec-03-head{padding:2.125vw var(--gutter); display:flex; justify-content:space-between; align-items:end; border-bottom:1.5px solid var(--fg)}
+.sec-03-head h2{font-size:clamp(1.53rem, 2.975vw, 2.55rem)}
+
+.lookover{background:var(--fg); color:var(--bg); display:grid; grid-template-columns:1.1fr .9fr; border-bottom:1.5px solid var(--fg)}
+.look-left{padding:3.4vw var(--gutter); border-right:1.5px solid rgba(255,255,255,.15)}
+.look-left .mono{color:var(--orange); margin-bottom:1.275rem; display:block}
+.look-left h2{font-size:clamp(2.04rem, 3.825vw, 3.825rem); color:var(--bg); line-height:.9}
+.look-right{padding:2.975vw var(--gutter)}
+.look-grid{display:grid; grid-template-columns:1fr 1fr; gap:0.85rem; margin:1.275rem 0}
+.look-item{border:1.5px solid rgba(255,255,255,.15); padding:0.85rem}
+
+.doover{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg); background:var(--cream-2)}
+.doover-left{padding:3.4vw var(--gutter)}
+.doover-left h2{font-size:clamp(1.87rem, 3.4vw, 3.23rem)}
+.doover-right{padding:3.4vw var(--gutter); border-left:1.5px solid var(--fg)}
+.big-price{display:flex; flex-direction:column; gap:0.255rem; margin:1.7rem 0; font-family:'Syne', sans-serif; font-weight:800; font-size:1.36rem}
+
+.how{border-bottom:1.5px solid var(--fg)}
+.how-head{padding:2.125vw var(--gutter); border-bottom:1.5px solid var(--fg); display:flex; justify-content:space-between; align-items:center}
+.steps{display:grid; grid-template-columns:repeat(5,1fr)}
+.step{padding:1.7rem 1.275rem; border-right:1.5px solid var(--fg)}
+.step:last-child{border-right:none}
+.step-num{font-family:'Syne', sans-serif; font-weight:800; margin-bottom:0.85rem}
+
+.philo{padding:5.1vw var(--gutter); text-align:center; border-bottom:1.5px solid var(--fg)}
+.philo p{font-family:'Syne', sans-serif; font-size:clamp(1.36rem, 2.55vw, 2.38rem); line-height:1.05; max-width:22ch; margin:0 auto}
+
+.work-head{padding:2.125vw var(--gutter); display:flex; justify-content:space-between; align-items:end; border-bottom:1.5px solid var(--fg)}
+.work-grid{display:grid; grid-template-columns:repeat(3,1fr); border-bottom:1.5px solid var(--fg)}
+.work-card{border-right:1.5px solid var(--fg); display:flex; flex-direction:column}
+.work-card:last-child{border-right:none}
+.work-img{aspect-ratio:4/3; background:#111; position:relative; overflow:hidden; border-bottom:1.5px solid var(--fg)}
+.work-info{padding:1.275rem var(--gutter)}
+
+.final{padding:4.25vw var(--gutter); display:grid; grid-template-columns:1.1fr .9fr; gap:3.4vw; border-bottom:1.5px solid var(--fg)}
+.final h2{font-size:clamp(2.125rem, 4.25vw, 4.25rem); line-height:.9}
+
+footer{padding:2.55vw var(--gutter); display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:2.55vw; background:var(--white)}
+footer a{display:block; margin:0.255rem 0; font-size:0.765rem}
+.foot-logo{font-family:'Syne', sans-serif; font-weight:800; font-size:1.7rem; text-transform:lowercase}
+.foot-bottom{grid-column:1 / -1; border-top:1.5px solid var(--fg); margin-top:1.7vw; padding-top:1.275vw; display:flex; justify-content:space-between; font-size:0.612rem; letter-spacing:.08em; text-transform:uppercase; flex-wrap:wrap; gap:0.85rem}
+
+/* WEB.HTML + DOC + VIDEO + LOOKOVER */
+.hero-eyebrow{display:flex; justify-content:space-between; gap:1.7rem; margin-bottom:1.275rem; opacity:.6; flex-wrap:wrap}
+.hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:3.4vw; margin-top:1.7rem}
+.hero-sub p{margin-bottom:0.68rem; font-size:0.85rem; line-height:1.6}
+.hero-price{font-family:'Syne', sans-serif; font-weight:800; font-size:1.36rem; margin:1.7rem 0}
+.hero-price span{display:block; font-family:'Instrument Serif', serif; font-size:0.85rem; font-weight:400; opacity:.6; letter-spacing:.1em; text-transform:uppercase}
+
+.section-label{padding:1.02rem var(--gutter); border-top:1.5px solid var(--fg); border-bottom:1.5px solid var(--fg); background:var(--white); display:flex; justify-content:space-between; align-items:center}
+.section-label h2{font-size:0.935rem; letter-spacing:.08em}
+.what{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg)}
+.what-left{padding:3.4vw var(--gutter); border-right:1.5px solid var(--fg)}
+.what-left h3{font-size:clamp(1.7rem,2.975vw,2.55rem); max-width:12ch}
+.what-right{padding:3.4vw var(--gutter); display:flex; flex-direction:column; gap:0.85rem; line-height:1.6}
+.what-right ul{list-style:none; margin:0.85rem 0}
+.what-right li{padding:0.255rem 0; border-bottom:1px solid rgba(0,0,0,.08); font-size:0.765rem}
+.what-right li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+
+.packages{border-bottom:1.5px solid var(--fg)}
+.package-row{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg); background:var(--bg)}
+.package-row:last-child{border-bottom:none}
+.pkg-big{padding:2.55vw var(--gutter); border-right:1.5px solid var(--fg); background:var(--paper); display:flex; flex-direction:column; justify-content:space-between}
+.pkg-big h3{font-size:clamp(2.125rem,4.25vw,3.825rem); line-height:.85}
+.pkg-big h3 span{display:block; font-family:'Space Grotesk', sans-serif; font-size:0.765rem; font-weight:700; letter-spacing:.12em; margin-top:0.51rem; opacity:.6}
+.from{margin-top:1.7rem; font-family:'Syne', sans-serif; font-weight:800; font-size:0.85rem}
+.from b{display:block; font-family:'Space Grotesk', sans-serif; font-size:0.68rem; font-weight:400; letter-spacing:.05em; margin-top:0.255rem; opacity:.7; text-transform:none}
+.pkg-details{padding:2.55vw var(--gutter); background:var(--bg)}
+.pkg-details h4{font-size:1.02rem; margin-bottom:0.85rem; max-width:28ch; line-height:1.3}
+.pkg-details p{margin-bottom:0.68rem; line-height:1.6; font-size:0.807rem}
+.ideal{border:1.5px solid var(--fg); padding:0.85rem; margin:1.275rem 0; background:var(--white)}
+.ideal b{font-size:0.637rem; letter-spacing:.1em; text-transform:uppercase}
+.ideal p{font-size:0.722rem; margin-top:0.255rem; line-height:1.4}
+.pkg-list{list-style:none; columns:2; column-gap:1.7rem; margin:0.85rem 0}
+.pkg-list li{font-size:0.68rem; padding:0.212rem 0; display:flex; gap:0.34rem}
+.pkg-list li::before{content:"→"; color:var(--orange)}
+.pkg-cta{margin-top:1.7rem}
+
+.refresh{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg); background:var(--cream)}
+.refresh-left{padding:3.4vw var(--gutter); border-right:1.5px solid var(--fg)}
+.refresh-left h2{font-size:clamp(1.7rem,3.4vw,2.975rem); margin-top:0.85rem}
+.refresh-price{font-family:'Instrument Serif', serif; font-size:4.25rem; color:var(--orange); margin:1.275rem 0; line-height:.9}
+.refresh-right{padding:3.4vw var(--gutter); background:var(--fg); color:var(--bg)}
+.refresh-list{list-style:none; margin:0.85rem 0}
+.refresh-list li{padding:0.34rem 0; font-size:0.722rem; border-bottom:1px solid rgba(255,255,255,.1)}
+.refresh-list li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+
+.included{border-bottom:1.5px solid var(--fg); background:var(--white)}
+.included-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0}
+.inc-col{padding:1.7rem 1.275rem; border-right:1.5px solid var(--fg)}
+.inc-col:last-child{border-right:none}
+.inc-col h4{font-size:0.68rem; letter-spacing:.12em; margin-bottom:0.85rem; color:var(--orange)}
+.inc-col ul{list-style:none}
+.inc-col li{font-size:0.68rem; padding:0.255rem 0; line-height:1.4}
+.inc-note{grid-column:1 / -1; padding:1.275rem var(--gutter); border-top:1.5px solid var(--fg); font-size:0.722rem; font-style:italic; opacity:.7; background:var(--bg)}
+
+.seo{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg)}
+.seo-left{padding:3.4vw var(--gutter); border-right:1.5px solid var(--fg)}
+.seo-right{padding:3.4vw var(--gutter); background:var(--paper)}
+.seo-right ul{list-style:none; margin-top:0.85rem}
+.seo-right li{padding:0.34rem 0; font-size:0.765rem; border-bottom:1px solid rgba(0,0,0,.08)}
+.seo-right li::before{content:"✕"; color:var(--orange); margin-right:0.425rem; font-weight:700}
+
+.domain{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg); background:var(--bg)}
+.domain > div{padding:3.4vw var(--gutter)}
+.domain > div:first-child{border-right:1.5px solid var(--fg)}
+.highlight{border:1.5px solid var(--fg); padding:0.85rem; margin-top:1.275rem; background:var(--orange); color:white; font-weight:700; font-size:0.765rem; transform:rotate(-.5deg)}
+
+.copy-sec{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg)}
+.copy-sec > div{padding:3.4vw var(--gutter)}
+.copy-sec > div:first-child{border-right:1.5px solid var(--fg)}
+.copy-sec ul{list-style:none; margin:0.85rem 0}
+.copy-sec li{padding:0.297rem 0; font-size:0.765rem}
+.copy-sec li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+
+.process{border-bottom:1.5px solid var(--fg)}
+.process-steps{display:grid; grid-template-columns:repeat(5,1fr)}
+.pstep{padding:2.125vw 1.275rem; border-right:1.5px solid var(--fg); border-bottom:1.5px solid var(--fg)}
+.pstep:last-child{border-right:none}
+.pstep-num{font-family:'Instrument Serif', serif; font-size:2.125rem; color:var(--orange); line-height:1; margin-bottom:0.85rem}
+.pstep h4{font-size:0.85rem; margin-bottom:0.425rem}
+.pstep p{font-size:0.722rem; line-height:1.5; opacity:.85}
+
+.boundary{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg)}
+.bound-col{padding:3.4vw var(--gutter)}
+.bound-col:first-child{border-right:1.5px solid var(--fg)}
+.bound-col ul{list-style:none; margin-top:0.85rem}
+.bound-col li{padding:0.297rem 0; font-size:0.765rem}
+.bound-col li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+
+.faq{padding:3.4vw var(--gutter); border-bottom:1.5px solid var(--fg); background:var(--cream)}
+.faq-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.7rem 3.4vw; margin-top:1.7rem}
+.faq-item{padding-bottom:1.275rem; border-bottom:1px solid rgba(0,0,0,.12)}
+.faq-item b{display:block; font-family:'Syne', sans-serif; text-transform:uppercase; margin-bottom:0.34rem; font-size:0.807rem}
+.faq-item p{font-size:0.765rem; opacity:.8; line-height:1.5}
+
+@media(max-width:833px){
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .hero-top, .sec-02, .lookover, .doover, .final, footer, .what, .package-row, .refresh, .seo, .domain, .copy-sec, .boundary{grid-template-columns:1fr}
+  .cards, .steps, .work-grid, .included-grid, .process-steps, .faq-grid{grid-template-columns:1fr}
+  .card, .step, .work-card, .inc-col{border-right:none; border-bottom:1.5px solid var(--fg); min-height:auto}
+  .big-bg-text{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .pkg-big{border-right:none; border-bottom:1.5px solid var(--fg)}
+  .pkg-list{columns:1}
+  .section-label{flex-direction:column; align-items:flex-start; gap:0.425rem}
+}
+
+
+/* ===== DOCUMENT.HTML STYLES ===== */
+.big-watermark{position:absolute; top:52%; left:50%; transform:translate(-50%,-50%); font-family:'Syne', sans-serif; font-size:clamp(10.2rem, 23.8vw, 25.5rem); line-height:.8; font-weight:800; color:var(--fg); opacity:.035; pointer-events:none; text-transform:lowercase; z-index:0; white-space:nowrap; letter-spacing:-0.06em;}
+.two-head{padding:1.7vw var(--gutter); display:flex; justify-content:space-between; align-items:end; border-top:1.5px solid var(--fg); border-bottom:1.5px solid var(--fg); background:var(--white); max-width: var(--page-max); margin:0 auto; width:100%}
+.two-ways{border-bottom:1.5px solid var(--fg); max-width: var(--page-max); margin:0 auto; width:100%}
+.split{display:grid; grid-template-columns:1fr 1fr; min-height:60vh}
+.split-left, .split-right{padding:3.4vw var(--gutter); display:flex; flex-direction:column; gap:0.85rem}
+.split-left{border-right:1.5px solid var(--fg); background:var(--paper)}
+.split-right{background:var(--bg)}
+.split-label{font-size:0.612rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700; opacity:.6; margin-bottom:0.425rem; display:block}
+.split h3{font-size:clamp(1.7rem,2.975vw,2.72rem); line-height:.9; margin-bottom:0.85rem}
+.split h3 i{font-family:'Instrument Serif', serif; color:var(--orange); text-transform:none}
+.split p{line-height:1.6; font-size:0.807rem; margin-bottom:0.51rem}
+.pricing{margin:1.275rem 0; border-top:1.5px solid var(--fg); border-bottom:1.5px solid var(--fg)}
+.price-row{display:flex; justify-content:space-between; gap:0.85rem; padding:0.595rem 0; border-bottom:1px solid rgba(0,0,0,.08); font-size:0.722rem}
+.price-row:last-child{border-bottom:none}
+.price-row b{font-family:'Syne', sans-serif; white-space:nowrap}
+
+.what-make{padding:3.4vw var(--gutter); border-bottom:1.5px solid var(--fg); background:var(--white); max-width: var(--page-max); margin:0 auto; width:100%}
+.what-make h2{font-size:clamp(1.7rem,3.4vw,2.975rem); margin-top:0.85rem; max-width:18ch}
+.doc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; background:var(--fg); border:1.5px solid var(--fg); margin-top:1.7rem}
+.doc-card{background:var(--bg); padding:1.7rem 1.275rem; min-height:238px}
+.doc-card h4{font-size:0.85rem; letter-spacing:.06em; text-transform:uppercase; margin-bottom:0.68rem}
+.doc-card p{font-size:0.765rem; line-height:1.5; opacity:.85}
+
+.real-problem{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg); max-width: var(--page-max); margin:0 auto; width:100%}
+.real-left{padding:3.4vw var(--gutter); border-right:1.5px solid var(--fg)}
+.real-right{padding:3.4vw var(--gutter); display:flex; flex-direction:column; gap:0.85rem}
+.real-right ul{list-style:none; margin:0.85rem 0}
+.real-right li{padding:0.297rem 0; font-size:0.765rem}
+.real-right li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+
+.giant-statement{padding:6.8vw var(--gutter); text-align:center; border-bottom:1.5px solid var(--fg); background:var(--fg); color:var(--bg); max-width: var(--page-max); margin:0 auto; width:100%}
+.giant-statement p{font-family:'Syne', sans-serif; font-size:clamp(1.7rem,4.25vw,3.825rem); line-height:.9; max-width:16ch; margin:0 auto}
+.giant-statement i{color:var(--orange); font-family:'Instrument Serif', serif; text-transform:none}
+
+.what-we-do{display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1.5px solid var(--fg); max-width: var(--page-max); margin:0 auto; width:100%}
+.wwd-col{padding:2.125vw 1.275rem; border-right:1.5px solid var(--fg)}
+.wwd-col:last-child{border-right:none}
+.wwd-col h4{font-size:0.68rem; letter-spacing:.12em; margin-bottom:0.85rem; color:var(--orange)}
+.wwd-col ul{list-style:none}
+.wwd-col li{font-size:0.68rem; padding:0.212rem 0; line-height:1.4}
+
+.mess{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg); max-width: var(--page-max); margin:0 auto; width:100%}
+.mess-left, .mess-right{padding:3.4vw var(--gutter)}
+.mess-left{border-right:1.5px solid var(--fg); background:var(--paper)}
+.mess-right{background:var(--cream)}
+.mess h3{font-size:clamp(1.36rem,2.38vw,2.04rem); margin-bottom:0.85rem}
+.mess ul{list-style:none; margin:0.85rem 0}
+.mess li{padding:0.255rem 0; font-size:0.765rem}
+.mess li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+
+.tidy{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg); max-width: var(--page-max); margin:0 auto; width:100%; background:var(--white)}
+.tidy-left{padding:3.4vw var(--gutter); border-right:1.5px solid var(--fg)}
+.tidy-price{font-family:'Instrument Serif', serif; font-size:4.25rem; color:var(--orange); margin:0.85rem 0; line-height:.9}
+.tidy-right{padding:3.4vw var(--gutter); background:var(--fg); color:var(--bg)}
+.tidy-grid{display:flex; flex-wrap:wrap; gap:0.425rem; margin:1.275rem 0}
+.tidy-tag{border:1px solid rgba(255,255,255,.2); padding:0.34rem 0.68rem; font-size:0.637rem; letter-spacing:.08em; text-transform:uppercase}
+
+.receive{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg); max-width: var(--page-max); margin:0 auto; width:100%}
+.rec-col{padding:3.4vw var(--gutter)}
+.rec-col:first-child{border-right:1.5px solid var(--fg)}
+.rec-col ul{list-style:none; margin:0.85rem 0}
+.rec-col li{padding:0.297rem 0; font-size:0.765rem}
+.rec-col li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+
+.work{border-bottom:1.5px solid var(--fg); max-width: var(--page-max); margin:0 auto; width:100%}
+.work-spread{aspect-ratio:16/11; background:#111; border-bottom:1.5px solid var(--fg)}
+.work-meta{display:flex; flex-wrap:wrap; gap:0.425rem; margin-top:0.85rem}
+.work-meta span{border:1px solid var(--fg); padding:0.212rem 0.51rem; font-size:0.552rem; letter-spacing:.08em; text-transform:uppercase}
+
+.hero-cta{display:flex; gap:0.85rem; align-items:center; margin-top:1.7rem; flex-wrap:wrap}
+.btn-orange{background:var(--orange); border-color:var(--orange); color:white}
+.btn-orange:hover{background:var(--fg); border-color:var(--fg)}
+
+@media(max-width:833px){
+  .split, .mess, .tidy, .receive, .real-problem, .what-we-do, .doc-grid{grid-template-columns:1fr}
+  .split-left{border-right:none; border-bottom:1.5px solid var(--fg)}
+  .wwd-col{border-right:none; border-bottom:1.5px solid var(--fg)}
+  .mess-left{border-right:none; border-bottom:1.5px solid var(--fg)}
+  .rec-col:first-child{border-right:none; border-bottom:1.5px solid var(--fg)}
+  .real-left{border-right:none; border-bottom:1.5px solid var(--fg)}
+  .tidy-left{border-right:none; border-bottom:1.5px solid var(--fg)}
+}
+
+
+/* ===== VIDEO.HTML STYLES ===== */
+.crop-marks{position:absolute; top:0.85rem; left:var(--gutter); right:var(--gutter); display:flex; justify-content:space-between; font-size:0.552rem; letter-spacing:.15em; opacity:.4; text-transform:uppercase; font-family:monospace; z-index:2}
+.reel{background:var(--fg); color:var(--bg); border-bottom:1.5px solid var(--fg); overflow:hidden; padding:0.51rem 0; max-width:85vw; width:100%}
+.reel-track{display:flex; gap:1.7rem; animation:reel 30s linear infinite; width:max-content}
+.reel-item{font-size:0.637rem; letter-spacing:.1em; text-transform:uppercase; border:1px solid rgba(255,255,255,.15); padding:0.34rem 0.68rem; white-space:nowrap; position:relative}
+.reel-item::after{content:attr(data-time); margin-left:0.68rem; opacity:.5; font-size:0.552rem}
+@keyframes reel{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.pricing{border-bottom:1.5px solid var(--fg); background:var(--bg); max-width:var(--page-max); margin:0 auto; width:100%}
+.pricing-head{padding:2.125vw var(--gutter); display:flex; justify-content:space-between; align-items:end; border-bottom:1.5px solid var(--fg)}
+.pricing-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; background:var(--fg); border-bottom:1.5px solid var(--fg)}
+.price-card{background:var(--paper); padding:2.125vw 1.53rem; display:flex; flex-direction:column; gap:0.68rem; min-height:306px}
+.price-card h4{font-size:1.02rem; text-transform:uppercase}
+.price-card .from{font-family:'Syne', sans-serif; font-weight:800; font-size:0.935rem; margin:0.425rem 0}
+.price-card p{font-size:0.722rem; line-height:1.5; opacity:.85}
+
+.timeline{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.timeline > div{padding:3.4vw var(--gutter)}
+.timeline > div:first-child{border-right:1.5px solid var(--fg)}
+.timeline ul{list-style:none; margin:0.85rem 0}
+.timeline li{padding:0.297rem 0; font-size:0.765rem}
+.timeline li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+
+.triple{display:grid; grid-template-columns:repeat(3,1fr); border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.tri-col{padding:2.55vw 1.53rem; border-right:1.5px solid var(--fg)}
+.tri-col:last-child{border-right:none}
+.tri-col.highlight{background:var(--orange); color:white}
+.tri-col h4{font-size:0.85rem; margin-bottom:0.68rem; text-transform:uppercase}
+.tri-col ul{list-style:none; margin:0.85rem 0}
+.tri-col li{padding:0.255rem 0; font-size:0.722rem; line-height:1.4}
+.tri-col li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+.tri-col.highlight li::before{color:white}
+
+.webvideo{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg); background:var(--cream); max-width:var(--page-max); margin:0 auto; width:100%}
+.webvideo > div{padding:3.4vw var(--gutter)}
+.webvideo > div:first-child{border-right:1.5px solid var(--fg)}
+.webvideo ul{list-style:none; margin:0.85rem 0}
+.webvideo li{padding:0.297rem 0; font-size:0.765rem}
+.webvideo li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+
+.source{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg); background:var(--paper); max-width:var(--page-max); margin:0 auto; width:100%}
+.source > div{padding:3.4vw var(--gutter)}
+.source > div:first-child{border-right:1.5px solid var(--fg)}
+.file-list{display:flex; flex-wrap:wrap; gap:0.425rem; margin:1.275rem 0}
+.file-tag{border:1.5px solid var(--fg); padding:0.34rem 0.68rem; font-size:0.637rem; letter-spacing:.06em; text-transform:uppercase; background:var(--white)}
+.file-tag.final{background:var(--fg); color:var(--bg); transform:rotate(.5deg)}
+
+.bound{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.b-col{padding:3.4vw var(--gutter)}
+.b-col:first-child{border-right:1.5px solid var(--fg)}
+.b-col ul{list-style:none; margin:0.85rem 0}
+.b-col li{padding:0.297rem 0; font-size:0.765rem}
+.b-col li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+
+.work-embed{aspect-ratio:16/9; background:#111; border-bottom:1.5px solid var(--fg); display:grid; place-items:center; color:#555; font-size:0.68rem; letter-spacing:.1em; text-transform:uppercase}
+
+.concept-line{border:1.5px solid var(--fg); padding:0.85rem; margin-top:1.275rem; font-size:0.68rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700; background:var(--white)}
+.split-num{font-family:'Instrument Serif', serif; font-size:2.55rem; color:var(--fg); opacity:.3; line-height:1; margin-bottom:0.85rem}
+
+@media(max-width:833px){
+  .pricing-grid, .timeline, .triple, .webvideo, .source, .bound{grid-template-columns:1fr}
+  .tri-col, .timeline > div:first-child, .webvideo > div:first-child, .source > div:first-child, .b-col:first-child{border-right:none; border-bottom:1.5px solid var(--fg)}
+  .price-card{border-bottom:1.5px solid var(--fg)}
+}
+
+
+/* ===== LOOKOVER.HTML STYLES ===== */
+.looking{display:grid; grid-template-columns:.9fr 1.1fr; border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.looking > div{padding:3.4vw var(--gutter)}
+.looking > div:first-child{border-right:1.5px solid var(--fg)}
+.looking ul{list-style:none; margin:0.85rem 0; columns:2; column-gap:1.7rem}
+.looking li{padding:0.255rem 0; font-size:0.722rem}
+.looking li::before{content:"→"; color:var(--orange); margin-right:0.425rem}
+
+.output-intro{padding:2.125vw var(--gutter); display:flex; justify-content:space-between; align-items:end; border-bottom:1.5px solid var(--fg); background:var(--white); max-width:var(--page-max); margin:0 auto; width:100%}
+.output-block{border-bottom:1.5px solid var(--fg); padding:4.25vw var(--gutter); display:grid; grid-template-columns:.45fr .55fr; gap:3.4vw; min-height:36vh; align-items:center; max-width:var(--page-max); margin:0 auto; width:100%}
+.output-block h3{font-size:clamp(3.4rem,8.5vw,9.35rem); line-height:.85; letter-spacing:-.07em}
+.output-block .desc h4{font-size:1.275rem; margin-bottom:0.51rem}
+.output-block .desc p{font-size:0.85rem; line-height:1.5; opacity:.85}
+.output-block.keep{background:var(--white); color:var(--fg)}
+.output-block.fix{background:var(--orange); color:white}
+.output-block.inconsistent{background:var(--fg); color:var(--bg)}
+.output-block.missing{background:#2A0C07; color:var(--paper)}
+.output-block.fixfirst{background:#5A2E1A; color:var(--paper); border-bottom-color:var(--fg)}
+
+.why{background:var(--fg); color:var(--bg); padding:5.1vw var(--gutter); display:grid; grid-template-columns:1fr 1fr; gap:3.4vw; border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.why h2{font-size:clamp(2.125rem,4.675vw,4.675rem); line-height:.9; color:var(--bg)}
+.why h2 i{font-family:'Instrument Serif', serif; color:var(--orange); text-transform:none; display:block; font-size:.95em; margin-top:0.425rem}
+.why p{line-height:1.6; margin-bottom:0.85rem; opacity:.85}
+
+.next{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.next-left{padding:3.4vw var(--gutter); background:var(--cream); border-right:1.5px solid var(--fg)}
+.next-right{padding:3.4vw var(--gutter); background:var(--fg); color:var(--bg)}
+.next-right h3{color:var(--paper)}
+.next ul{list-style:none; margin-top:0.85rem}
+.next li{padding:0.34rem 0; font-size:0.765rem}
+
+.doover{background:var(--orange); color:white; padding:4.25vw var(--gutter); display:grid; grid-template-columns:.9fr 1.1fr; gap:3.4vw; border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.doover h2{font-size:clamp(2.125rem,4.25vw,3.825rem); color:white}
+.doover-price{font-family:'Instrument Serif', serif; font-size:5.1rem; line-height:.9; margin:1.275rem 0}
+.doover ul{list-style:none; columns:2; margin-top:0.85rem}
+.doover li{padding:0.34rem 0; font-size:0.722rem}
+
+.examples{padding:3.4vw var(--gutter); background:var(--paper); border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.examples-head{display:flex; justify-content:space-between; align-items:end; margin-bottom:2.55vw}
+.ex-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; background:var(--fg); border:1.5px solid var(--fg)}
+.ex-card{background:var(--white); padding:1.7vw}
+.ex-card h4{font-size:0.765rem; letter-spacing:.1em; margin-bottom:0.85rem; color:var(--orange)}
+.ex-card .line{padding:0.51rem 0; border-bottom:1px solid rgba(0,0,0,.08); font-size:0.722rem; display:flex; justify-content:space-between}
+.ex-card .line b{font-family:'Syne', sans-serif; text-transform:uppercase; font-size:0.637rem}
+.ex-card .rec{margin-top:1.275rem; background:var(--cream); border:1.5px solid var(--fg); padding:0.85rem; font-size:0.722rem; line-height:1.5}
+
+.whyprice{background:var(--fg); color:var(--bg); padding:4.25vw var(--gutter); display:grid; grid-template-columns:1fr 1fr; gap:3.4vw; border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.whyprice h2{font-size:clamp(2.125rem,4.25vw,3.825rem); color:var(--bg)}
+
+.how{border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.how-head{padding:2.125vw var(--gutter); border-bottom:1.5px solid var(--fg); display:flex; justify-content:space-between; align-items:center}
+.good-fit{list-style:none; margin:0.85rem 0}
+.good-fit li{padding:0.425rem 0; font-style:italic; font-size:0.807rem; border-bottom:1px solid rgba(0,0,0,.08)}
+.good-fit li::before{content:"“"; font-family:'Instrument Serif', serif; font-size:1.02rem; color:var(--orange); margin-right:0.255rem}
+
+@media(max-width:833px){
+  .looking, .why, .next, .doover, .whyprice, .output-block{grid-template-columns:1fr}
+  .looking > div:first-child, .next-left, .looking ul{border-right:none; border-bottom:1.5px solid var(--fg); columns:1}
+  .output-block h3{font-size:15.3vw}
+  .ex-grid{grid-template-columns:1fr}
+}
+
+
+/* Image support for work cards - FIXED no blow-up */
+.work-grid{grid-template-columns:repeat(3, minmax(0, 1fr))}
+.work-card{min-width:0}
+.work-img{
+  aspect-ratio:4/3; 
+  background:#111; 
+  overflow:hidden; 
+  position:relative; 
+  border-bottom:1.5px solid var(--fg);
+  display:block;
+}
+.work-img img, .work-spread img, .work-embed img{
+  width:100%; 
+  height:100%; 
+  object-fit:cover; 
+  object-position:center center; 
+  display:block;
+}
+/* If your source image is portrait and looks blown up, change to this: */
+/* .work-img img{object-fit:contain; background:#111} */
+
+/* ===== NEW SIMPLIFIED DOCUMENT PAGE ADDITIONS ===== */
+.choose-grid{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.choose-col{padding:0; border-right:1.5px solid var(--fg); display:flex; flex-direction:column}
+.choose-col:last-child{border-right:none}
+.choose-head{padding:2.5vw var(--gutter) 1.5vw; border-bottom:1.5px solid var(--fg); background:var(--paper)}
+.choose-head h3{font-size:clamp(1.4rem,2.2vw,1.9rem); line-height:.9; margin-top:.4rem}
+.choose-head p{font-size:.78rem; opacity:.7; margin-top:.6rem; line-height:1.5; max-width:36ch}
+.choose-prices{display:flex; flex-direction:column}
+.price-btn{display:flex; justify-content:space-between; align-items:center; padding:1.2vw var(--gutter); border-bottom:1.5px solid var(--fg); font-family:'Syne',sans-serif; font-weight:700; font-size:.85rem; text-transform:uppercase; transition:.2s; background:var(--white); cursor:pointer}
+.price-btn:last-child{border-bottom:none}
+.price-btn .left small{display:block; font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:.62rem; text-transform:none; opacity:.6; margin-top:.15rem; line-height:1.3; max-width:28ch}
+.price-btn:hover{background:var(--fg); color:var(--bg)}
+.price-btn:hover .right{color:var(--orange)}
+.choose-foot{padding:.9rem var(--gutter); font-size:.68rem; opacity:.6; border-top:1.5px solid var(--fg); border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%; background:var(--bg)}
+.step-simple{padding:2.8vw var(--gutter); border-bottom:1.5px solid var(--fg); display:grid; grid-template-columns:.18fr .82fr; gap:3vw; max-width:var(--page-max); margin:0 auto; width:100%}
+.step-simple .step-num{font-family:'Instrument Serif',serif; font-size:clamp(2.8rem,4.5vw,4rem); line-height:.9; color:var(--orange)}
+.step-simple h3{font-size:clamp(1.2rem,1.8vw,1.5rem); margin-bottom:.6rem}
+.step-simple p{font-size:.85rem; line-height:1.6; opacity:.85; max-width:52ch; margin-bottom:.5rem}
+.step-simple ul{list-style:none; margin:.6rem 0}
+.step-simple li{font-size:.82rem; padding:.2rem 0}
+.step-simple li::before{content:"→ "; color:var(--orange)}
+.send-list{padding:2.2vw var(--gutter); border-bottom:1.5px solid var(--fg); background:var(--white); max-width:var(--page-max); margin:0 auto; width:100%}
+.send-tags{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem}
+.send-tags span{border:1px solid var(--fg); padding:.45rem .8rem; font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; background:var(--paper)}
+@media(max-width:833px){.choose-grid,.step-simple{grid-template-columns:1fr}.choose-col{border-right:none; border-bottom:1.5px solid var(--fg)}}
+
+.vid-packs{display:grid; grid-template-columns:repeat(5,1fr); border-bottom:1.5px solid var(--fg); background:var(--fg); gap:1.5px; max-width:var(--page-max); margin:0 auto; width:100%}
+.vid-pack{background:var(--paper); padding:1.8vw 1.4rem; min-height:340px; display:flex; flex-direction:column}
+.vid-pack h3{font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; margin:.6rem 0 .4rem 0; line-height:1.1}
+.vid-pack .price-big{font-family:'Instrument Serif',serif; font-size:2.4rem; line-height:.9; color:var(--orange)}
+.vid-pack p{font-size:.7rem; line-height:1.5; opacity:.7; margin-top:.4rem}
+.vid-pack .btn{margin-top:auto; font-size:.6rem}
+.vid-pack.featured{background:var(--fg); color:var(--cream)}
+.vid-pack.featured .price-big{color:var(--orange)}
+.vid-pack.featured p{color:var(--cream); opacity:.8}
+@media(max-width:1100px){.vid-packs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.vid-packs{grid-template-columns:1fr}}
+.showreel{max-width:var(--page-max); margin:0 auto; width:100%; border-bottom:1.5px solid var(--fg); background:var(--fg); display:grid; grid-template-columns:1.6fr .8fr; gap:1.5px}
+.show-main{background:#0a0a0a; aspect-ratio:16/9; display:grid; place-items:center; color:var(--orange); font-family:'Space Grotesk'; font-size:.7rem; letter-spacing:.1em}
+.show-side{background:var(--paper); display:grid; grid-template-rows:1fr 1fr; gap:1.5px}
+.show-side div{background:var(--paper); display:grid; place-items:center; color:#555; font-size:.6rem; aspect-ratio:16/9}
+@media(max-width:833px){.showreel{grid-template-columns:1fr}}
+.strange-note{background:var(--orange); color:var(--cream); padding:1rem; transform:rotate(.6deg); border:1.5px solid var(--fg); font-size:.75rem; line-height:1.5}
 </style>
 </head>
 <body>
 
-<!-- ================= NAV - SINGLE, FINAL ================= -->
-<!-- ================= NAV - SINGLE, FINAL ================= -->
 <nav>
   <a href="index.html" class="logo">akchally<span class="dot"></span></a>
   <div class="nav-links">
@@ -39,267 +574,168 @@
     <a href="web.html">WEB / 01</a>
     <a href="document.html">DOCUMENT / 02</a>
     <a href="video.html">VIDEO / 03</a>
-    <a href="lookover.html">LOOK-OVER</a>
-    <a href="index.html#work">WORK</a>
   </div>
-  <div style="display:flex; gap:1rem; align-items:center">
-    <a href="index.html#contact" class="btn btn-black" style="padding:.8rem 1.2rem; font-size:.75rem">START SOMETHING →</a>
-    <div class="hamburger">☰</div>
-  </div>
+  <a href="#packs" class="btn btn-black" style="padding:.75rem 1.1rem; font-size:.66rem">MAKE MY VIDEO →</a>
 </nav>
 
-<!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="big-bg-text">video</div>
+  <div class="big-bg-text" style="font-size:clamp(7rem, 22vw, 30rem)">video</div>
   <div class="hero-top">
-
     <div class="hero-left">
-      <span class="mono">VIDEO / 03 — Business Video</span>
-      <span class="mono" style="opacity:.6; display:block; margin-top:.3rem">Remote production · From $300</span>
-
-      <h1 style="margin-top:1.2rem">
-        You've got the footage.<br>
-        Or the <i class="accent">idea.</i>
-      </h1>
-
+      <span class="mono">VIDEO / 03 — Business Video — Remote production · From $300</span>
+      <h1 style="margin-top:1rem">Got the footage?<br><i class="accent">Send it over.</i></h1>
       <div class="hero-copy">
-        <p>Maybe you've already filmed something.</p>
-        <p>Maybe you've got old footage, product shots, photographs and brand assets scattered across twelve folders.</p>
-        <p>Maybe you have none of that and just keep saying: "We really need a video."</p>
-        <p style="margin-top:1rem"><b>AKCHALLY creates business video remotely — from what you already have, or from an idea we help you shape.</b></p>
+        <p>Phone footage. Product shots. Photographs. Screen recordings. Old video. Brand assets. Twelve folders of random stuff.</p>
+        <p>Or maybe just an idea.</p>
+        <p><b>AKCHALLY turns it into something worth watching.</b></p>
+        <p class="mono" style="margin-top:.8rem; opacity:.6">Concept · Edit · Sound · Motion · Finish</p>
       </div>
-
       <div class="hero-actions">
-        <a href="#pricing" class="btn btn-black">Video from $300 — Make My Video →</a>
-      </div>
-
-      <div style="margin-top:2rem; border:1.5px solid var(--fg); padding:.8rem 1rem; background:var(--white); display:inline-block">
-        <span class="mono" style="font-size:.62rem">Concept · Structure · Edit · Sound · Motion · Finish<br>All produced remotely. No film crew at 6am.</span>
+        <a href="#packs" class="btn btn-black">Video from $300 — Make My Video →</a>
+        <a href="#ways" class="btn btn-ghost">Two ways in ↓</a>
       </div>
     </div>
-
     <div class="hero-right">
       <div class="hero-note">
-        <span class="mono">Remote Video Production</span>
-        <p style="margin-top:.6rem; font-size:.8rem; line-height:1.6">
-          Not every business video needs a production crew.<br><br>
-          Sometimes the ingredients already exist.<br><br>
-          Footage.<br>
-          Photographs.<br>
-          Product shots.<br>
-          Screen recordings.<br>
-          Brand assets.<br>
-          Words.<br>
-          An idea.<br><br>
-          We bring the pieces together into something intentional.
-        </p>
-        <p style="margin-top:1rem; font-weight:700; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase">
-          Concept · Structure · Edit · Sound · Motion · Finish
-        </p>
+        <span class="mono">Side Note — The weird shit</span>
+        <p style="margin-top:.6rem; font-size:.78rem; line-height:1.6">Don't sanitise the strange stuff into "corporate video production." If you've got weird, experimental, motion-obsessed ideas — that's the bit we actually want to make.</p>
+      </div>
+      <div class="strange-note">
+        REMOTE MEANS REMOTE.<br>No film crew at 6am. No pretending otherwise. We handle creative + production remotely. You send what you've got or capture locally with direction.
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ================= START WHERE YOU ARE ================= -->
+<div class="marquee">
+  <div class="marquee-inner">
+    <span>Phone footage · Product shots · Screen recordings · 12 folders of random stuff <i>·</i> Concept · Edit · Sound · Motion <i>·</i> No crew at 6am <i>·</i></span>
+    <span>Phone footage · Product shots · Screen recordings · 12 folders of random stuff <i>·</i> Concept · Edit · Sound · Motion <i>·</i> No crew at 6am <i>·</i></span>
+  </div>
+</div>
+
+<div class="sec-03-head" id="ways">
+  <div>
+    <span class="mono">Two ways in</span>
+    <h2>Same endpoint. Different starting point.</h2>
+  </div>
+</div>
+
+<div class="lanes" style="display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg); background:var(--fg); gap:1.5px; max-width:var(--page-max); margin:0 auto; width:100%">
+  <div style="background:var(--cream); padding:2.2vw 1.9rem">
+    <span class="mono" style="color:var(--orange)">01 / I HAVE THE STUFF</span>
+    <h3 style="font-size:1.5rem; margin:.8rem 0; line-height:.95">Send us what you've got.<br><i style="font-family:'Instrument Serif'; font-weight:400; text-transform:none">We'll work out what belongs.</i></h3>
+    <p style="font-size:.8rem; line-height:1.6">Phone footage, product shots, photographs, screen recordings, old video, brand assets — twelve folders of random stuff. We'll turn it into the finished piece.</p>
+    <a href="#packs" class="btn btn-black" style="margin-top:1.2rem; width:100%; justify-content:space-between">Use What I've Got →</a>
+  </div>
+  <div style="background:var(--fg); color:var(--cream); padding:2.2vw 1.9rem">
+    <span class="mono" style="color:var(--orange)">02 / I HAVE AN IDEA</span>
+    <h3 style="font-size:1.5rem; margin:.8rem 0; line-height:.95; color:var(--cream)">You know you need a video.<br><i style="font-family:'Instrument Serif'; font-weight:400; text-transform:none; color:var(--orange)">You just haven't worked out what it is yet.</i></h3>
+    <p style="font-size:.8rem; line-height:1.6; opacity:.85">We'll help shape the concept and tell you exactly what we need to capture. No mysterious production vocabulary required.</p>
+    <a href="mailto:hello@akchally.com?subject=Video%20Idea%20Help" class="btn btn-black" style="margin-top:1.2rem; width:100%; justify-content:space-between; background:var(--cream); color:var(--fg)">Help Me Work It Out →</a>
+  </div>
+</div>
+
+<div class="sec-03-head" id="packs">
+  <div>
+    <span class="mono">What are we making?</span>
+    <h2>From $300 to proper. Every price is checkout.</h2>
+  </div>
+  <span class="mono" style="opacity:.5">Pick the length that matches the job</span>
+</div>
+
+<div class="vid-packs">
+  <div class="vid-pack">
+    <span class="mono" style="color:var(--orange)">SHORT EDIT</span>
+    <div class="price-big">$300</div>
+    <h3>Concise branded edit</h3>
+    <p>Using supplied footage and assets. Tight, credible, finished.</p>
+    <a href="mailto:hello@akchally.com?subject=Short%20Edit%20-%20%24300" class="btn btn-black">Start Short Edit →</a>
+  </div>
+  <div class="vid-pack">
+    <span class="mono" style="color:var(--orange)">WEBSITE HERO</span>
+    <div class="price-big">$450</div>
+    <h3>Built for your website</h3>
+    <p>Short visual piece for homepage hero. No waffle, just impact.</p>
+    <a href="mailto:hello@akchally.com?subject=Website%20Hero%20-%20%24450" class="btn btn-black">Start Hero →</a>
+  </div>
+  <div class="vid-pack">
+    <span class="mono" style="color:var(--orange)">PROMO</span>
+    <div class="price-big">$500</div>
+    <h3>30–60 sec promotional</h3>
+    <p>Focused promo edit. For social, ads, landing pages.</p>
+    <a href="mailto:hello@akchally.com?subject=Promotional%20Video%20-%20%24500" class="btn btn-black">Start Promo →</a>
+  </div>
+  <div class="vid-pack featured">
+    <span class="mono" style="color:var(--orange)">BUSINESS / PRODUCT</span>
+    <div class="price-big">$750</div>
+    <h3>60–90 sec business video</h3>
+    <p>More substantial. Service, product, explainer that actually explains.</p>
+    <a href="mailto:hello@akchally.com?subject=Business%20Video%20-%20%24750" class="btn btn-black" style="background:var(--cream); color:var(--fg)">Start Business Video →</a>
+  </div>
+  <div class="vid-pack">
+    <span class="mono" style="color:var(--orange)">COMPANY / PROFILE</span>
+    <div class="price-big">$950</div>
+    <h3>Fuller company piece</h3>
+    <p>Company or professional profile. The one you've been meaning to make.</p>
+    <a href="mailto:hello@akchally.com?subject=Company%20Profile%20Video%20-%20%24950" class="btn btn-black">Start Profile →</a>
+  </div>
+</div>
+
+<div class="included">
+  <div class="section-label">
+    <h2>What can go into it?</h2>
+    <span class="mono" style="opacity:.5">Your quote tells you exactly what's included</span>
+  </div>
+  <div class="included-grid">
+    <div class="inc-col"><h4>CONCEPT</h4><ul><li>Concept · Basic scripting</li><li>Pacing · Structure</li><li>Titles · Brand application</li></ul></div>
+    <div class="inc-col"><h4>EDIT</h4><ul><li>Editing · Pacing · Cut</li><li>Sound design · Music</li><li>Final formatting</li></ul></div>
+    <div class="inc-col"><h4>MOTION</h4><ul><li>Motion graphics</li><li>Images · Assets</li><li>Visual weirdness welcome</li></ul></div>
+    <div class="inc-col"><h4>FINISH</h4><ul><li>Colour · Mix · Master</li><li>Versions for web / social</li><li>No mystery vocab</li></ul></div>
+  </div>
+  <div class="inc-note">No mysterious production vocabulary required. No film crew at 6am unless genuinely needed — we'll tell you straight if specialist filming is required. Otherwise remote = remote.</div>
+</div>
+
 <div class="sec-03-head">
   <div>
-    <span class="mono">Start Where You Are</span>
-    <h2>Two ways in.</h2>
+    <span class="mono">Selected video work — Visual centre</span>
+    <h2>Let the weird shit do the selling.</h2>
+  </div>
+  <span class="mono" style="opacity:.5">Big videos. Minimal explanation.</span>
+</div>
+
+<div class="showreel">
+  <div class="show-main">SHOWREEL / HERO VIDEO EMBED — 16:9 — BIG</div>
+  <div class="show-side">
+    <div>BRAND / BUSINESS [Video]</div>
+    <div>PRODUCT / PROMO [Video]</div>
   </div>
 </div>
 
-<section class="sec-02">
-
-  <div class="sec-02-left">
-    <span class="mono" style="color:var(--orange)">01 / I Have The Stuff.</span>
-    <h2 style="font-size:clamp(1.4rem,2.6vw,2.2rem); max-width:16ch">Send us the material.</h2>
-    <ul style="list-style:none; margin-top:1.2rem; font-size:.78rem; line-height:1.8">
-      <li>→ Raw footage</li>
-      <li>→ Phone footage</li>
-      <li>→ Photographs</li>
-      <li>→ Product imagery</li>
-      <li>→ Logo</li>
-      <li>→ Brand assets</li>
-      <li>→ Existing video</li>
-      <li>→ Screen recordings</li>
-    </ul>
-    <p style="margin-top:1rem; font-size:.78rem; opacity:.8">Tell us what you're trying to make. We'll work out what belongs, what doesn't and how to turn it into the finished piece.</p>
-    <div style="margin-top:1.5rem">
-      <a href="#contact" class="btn btn-black">Use What I've Got →</a>
-    </div>
-  </div>
-
-  <div class="sec-02-right" style="background:var(--white)">
-    <span class="mono" style="color:var(--orange)">02 / I Have An Idea.</span>
-    <h2 style="font-size:clamp(1.4rem,2.6vw,2.2rem); max-width:16ch">You know you need a video.</h2>
-    <p style="margin-top:1rem">You just don't know exactly what to film, what to say or how it should come together.</p>
-    <p>We'll help shape the concept and define the footage/assets needed before production begins.</p>
-    <div style="margin-top:1.5rem">
-      <a href="#contact" class="btn btn-black">Help Me Work It Out →</a>
-    </div>
-  </div>
-
-</section>
-
-<!-- ================= WHAT ARE WE MAKING ================= -->
-<div class="sec-03-head" id="pricing">
-  <div>
-    <span class="mono">What Are We Making?</span>
-    <h2>Simple starting points.</h2>
-  </div>
+<div class="work-grid" style="grid-template-columns:repeat(3, minmax(0,1fr)); border-bottom:1.5px solid var(--fg)">
+  <div class="work-card"><div class="work-img" style="aspect-ratio:16/9; display:grid; place-items:center; background:#111; color:var(--orange); font-size:.6rem">BRAND / BUSINESS — VIDEO</div><div class="work-info"><span class="mono">Brand / Business</span><p style="font-size:.78rem; margin:.4rem 0">Credible, not corporate.</p></div></div>
+  <div class="work-card"><div class="work-img" style="aspect-ratio:16/9; display:grid; place-items:center; background:#111; color:var(--orange); font-size:.6rem">PRODUCT / PROMOTIONAL — VIDEO</div><div class="work-info"><span class="mono">Product / Promotional</span><p style="font-size:.78rem; margin:.4rem 0">30–60 sec that actually sells.</p></div></div>
+  <div class="work-card" style="border:1.5px solid var(--orange)"><div class="work-img" style="aspect-ratio:16/9; display:grid; place-items:center; background:var(--orange); color:var(--cream); font-size:.6rem; font-weight:700">MOTION / EXPERIMENTAL — VIDEO — KEEP WEIRD</div><div class="work-info" style="background:var(--cream)"><span class="mono" style="color:var(--orange)">Motion / Experimental</span><p style="font-size:.78rem; margin:.4rem 0"><b>This is the differentiation.</b> Don't sanitise it.</p></div></div>
 </div>
 
-<section class="pricing">
-  <div class="pricing-grid tight-6">
-
-    <div class="price-card">
-      <span class="mono">Short Edit</span>
-      <h4>Short Edit</h4>
-      <div class="from">from $300</div>
-      <p>A concise branded edit using supplied footage and assets.</p>
-      <div style="margin-top:auto; padding-top:1rem">
-        <a href="#contact" class="btn btn-black" style="width:100%; justify-content:center">Start a Short Edit →</a>
-      </div>
-    </div>
-
-    <div class="price-card">
-      <span class="mono">Website Hero</span>
-      <h4>Website Hero</h4>
-      <div class="from">from $450</div>
-      <p>A short visual video designed specifically for website use.</p>
-      <div style="margin-top:auto; padding-top:1rem">
-        <a href="#contact" class="btn btn-black" style="width:100%; justify-content:center">Make a Hero Video →</a>
-      </div>
-    </div>
-
-    <div class="price-card">
-      <span class="mono">Promotional</span>
-      <h4>Promotional</h4>
-      <div class="from">from $500</div>
-      <p>A focused 30–60 second promotional video.</p>
-      <div style="margin-top:auto; padding-top:1rem">
-        <a href="#contact" class="btn btn-black" style="width:100%; justify-content:center">Make a Promo →</a>
-      </div>
-    </div>
-
-    <div class="price-card">
-      <span class="mono">Business</span>
-      <h4>Business</h4>
-      <div class="from">from $750</div>
-      <p>A 60–90 second business, service or product video.</p>
-      <div style="margin-top:auto; padding-top:1rem">
-        <a href="#contact" class="btn btn-black" style="width:100%; justify-content:center">Make a Business Video →</a>
-      </div>
-    </div>
-
-    <div class="price-card">
-      <span class="mono">Company / Profile</span>
-      <h4>Company / Profile</h4>
-      <div class="from">from $950</div>
-      <p>A more substantial company or professional profile video.</p>
-      <div style="margin-top:auto; padding-top:1rem">
-        <a href="#contact" class="btn btn-black" style="width:100%; justify-content:center">Make a Company Video →</a>
-      </div>
-    </div>
-
-    <div class="price-card" style="background:var(--fg); color:var(--bg)">
-      <span class="mono" style="color:var(--orange)">More Versions</span>
-      <h4>Additional Cuts</h4>
-      <div class="from" style="color:var(--bg)">from $200</div>
-      <p style="opacity:.7">Additional agreed cuts, lengths or formats from an existing master edit.</p>
-      <div style="margin-top:auto; padding-top:1rem">
-        <a href="#contact" class="btn" style="width:100%; justify-content:center; background:var(--bg); color:var(--fg)">Ask About Versions →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= WHAT CAN BE INCLUDED ================= -->
-<div class="sec-03-head">
-  <div>
-    <span class="mono">What Can Be Included</span>
-    <h2>Depending on the project:</h2>
-    <p class="mono" style="text-transform:none; opacity:.6; margin-top:.4rem">Your quote will specify exactly what's included.</p>
-  </div>
-</div>
-
-<ul class="include-list">
-  <li>Concept development</li>
-  <li>Basic scripting / copy</li>
-  <li>Asset and footage guidance</li>
-  <li>Editing</li>
-  <li>Pacing</li>
-  <li>Titles and text overlays</li>
-  <li>Brand application</li>
-  <li>Sound design</li>
-  <li>Music selection where included</li>
-  <li>Basic motion graphics</li>
-  <li>Image integration</li>
-  <li>Final formatting</li>
-  <li>Additional agreed outputs</li>
-</ul>
-
-<!-- ================= REMOTE MEANS REMOTE ================= -->
-<section class="sec-02" style="background:var(--fg); color:var(--bg); border-color:rgba(255,255,255,.15)">
-
-  <div class="sec-02-left" style="border-color:rgba(255,255,255,.15)">
-    <span class="mono" style="color:var(--orange)">Remote Means Remote</span>
-    <h2 style="color:var(--bg)">No film crew at 6am.</h2>
-  </div>
-
-  <div class="sec-02-right">
-    <p style="color:var(--bg); opacity:.85">AKCHALLY handles the creative and production work remotely.</p>
-    <p style="color:var(--bg); opacity:.85">You provide existing footage or capture what is needed locally.</p>
-    <p style="color:var(--bg); opacity:.85">If the project genuinely requires specialist on-location filming, we'll tell you.</p>
-    <p style="color:var(--bg); font-weight:700; margin-top:1rem">No pretending otherwise.</p>
-  </div>
-
-</section>
-
-<!-- ================= FINAL CTA ================= -->
 <section class="final" id="contact">
   <div>
-    <span class="mono">Video / Akchally</span>
-    <h2>That video you've been meaning to make?<br><i>This is your sign.</i></h2>
+    <span class="mono">Video / akchally</span>
+    <h2>That video you've been meaning to make?<br><i style="color:var(--orange); font-family:'Instrument Serif',serif; text-transform:none">This is your sign.</i></h2>
   </div>
-
-  <div class="final-right">
-    <p>Video from $300.</p>
-    <div style="display:flex; gap:0.85rem; flex-wrap:wrap; margin-top:1.2rem">
-      <a href="#contact" class="btn btn-black" style="font-size:0.85rem; padding:1.1rem 1.87rem">I Have The Footage →</a>
-      <a href="#contact" class="btn" style="font-size:0.85rem; padding:1.1rem 1.87rem">I Have The Idea →</a>
-    </div>
+  <div style="display:flex; flex-direction:column; gap:1rem; justify-content:center">
+    <p style="font-size:.9rem; line-height:1.6">Remote production. Concept, edit, sound, motion, finish. From $300. Phone footage welcome. Weird ideas welcome.</p>
+    <a href="mailto:hello@akchally.com?subject=I%20Have%20The%20Footage%20-%20Video%20from%20%24300" class="btn btn-black" style="justify-content:space-between">I Have The Footage →</a>
+    <a href="mailto:hello@akchally.com?subject=I%20Have%20An%20Idea%20-%20Video" class="btn btn-ghost" style="justify-content:space-between">I Have The Idea →</a>
+    <span class="mono" style="opacity:.5; margin-top:.5rem">SEND STUFF → WE WORK IT OUT → FINISHED VIDEO</span>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer>
-  <div>
-    <div class="foot-logo">akchally<span>.</span></div>
-    <p style="margin-top:0.85rem; font-weight:500">Make your business look like it actually should.</p>
-    <p class="mono">Web · Document · Video</p>
-    <p style="margin-top:1.7rem; font-size:.68rem; opacity:.6">Remote studio · Working internationally<br>All pricing in USD</p>
-  </div>
-  <div>
-    <span class="mono">Navigate</span>
-    <a href="index-tight.html">Home</a>
-    <a href="web-tight.html">Web</a>
-    <a href="document-tight.html">Document</a>
-    <a href="video-tight.html">Video</a>
-    <a href="data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPgo8dGl0bGU+VEhFIExPT0stT1ZFUiDigJQgQUtDSEFMTFkuPC90aXRsZT4KPGxpbmsgaHJlZj0iaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1JbnN0cnVtZW50K1NlcmlmOml0YWxAMDsxJmZhbWlseT1TcGFjZStHcm90ZXNrOndnaHRAMzAwOzQwMDs1MDA7NzAwJmZhbWlseT1TeW5lOndnaHRANzAwOzgwMCZkaXNwbGF5PXN3YXAiIHJlbD0ic3R5bGVzaGVldCI+CjxzdHlsZT4KOnJvb3R7LS1iZzojRjJFREU2Oy0tZmc6IzBGMEYwRjstLW9yYW5nZTojRkYzRDEyOy0tb3hibG9vZDojMkEwQzA3Oy0tYnJvd246IzVBMkUxQTstLWNyZWFtOiNFREUzRDM7LS1wYXBlcjojRkZGOEVDOy0td2hpdGU6I0ZGRkJGNX0KKnttYXJnaW46MDtwYWRkaW5nOjA7Ym94LXNpemluZzpib3JkZXItYm94fSBodG1se3Njcm9sbC1iZWhhdmlvcjpzbW9vdGh9CmJvZHl7YmFja2dyb3VuZDp2YXIoLS1iZyk7IGNvbG9yOnZhcigtLWZnKTsgZm9udC1mYW1pbHk6J1NwYWNlIEdyb3Rlc2snLHNhbnMtc2VyaWY7IGxpbmUtaGVpZ2h0OjEuNDU7IG92ZXJmbG93LXg6aGlkZGVufQpoMSxoMixoM3tmb250LWZhbWlseTonU3luZScsc2Fucy1zZXJpZjsgdGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlOyBsaW5lLWhlaWdodDouOTsgbGV0dGVyLXNwYWNpbmc6LS4wM2VtfQoubW9ub3tmb250LXNpemU6LjY4cmVtOyBsZXR0ZXItc3BhY2luZzouMTZlbTsgdGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlOyBmb250LXdlaWdodDo3MDB9CmF7Y29sb3I6aW5oZXJpdDsgdGV4dC1kZWNvcmF0aW9uOm5vbmV9Ci5idG57ZGlzcGxheTppbmxpbmUtZmxleDsgYWxpZ24taXRlbXM6Y2VudGVyOyBnYXA6LjdyZW07IGJvcmRlcjoxLjVweCBzb2xpZCB2YXIoLS1mZyk7IHBhZGRpbmc6MXJlbSAxLjhyZW07IGZvbnQtd2VpZ2h0OjcwMDsgZm9udC1zaXplOi44cmVtOyBsZXR0ZXItc3BhY2luZzouMWVtOyB0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7IHRyYW5zaXRpb246LjI1c30KLmJ0bi1ibGFja3tiYWNrZ3JvdW5kOnZhcigtLWZnKTsgY29sb3I6dmFyKC0tYmcpfSAuYnRuLWJsYWNrOmhvdmVye2JhY2tncm91bmQ6dmFyKC0tb3JhbmdlKTsgYm9yZGVyLWNvbG9yOnZhcigtLW9yYW5nZSk7IGNvbG9yOndoaXRlOyB0cmFuc2Zvcm06dHJhbnNsYXRlWSgtMnB4KX0KLmJ0bi1vcmFuZ2V7YmFja2dyb3VuZDp2YXIoLS1vcmFuZ2UpOyBib3JkZXItY29sb3I6dmFyKC0tb3JhbmdlKTsgY29sb3I6d2hpdGV9IC5idG4tb3JhbmdlOmhvdmVye2JhY2tncm91bmQ6dmFyKC0tZmcpOyBib3JkZXItY29sb3I6dmFyKC0tZmcpfQpuYXZ7cG9zaXRpb246c3RpY2t5OyB0b3A6MDsgei1pbmRleDo1MDsgZGlzcGxheTpmbGV4OyBqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtYmV0d2VlbjsgYWxpZ24taXRlbXM6Y2VudGVyOyBwYWRkaW5nOjFyZW0gMi41dnc7IGJhY2tncm91bmQ6cmdiYSgyNDIsMjM3LDIzMCwuOTIpOyBiYWNrZHJvcC1maWx0ZXI6Ymx1cigxMnB4KTsgYm9yZGVyLWJvdHRvbToxLjVweCBzb2xpZCB2YXIoLS1mZyl9Ci5sb2dve2ZvbnQtZmFtaWx5OidTeW5lJyxzYW5zLXNlcmlmOyBmb250LXdlaWdodDo4MDA7IGZvbnQtc2l6ZToxLjlyZW07IGxldHRlci1zcGFjaW5nOi0uMDVlbTsgdGV4dC10cmFuc2Zvcm06bG93ZXJjYXNlfSAuZG90e3dpZHRoOi4zOGVtO2hlaWdodDouMzhlbTtiYWNrZ3JvdW5kOnZhcigtLW9yYW5nZSk7Ym9yZGVyLXJhZGl1czo1MCU7ZGlzcGxheTppbmxpbmUtYmxvY2s7bWFyZ2luLWxlZnQ6LjA1ZW19CgovKiBIRVJPIERJQUdOT1NUSUMgKi8KLmhlcm97cGFkZGluZzo1dncgMi41dncgNHZ3OyBkaXNwbGF5OmdyaWQ7IGdyaWQtdGVtcGxhdGUtY29sdW1uczoxLjFmciAuOWZyOyBnYXA6NHZ3OyBib3JkZXItYm90dG9tOjEuNXB4IHNvbGlkIHZhcigtLWZnKTsgYmFja2dyb3VuZDp2YXIoLS1jcmVhbSl9Ci5oZXJvLWxlZnQgaDF7Zm9udC1zaXplOmNsYW1wKDRyZW0sOXZ3LDlyZW0pOyBsaW5lLWhlaWdodDouODI7IGxldHRlci1zcGFjaW5nOi0uMDZlbX0KLmhlcm8tbGVmdCBoMSBzcGFue2Rpc3BsYXk6YmxvY2s7IGZvbnQtZmFtaWx5OidJbnN0cnVtZW50IFNlcmlmJyxzZXJpZjsgZm9udC1zdHlsZTppdGFsaWM7IHRleHQtdHJhbnNmb3JtOm5vbmU7IGNvbG9yOnZhcigtLW9yYW5nZSk7IGZvbnQtc2l6ZTouOWVtOyBtYXJnaW4tdG9wOi41cmVtfQouaGVyby1yaWdodHtwYWRkaW5nLXRvcDoxcmVtfQouaGVyby1yaWdodCBwe2ZvbnQtc2l6ZToxLjA1cmVtOyBsaW5lLWhlaWdodDoxLjY7IG1hcmdpbi1ib3R0b206MXJlbX0KLmhlcm8tcHJpY2V7Zm9udC1mYW1pbHk6J0luc3RydW1lbnQgU2VyaWYnLHNlcmlmOyBmb250LXNpemU6N3JlbTsgbGluZS1oZWlnaHQ6Ljk7IGNvbG9yOnZhcigtLW9yYW5nZSk7IG1hcmdpbjoxLjVyZW0gMH0KLmhlcm8tcHJpY2UgYntkaXNwbGF5OmJsb2NrOyBmb250LWZhbWlseTonU3luZScsc2Fucy1zZXJpZjsgZm9udC1zaXplOi45cmVtOyBsZXR0ZXItc3BhY2luZzouMTJlbTsgdGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlOyBjb2xvcjp2YXIoLS1mZyk7IG1hcmdpbi10b3A6LjVyZW07IGZvbnQtc3R5bGU6bm9ybWFsfQoKLyogTE9PS0lORyBGT1IgKi8KLmxvb2tpbmd7cGFkZGluZzo0dncgMi41dnc7IGRpc3BsYXk6Z3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOi45ZnIgMS4xZnI7IGdhcDo0dnc7IGJvcmRlci1ib3R0b206MS41cHggc29saWQgdmFyKC0tZmcpOyBiYWNrZ3JvdW5kOnZhcigtLXBhcGVyKX0KLmxvb2tpbmcgaDJ7Zm9udC1zaXplOmNsYW1wKDJyZW0sNHZ3LDMuOHJlbSl9Ci5sb29raW5nIHVse2NvbHVtbnM6MjsgbGlzdC1zdHlsZTpub25lOyBtYXJnaW4tdG9wOjEuNXJlbX0gLmxvb2tpbmcgbGl7cGFkZGluZzouNXJlbSAwOyBib3JkZXItYm90dG9tOjFweCBzb2xpZCByZ2JhKDAsMCwwLC4wOCk7IGZvbnQtc2l6ZTouOXJlbTsgZGlzcGxheTpmbGV4OyBnYXA6LjZyZW19Ci5sb29raW5nIGxpOjpiZWZvcmV7Y29udGVudDoi4oaSIjsgY29sb3I6dmFyKC0tb3JhbmdlKX0KCi8qIE9VVFBVVCAtIEhVR0UgRURJVE9SSUFMIExBQkVMUyAqLwoub3V0cHV0LWludHJve3BhZGRpbmc6M3Z3IDIuNXZ3OyBiYWNrZ3JvdW5kOnZhcigtLXdoaXRlKTsgYm9yZGVyLWJvdHRvbToxLjVweCBzb2xpZCB2YXIoLS1mZyk7IGRpc3BsYXk6ZmxleDsganVzdGlmeS1jb250ZW50OnNwYWNlLWJldHdlZW47IGFsaWduLWl0ZW1zOmVuZH0KLm91dHB1dC1pbnRybyBoMntmb250LXNpemU6Y2xhbXAoMi41cmVtLDV2dyw1cmVtKX0KLm91dHB1dC1ibG9ja3tib3JkZXItYm90dG9tOjEuNXB4IHNvbGlkIHZhcigtLWZnKTsgcGFkZGluZzo1dncgMi41dnc7IGRpc3BsYXk6Z3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOi40NWZyIC41NWZyOyBnYXA6NHZ3OyBtaW4taGVpZ2h0OjM2dmg7IGFsaWduLWl0ZW1zOmNlbnRlcn0KLm91dHB1dC1ibG9jayBoM3tmb250LXNpemU6Y2xhbXAoNHJlbSwxMHZ3LDExcmVtKTsgbGluZS1oZWlnaHQ6Ljg1OyBsZXR0ZXItc3BhY2luZzotLjA3ZW19Ci5vdXRwdXQtYmxvY2sgLmRlc2MgaDR7Zm9udC1zaXplOjEuNXJlbTsgbWFyZ2luLWJvdHRvbTouNnJlbX0KLm91dHB1dC1ibG9jayAuZGVzYyBwe2ZvbnQtc2l6ZToxcmVtOyBsaW5lLWhlaWdodDoxLjU7IG9wYWNpdHk6Ljg1fQoub3V0cHV0LWJsb2NrLmtlZXB7YmFja2dyb3VuZDp2YXIoLS13aGl0ZSk7IGNvbG9yOnZhcigtLWZnKX0KLm91dHB1dC1ibG9jay5maXh7YmFja2dyb3VuZDp2YXIoLS1vcmFuZ2UpOyBjb2xvcjp3aGl0ZX0KLm91dHB1dC1ibG9jay5pbmNvbnNpc3RlbnR7YmFja2dyb3VuZDp2YXIoLS1mZyk7IGNvbG9yOnZhcigtLWJnKX0KLm91dHB1dC1ibG9jay5taXNzaW5ne2JhY2tncm91bmQ6dmFyKC0tb3hibG9vZCk7IGNvbG9yOnZhcigtLXBhcGVyKX0KLm91dHB1dC1ibG9jay5maXhmaXJzdHtiYWNrZ3JvdW5kOnZhcigtLWJyb3duKTsgY29sb3I6dmFyKC0tcGFwZXIpOyBib3JkZXItYm90dG9tLWNvbG9yOnZhcigtLWZnKX0KCi8qIFdIWSBFWElTVFMgLSBTVFJPTkdFU1QgTElORSAqLwoud2h5e2JhY2tncm91bmQ6dmFyKC0tZmcpOyBjb2xvcjp2YXIoLS1iZyk7IHBhZGRpbmc6NnZ3IDIuNXZ3OyBkaXNwbGF5OmdyaWQ7IGdyaWQtdGVtcGxhdGUtY29sdW1uczoxZnIgMWZyOyBnYXA6NHZ3OyBib3JkZXItYm90dG9tOjEuNXB4IHNvbGlkIHZhcigtLWZnKX0KLndoeSBoMntmb250LXNpemU6Y2xhbXAoMi41cmVtLDUuNXZ3LDUuNXJlbSk7IGxpbmUtaGVpZ2h0Oi45OyBjb2xvcjp2YXIoLS1iZyl9Ci53aHkgaDIgaXtmb250LWZhbWlseTonSW5zdHJ1bWVudCBTZXJpZicsc2VyaWY7IGNvbG9yOnZhcigtLW9yYW5nZSk7IHRleHQtdHJhbnNmb3JtOm5vbmU7IGRpc3BsYXk6YmxvY2s7IGZvbnQtc2l6ZTouOTVlbTsgbWFyZ2luLXRvcDouNXJlbX0KLndoeSBwe2xpbmUtaGVpZ2h0OjEuNjsgbWFyZ2luLWJvdHRvbToxcmVtOyBvcGFjaXR5Oi44NX0KCi8qIFdIQVQgSVQgSVMgTk9UICsgV0hPIElUUyBGT1IgKi8KLnNwbGl0e2Rpc3BsYXk6Z3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOjFmciAxZnI7IGJvcmRlci1ib3R0b206MS41cHggc29saWQgdmFyKC0tZmcpfQouc3BsaXQtbGVmdHtwYWRkaW5nOjR2dyAyLjV2dzsgYmFja2dyb3VuZDp2YXIoLS1wYXBlcik7IGJvcmRlci1yaWdodDoxLjVweCBzb2xpZCB2YXIoLS1mZyl9Ci5zcGxpdC1yaWdodHtwYWRkaW5nOjR2dyAyLjV2dzsgYmFja2dyb3VuZDp2YXIoLS1jcmVhbSl9Ci5zcGxpdCBoM3tmb250LXNpemU6Y2xhbXAoMnJlbSwzdncsMi44cmVtKTsgbWFyZ2luLWJvdHRvbToxcmVtfQouc3BsaXQgdWx7bGlzdC1zdHlsZTpub25lOyBtYXJnaW4tdG9wOjFyZW19IC5zcGxpdCBsaXtwYWRkaW5nOi41cmVtIDA7IGJvcmRlci1ib3R0b206MXB4IHNvbGlkIHJnYmEoMCwwLDAsLjA4KTsgZm9udC1zaXplOi45cmVtOyBkaXNwbGF5OmZsZXg7IGdhcDouNnJlbX0KLnNwbGl0IGxpOjpiZWZvcmV7Y29udGVudDoi4pyVIjsgY29sb3I6dmFyKC0tb3JhbmdlKTsgZm9udC13ZWlnaHQ6NzAwfQouZ29vZC1maXQgbGk6OmJlZm9yZXtjb250ZW50OiLigJwiOyBmb250LWZhbWlseTonSW5zdHJ1bWVudCBTZXJpZicsc2VyaWY7IGZvbnQtc2l6ZToxLjJyZW07IGxpbmUtaGVpZ2h0OjF9Ci5nb29kLWZpdCBsaXtmb250LXN0eWxlOml0YWxpYzsgZm9udC1zaXplOjFyZW19CgovKiBIT1cgSVQgV09SS1MgKi8KLmhvd3tib3JkZXItYm90dG9tOjEuNXB4IHNvbGlkIHZhcigtLWZnKTsgYmFja2dyb3VuZDp2YXIoLS13aGl0ZSl9Ci5ob3ctaGVhZHtwYWRkaW5nOjJ2dyAyLjV2dzsgYm9yZGVyLWJvdHRvbToxLjVweCBzb2xpZCB2YXIoLS1mZyk7IGRpc3BsYXk6ZmxleDsganVzdGlmeS1jb250ZW50OnNwYWNlLWJldHdlZW59Ci5zdGVwc3tkaXNwbGF5OmdyaWQ7IGdyaWQtdGVtcGxhdGUtY29sdW1uczpyZXBlYXQoNCwxZnIpfQouc3RlcHtwYWRkaW5nOjIuNXZ3OyBib3JkZXItcmlnaHQ6MS41cHggc29saWQgdmFyKC0tZmcpfSAuc3RlcDpsYXN0LWNoaWxke2JvcmRlci1yaWdodDpub25lfQouc3RlcC1udW17Zm9udC1mYW1pbHk6J0luc3RydW1lbnQgU2VyaWYnLHNlcmlmOyBmb250LXNpemU6My41cmVtOyBjb2xvcjp2YXIoLS1vcmFuZ2UpOyBsaW5lLWhlaWdodDoxfQouc3RlcCB1bHtsaXN0LXN0eWxlOm5vbmU7IG1hcmdpbi10b3A6LjhyZW19IC5zdGVwIGxpe2ZvbnQtc2l6ZTouOHJlbTsgcGFkZGluZzouMjVyZW0gMH0KCi8qIFdIQVQgSEFQUEVOUyBORVhUICovCi5uZXh0e2Rpc3BsYXk6Z3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOjFmciAxZnI7IGJvcmRlci1ib3R0b206MS41cHggc29saWQgdmFyKC0tZmcpfQoubmV4dC1sZWZ0e3BhZGRpbmc6NHZ3IDIuNXZ3OyBiYWNrZ3JvdW5kOnZhcigtLWNyZWFtKTsgYm9yZGVyLXJpZ2h0OjEuNXB4IHNvbGlkIHZhcigtLWZnKX0KLm5leHQtcmlnaHR7cGFkZGluZzo0dncgMi41dnc7IGJhY2tncm91bmQ6dmFyKC0tZmcpOyBjb2xvcjp2YXIoLS1iZyl9Ci5uZXh0LXJpZ2h0IHVse2xpc3Qtc3R5bGU6bm9uZTsgbWFyZ2luLXRvcDoxcmVtfSAubmV4dC1yaWdodCBsaXtwYWRkaW5nOi40cmVtIDA7IGZvbnQtc2l6ZTouOXJlbTsgb3BhY2l0eTouOH0KCi8qIERPLU9WRVIgKi8KLmRvb3ZlcntiYWNrZ3JvdW5kOnZhcigtLW9yYW5nZSk7IGNvbG9yOndoaXRlOyBwYWRkaW5nOjV2dyAyLjV2dzsgZGlzcGxheTpncmlkOyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6LjlmciAxLjFmcjsgZ2FwOjR2dzsgYm9yZGVyLWJvdHRvbToxLjVweCBzb2xpZCB2YXIoLS1mZyl9Ci5kb292ZXIgaDJ7Zm9udC1zaXplOmNsYW1wKDIuNXJlbSw1dncsNC41cmVtKTsgY29sb3I6d2hpdGV9Ci5kb292ZXItcHJpY2V7Zm9udC1mYW1pbHk6J0luc3RydW1lbnQgU2VyaWYnLHNlcmlmOyBmb250LXNpemU6NnJlbTsgbGluZS1oZWlnaHQ6Ljk7IG1hcmdpbjoxLjVyZW0gMH0KLmRvb3ZlciB1bHtsaXN0LXN0eWxlOm5vbmU7IGNvbHVtbnM6MjsgbWFyZ2luLXRvcDoxcmVtfSAuZG9vdmVyIGxpe3BhZGRpbmc6LjRyZW0gMDsgZm9udC1zaXplOi44NXJlbX0KCi8qIEVYQU1QTEVTICovCi5leGFtcGxlc3twYWRkaW5nOjR2dyAyLjV2dzsgYmFja2dyb3VuZDp2YXIoLS1wYXBlcik7IGJvcmRlci1ib3R0b206MS41cHggc29saWQgdmFyKC0tZmcpfQouZXhhbXBsZXMtaGVhZHtkaXNwbGF5OmZsZXg7IGp1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuOyBhbGlnbi1pdGVtczplbmQ7IG1hcmdpbi1ib3R0b206M3Z3fQouZXgtZ3JpZHtkaXNwbGF5OmdyaWQ7IGdyaWQtdGVtcGxhdGUtY29sdW1uczpyZXBlYXQoMywxZnIpOyBnYXA6MS41cHg7IGJhY2tncm91bmQ6dmFyKC0tZmcpOyBib3JkZXI6MS41cHggc29saWQgdmFyKC0tZmcpfQouZXgtY2FyZHtiYWNrZ3JvdW5kOnZhcigtLXdoaXRlKTsgcGFkZGluZzoydnd9Ci5leC1jYXJkIGg0e2ZvbnQtc2l6ZTouOXJlbTsgbGV0dGVyLXNwYWNpbmc6LjFlbTsgbWFyZ2luLWJvdHRvbToxcmVtOyBjb2xvcjp2YXIoLS1vcmFuZ2UpfQouZXgtY2FyZCAubGluZXtwYWRkaW5nOi42cmVtIDA7IGJvcmRlci1ib3R0b206MXB4IHNvbGlkIHJnYmEoMCwwLDAsLjA4KTsgZm9udC1zaXplOi44NXJlbTsgZGlzcGxheTpmbGV4OyBqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtYmV0d2Vlbn0KLmV4LWNhcmQgLmxpbmUgYntmb250LWZhbWlseTonU3luZScsc2Fucy1zZXJpZjsgdGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlOyBmb250LXNpemU6Ljc1cmVtfQouZXgtY2FyZCAucmVje21hcmdpbi10b3A6MS41cmVtOyBiYWNrZ3JvdW5kOnZhcigtLWNyZWFtKTsgYm9yZGVyOjEuNXB4IHNvbGlkIHZhcigtLWZnKTsgcGFkZGluZzoxcmVtOyBmb250LXNpemU6Ljg1cmVtOyBsaW5lLWhlaWdodDoxLjV9CgovKiBXSFkgJDI1MCAqLwoud2h5cHJpY2V7YmFja2dyb3VuZDp2YXIoLS1mZyk7IGNvbG9yOnZhcigtLWJnKTsgcGFkZGluZzo1dncgMi41dnc7IGRpc3BsYXk6Z3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOjFmciAxZnI7IGdhcDo0dnc7IGJvcmRlci1ib3R0b206MS41cHggc29saWQgdmFyKC0tZmcpfQoud2h5cHJpY2UgaDJ7Zm9udC1zaXplOmNsYW1wKDIuNXJlbSw1dncsNC41cmVtKTsgY29sb3I6dmFyKC0tYmcpfQoKLyogRkFRICovCi5mYXF7YmFja2dyb3VuZDp2YXIoLS1jcmVhbSk7IHBhZGRpbmc6NHZ3IDIuNXZ3OyBib3JkZXItYm90dG9tOjEuNXB4IHNvbGlkIHZhcigtLWZnKX0KLmZhcS1ncmlke2Rpc3BsYXk6Z3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOjFmciAxZnI7IGdhcDoycmVtIDR2dzsgbWFyZ2luLXRvcDoycmVtfQouZmFxLWl0ZW17cGFkZGluZy1ib3R0b206MS41cmVtOyBib3JkZXItYm90dG9tOjFweCBzb2xpZCByZ2JhKDAsMCwwLC4xMil9IC5mYXEtaXRlbSBie2Rpc3BsYXk6YmxvY2s7IGZvbnQtZmFtaWx5OidTeW5lJyxzYW5zLXNlcmlmOyB0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7IG1hcmdpbi1ib3R0b206LjRyZW07IGZvbnQtc2l6ZTouOTVyZW19IC5mYXEtaXRlbSBwe2ZvbnQtc2l6ZTouOXJlbTsgb3BhY2l0eTouODsgbGluZS1oZWlnaHQ6MS41fQoKLyogRklOQUwgKi8KLmZpbmFse2JhY2tncm91bmQ6dmFyKC0tcGFwZXIpOyBwYWRkaW5nOjZ2dyAyLjV2dzsgZGlzcGxheTpncmlkOyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6MWZyIDFmcjsgZ2FwOjR2dzsgYm9yZGVyLWJvdHRvbToxLjVweCBzb2xpZCB2YXIoLS1mZyl9Ci5maW5hbCBoMntmb250LXNpemU6Y2xhbXAoM3JlbSw2dncsNS41cmVtKX0gLmZpbmFsIGgyIGl7Y29sb3I6dmFyKC0tb3JhbmdlKTsgZm9udC1mYW1pbHk6J0luc3RydW1lbnQgU2VyaWYnLHNlcmlmOyB0ZXh0LXRyYW5zZm9ybTpub25lOyBkaXNwbGF5OmJsb2NrfQpmb290ZXJ7cGFkZGluZzoydncgMi41dnc7IGRpc3BsYXk6ZmxleDsganVzdGlmeS1jb250ZW50OnNwYWNlLWJldHdlZW47IGZvbnQtc2l6ZTouN3JlbTsgdGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlOyBsZXR0ZXItc3BhY2luZzouMWVtOyBiYWNrZ3JvdW5kOnZhcigtLXdoaXRlKX0KCkBtZWRpYShtYXgtd2lkdGg6OTgwcHgpewogIC5oZXJvLCAubG9va2luZywgLm91dHB1dC1ibG9jaywgLndoeSwgLnNwbGl0LCAuc3RlcHMsIC5uZXh0LCAuZG9vdmVyLCAuZXgtZ3JpZCwgLndoeXByaWNlLCAuZmFxLWdyaWQsIC5maW5hbHtncmlkLXRlbXBsYXRlLWNvbHVtbnM6MWZyfQogIC5zdGVwLCAuc3BsaXQtbGVmdCwgLm5leHQtbGVmdHtib3JkZXItcmlnaHQ6bm9uZTsgYm9yZGVyLWJvdHRvbToxLjVweCBzb2xpZCB2YXIoLS1mZyl9CiAgLm91dHB1dC1ibG9jayBoM3tmb250LXNpemU6MTh2d30KfQo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5Pgo8bmF2PgogIDxhIGhyZWY9ImluZGV4Lmh0bWwiIGNsYXNzPSJsb2dvIj5ha2NoYWxseTxzcGFuIGNsYXNzPSJkb3QiPjwvc3Bhbj48L2E+CiAgPGRpdiBzdHlsZT0iZGlzcGxheTpmbGV4OyBnYXA6MS4ycmVtIj48YSBocmVmPSJpbmRleC5odG1sIiBjbGFzcz0ibW9ubyI+SG9tZTwvYT48YSBocmVmPSJ3ZWIuaHRtbCIgY2xhc3M9Im1vbm8iPldlYiAvIDAxPC9hPjxhIGhyZWY9ImRvY3VtZW50Lmh0bWwiIGNsYXNzPSJtb25vIj5Eb2MgLyAwMjwvYT48YSBocmVmPSJ2aWRlby5odG1sIiBjbGFzcz0ibW9ubyI+VmlkZW8gLyAwMzwvYT48c3BhbiBjbGFzcz0ibW9ubyIgc3R5bGU9ImJvcmRlci1ib3R0b206MS41cHggc29saWQgdmFyKC0tZmcpIj5Mb29rLU92ZXI8L3NwYW4+PC9kaXY+CiAgPGEgaHJlZj0iI2dldCIgY2xhc3M9ImJ0biBidG4tYmxhY2siPkdldCBhIExvb2stT3ZlciDihpI8L2E+CjwvbmF2PgoKPHNlY3Rpb24gY2xhc3M9Imhlcm8iPgogIDxkaXYgY2xhc3M9Imhlcm8tbGVmdCI+CiAgICA8c3BhbiBjbGFzcz0ibW9ubyI+VGhlIExvb2stT3ZlciDigJQgQnVzaW5lc3MgUHJlc2VuY2UgJiBDb2hlc2lvbiBSZXZpZXc8L3NwYW4+CiAgICA8aDE+U29tZXRoaW5nIGZlZWxzIDxzcGFuPm9mZi48L3NwYW4+PC9oMT4KICAgIDxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OidTeW5lJyxzYW5zLXNlcmlmOyBmb250LXdlaWdodDo4MDA7IGZvbnQtc2l6ZTpjbGFtcCgxLjJyZW0sMnZ3LDEuNnJlbSk7IG1hcmdpbi10b3A6MS41cmVtOyBtYXgtd2lkdGg6MjRjaDsgbGluZS1oZWlnaHQ6MS4yIj5NYXliZSB0aGUgd2Vic2l0ZSBpcyBkYXRlZC4gTWF5YmUgdGhlIGNvbXBhbnkgcHJvZmlsZSBsb29rcyBkaXNjb25uZWN0ZWQgZnJvbSBldmVyeXRoaW5nIGVsc2UuIE1heWJlIHRoZSBsb2dvIGlzIGZpbmUsIHRoZSBjb2xvdXJzIGFyZSBmaW5lLCB0aGUgc29jaWFsIHBhZ2VzIGFyZSBmaW5lIOKAlCBidXQgc29tZWhvdyBub25lIG9mIGl0IGZlZWxzIGxpa2UgdGhlIHNhbWUgYnVzaW5lc3MuPC9kaXY+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iaGVyby1yaWdodCI+CiAgICA8cD5Zb3Uga25vdyBzb21ldGhpbmcgaXNuJ3QgcmlnaHQuIFlvdSBqdXN0IGRvbid0IGtub3cgd2hhdC48L3A+CiAgICA8cD48c3Ryb25nPlRoYXQncyB3aGF0IHRoZSBMb29rLU92ZXIgaXMgZm9yLjwvc3Ryb25nPjwvcD4KICAgIDxkaXYgY2xhc3M9Imhlcm8tcHJpY2UiPiQyNTA8Yj5BIGZvY3VzZWQgQnVzaW5lc3MgUHJlc2VuY2UgJiBDb2hlc2lvbiBSZXZpZXcgb2YgaG93IHlvdXIgYnVzaW5lc3MgY3VycmVudGx5IHByZXNlbnRzIGl0c2VsZiBleHRlcm5hbGx5LjwvYj48L2Rpdj4KICAgIDxhIGhyZWY9IiNnZXQiIGNsYXNzPSJidG4gYnRuLWJsYWNrIiBzdHlsZT0iZm9udC1zaXplOjFyZW07IHBhZGRpbmc6MS4ycmVtIDIuMnJlbSI+R2V0IGEgTG9vay1PdmVyIOKGkjwvYT4KICA8L2Rpdj4KPC9zZWN0aW9uPgoKPHNlY3Rpb24gY2xhc3M9Imxvb2tpbmciPgogIDxkaXY+PHNwYW4gY2xhc3M9Im1vbm8iPlNlY3Rpb24gMDIg4oCUIFdoYXQgd2UncmUgbG9va2luZyBmb3I8L3NwYW4+PGgyIHN0eWxlPSJtYXJnaW4tdG9wOjFyZW0iPkRvZXMgdGhlIGJ1c2luZXNzIGxvb2sgbGlrZSBvbmUgYnVzaW5lc3M/PC9oMj48cCBzdHlsZT0ibWFyZ2luLXRvcDoxcmVtIj5XZSByZXZpZXcgdGhlIHBsYWNlcyB3aGVyZSBwZW9wbGUgZW5jb3VudGVyIHlvdSBhbmQgYXNrIG9uZSBzaW1wbGUgcXVlc3Rpb246PC9wPjxwIHN0eWxlPSJmb250LXdlaWdodDo3MDA7IGZvbnQtc2l6ZToxLjJyZW07IG1hcmdpbi10b3A6MXJlbSI+RG9lcyB0aGlzIGFsbCBiZWxvbmcgdG9nZXRoZXI/PC9wPjwvZGl2PgogIDxkaXY+CiAgICA8cD5EZXBlbmRpbmcgb24gd2hhdCBleGlzdHMsIHdlIGxvb2sgYXQ6PC9wPgogICAgPHVsPjxsaT5XZWJzaXRlPC9saT48bGk+TG9nbyBhbmQgdmlzdWFsIGlkZW50aXR5PC9saT48bGk+VHlwb2dyYXBoeSBhbmQgY29sb3VyPC9saT48bGk+TWVzc2FnaW5nPC9saT48bGk+R29vZ2xlL3NlYXJjaCBwcmVzZW50YXRpb248L2xpPjxsaT5Db21wYW55IHByb2ZpbGU8L2xpPjxsaT5Qcm9wb3NhbHM8L2xpPjxsaT5QcmVzZW50YXRpb25zPC9saT48bGk+QnJvY2h1cmVzPC9saT48bGk+SW1hZ2VyeTwvbGk+PGxpPlZpZGVvPC9saT48bGk+UmVsZXZhbnQgc29jaWFsIHByZXNlbnRhdGlvbjwvbGk+PGxpPk92ZXJhbGwgY29uc2lzdGVuY3k8L2xpPjwvdWw+CiAgICA8cCBzdHlsZT0ibWFyZ2luLXRvcDoxLjVyZW0iPk5vdCB0byBmaW5kIGZhdWx0cyBmb3IgdGhlIHNha2Ugb2YgZmluZGluZyBmYXVsdHMuIFRvIHVuZGVyc3RhbmQgd2hhdCBpcyBoZWxwaW5nLCB3aGF0IGlzIGh1cnRpbmcgYW5kIHdoYXQgYWN0dWFsbHkgbmVlZHMgYXR0ZW50aW9uLjwvcD4KICA8L2Rpdj4KPC9zZWN0aW9uPgoKPGRpdiBjbGFzcz0ib3V0cHV0LWludHJvIj48aDI+V2hhdCB5b3UgZ2V0PC9oMj48c3BhbiBjbGFzcz0ibW9ubyI+U2VjdGlvbiAwMyDigJQgVGhlIE91dHB1dCDigJQgTm8gNDAtcGFnZSBzdHJhdGVneSBkZWNrPC9zcGFuPjwvZGl2PgoKPHNlY3Rpb24+CiAgPGRpdiBjbGFzcz0ib3V0cHV0LWJsb2NrIGtlZXAiPjxoMz5LRUVQLjwvaDM+PGRpdiBjbGFzcz0iZGVzYyI+PGg0PldoYXQncyBhbHJlYWR5IHdvcmtpbmcuPC9oND48cD5UaGUgdGhpbmdzIHdlIHdvdWxkIGxlYXZlIGFsb25lLiBUaGUgcGFydHMgb2YgeW91ciBwcmVzZW5jZSB0aGF0IGFyZSBkb2luZyB0aGVpciBqb2IuPC9wPjwvZGl2PjwvZGl2PgogIDxkaXYgY2xhc3M9Im91dHB1dC1ibG9jayBmaXgiPjxoMz5GSVguPC9oMz48ZGl2IGNsYXNzPSJkZXNjIj48aDQ+V2hhdCdzIHdlYWtlbmluZyB0aGUgcHJlc2VudGF0aW9uLjwvaDQ+PHA+Tm90IG5lY2Vzc2FyaWx5IGJyb2tlbi4gSnVzdCBub3QgaGVscGluZy4gRGF0ZWQgY29weSwgYmFkIHNwYWNpbmcsIHdlYWsgaGllcmFyY2h5LCBpbmNvbnNpc3RlbnQgaW1hZ2VyeS48L3A+PC9kaXY+PC9kaXY+CiAgPGRpdiBjbGFzcz0ib3V0cHV0LWJsb2NrIGluY29uc2lzdGVudCI+PGgzPklOQ09OU0lTVEVOVC48L2gzPjxkaXYgY2xhc3M9ImRlc2MiPjxoND5XaGVyZSB0aGUgYnVzaW5lc3Mgc3RvcHMgbG9va2luZyBsaWtlIG9uZSBjb2hlcmVudCBidXNpbmVzcy48L2g0PjxwPkRpZmZlcmVudCBmb250cy4gRGlmZmVyZW50IHRvbmUuIERpZmZlcmVudCBjb2xvdXJzLiBEaWZmZXJlbnQgbWVzc2FnaW5nLiBEaWZmZXJlbnQgbGV2ZWxzIG9mIHF1YWxpdHkuPC9wPjwvZGl2PjwvZGl2PgogIDxkaXYgY2xhc3M9Im91dHB1dC1ibG9jayBtaXNzaW5nIj48aDM+TUlTU0lORy48L2gzPjxkaXYgY2xhc3M9ImRlc2MiPjxoND5UaGUgb2J2aW91cyBnYXBzLjwvaDQ+PHA+VGhpbmdzIGN1c3RvbWVycyBvciBzdGFrZWhvbGRlcnMgc2hvdWxkIGJlIGFibGUgdG8gZmluZCBvciB1bmRlcnN0YW5kIGJ1dCBjdXJyZW50bHkgY2FuJ3QuPC9wPjwvZGl2PjwvZGl2PgogIDxkaXYgY2xhc3M9Im91dHB1dC1ibG9jayBmaXhmaXJzdCI+PGgzPkZJWCBGSVJTVC48L2gzPjxkaXYgY2xhc3M9ImRlc2MiPjxoND5UaGUgcHJpb3JpdHkgb3JkZXIuPC9oND48cD5CZWNhdXNlIG5vdCBldmVyeXRoaW5nIG5lZWRzIGZpeGluZyBhdCBvbmNlLiBXZSB0ZWxsIHlvdSB3aGF0IHdlIHdvdWxkIGFkZHJlc3MgZmlyc3QsIHNlY29uZCBhbmQgbGF0ZXIuPC9wPjxwIHN0eWxlPSJtYXJnaW4tdG9wOjFyZW07IGZvbnQtZmFtaWx5OidTeW5lJyxzYW5zLXNlcmlmOyBmb250LXdlaWdodDo4MDAiPlByaW9yaXR5IG1hdHRlcnMgbW9yZSB0aGFuIGRvaW5nIGV2ZXJ5dGhpbmcgYXQgb25jZS48L3A+PC9kaXY+PC9kaXY+Cjwvc2VjdGlvbj4KCjxzZWN0aW9uIGNsYXNzPSJ3aHkiPgogIDxkaXY+PGgyPkJlY2F1c2Ug4oCcd2UgbmVlZCBhIG5ldyB3ZWJzaXRl4oCdIDxpPmlzbid0IGFsd2F5cyB0aGUgYW5zd2VyLjwvaT48L2gyPjwvZGl2PgogIDxkaXY+CiAgICA8cD5Tb21ldGltZXMgdGhlIHdlYnNpdGUgaXMgYWN0dWFsbHkgZmluZS48L3A+PHA+U29tZXRpbWVzIHRoZSByZWFsIGlzc3VlIGlzIHRoZTo8L3A+PHA+PHN0cm9uZz5jb21wYW55IHByb2ZpbGUsPGJyPm1lc3NhZ2luZyw8YnI+R29vZ2xlIHByZXNlbmNlLDxicj5pbWFnZXJ5LDxicj52aXN1YWwgaWRlbnRpdHksPC9zdHJvbmc+PC9wPjxwPm9yIHRoZSBmYWN0IHRoYXQgZXZlcnkgY3VzdG9tZXItZmFjaW5nIGFzc2V0IGhhcyBiZWVuIGNyZWF0ZWQgc2VwYXJhdGVseSBvdmVyIGZpdmUgeWVhcnMuPC9wPjxwPklmIHlvdSByZXBsYWNlIHRoZSB3cm9uZyB0aGluZywgeW91J3ZlIHNwZW50IG1vbmV5IHdpdGhvdXQgZml4aW5nIHRoZSBhY3R1YWwgcHJvYmxlbS48L3A+PHA+PHN0cm9uZz5UaGUgTG9vay1PdmVyIGV4aXN0cyB0byBzZXBhcmF0ZSB0aGUgcmVhbCBpc3N1ZSBmcm9tIHRoZSBvYnZpb3VzIHN5bXB0b20uPC9zdHJvbmc+PC9wPgogIDwvZGl2Pgo8L3NlY3Rpb24+Cgo8c2VjdGlvbiBjbGFzcz0ic3BsaXQiPgogIDxkaXYgY2xhc3M9InNwbGl0LWxlZnQiPjxzcGFuIGNsYXNzPSJtb25vIj5TZWN0aW9uIDA1IOKAlCBXaGF0IGl0IGlzIG5vdDwvc3Bhbj48aDMgc3R5bGU9Im1hcmdpbi10b3A6MXJlbSI+QSB1c2VmdWwgZGlzdGluY3Rpb248L2gzPjxwPjxzdHJvbmc+VGhpcyBpcyBub3QgYnJhbmQgc3RyYXRlZ3kuPC9zdHJvbmc+PC9wPjxwPldlJ3JlIG5vdCBkb2luZzo8L3A+PHVsPjxsaT5DdXN0b21lciByZXNlYXJjaDwvbGk+PGxpPk1hcmtldCBwb3NpdGlvbmluZyBzdHVkaWVzPC9saT48bGk+Q29tcGV0aXRvciBzdHJhdGVneTwvbGk+PGxpPkJyYW5kIGFyY2hpdGVjdHVyZTwvbGk+PGxpPkF1ZGllbmNlIHNlZ21lbnRhdGlvbjwvbGk+PGxpPkZ1bGwgbWFya2V0aW5nIGF1ZGl0czwvbGk+PGxpPk9wZXJhdGlvbmFsIGRpYWdub3NpczwvbGk+PC91bD48cCBzdHlsZT0ibWFyZ2luLXRvcDoxcmVtIj5UaGUgTG9vay1PdmVyIGlzIG11Y2ggbmFycm93ZXIuIEl0IGxvb2tzIGF0IGhvdyB0aGUgYnVzaW5lc3MgY3VycmVudGx5IHByZXNlbnRzIGl0c2VsZiBleHRlcm5hbGx5IGFuZCB3aGV0aGVyIHRoYXQgcHJlc2VudGF0aW9uIGZlZWxzIGNsZWFyLCBjcmVkaWJsZSBhbmQgY29oZXJlbnQuIFRoYXQncyBpdC48L3A+PC9kaXY+CiAgPGRpdiBjbGFzcz0ic3BsaXQtcmlnaHQiPjxzcGFuIGNsYXNzPSJtb25vIj5TZWN0aW9uIDA2IOKAlCBXaG8gaXQncyBmb3I8L3NwYW4+PGgzIHN0eWxlPSJtYXJnaW4tdG9wOjFyZW0iPkEgZ29vZCBmaXQgaWYuLi48L2gzPjxwPllvdSByZWNvZ25pc2UgYW55IG9mIHRoZXNlLjwvcD48dWwgY2xhc3M9Imdvb2QtZml0Ij48bGk+4oCcT3VyIHdlYnNpdGUgaXNuJ3QgdGVycmlibGUsIGJ1dCBpdCBkb2Vzbid0IGZlZWwgcmlnaHQu4oCdPC9saT48bGk+4oCcRXZlcnl0aGluZyBsb29rcyBsaWtlIGl0IHdhcyBtYWRlIGJ5IGRpZmZlcmVudCBwZW9wbGUu4oCdPC9saT48bGk+4oCcT3VyIGNvbXBhbnkgcHJvZmlsZSBpcyBlbWJhcnJhc3Npbmcu4oCdPC9saT48bGk+4oCcV2UgaGF2ZSBhIGxvZ28sIGJ1dCBubyByZWFsIHZpc3VhbCBjb25zaXN0ZW5jeS7igJ08L2xpPjxsaT7igJxJIGRvbid0IGtub3cgd2hldGhlciB3ZSBuZWVkIGEgd2Vic2l0ZSByZWJ1aWxkIG9yIGp1c3QgYSByZWZyZXNoLuKAnTwvbGk+PGxpPuKAnFdlIGhhdmUgZ29vZCBtYXRlcmlhbCwgYnV0IG5vdGhpbmcgZmVlbHMgcG9saXNoZWQu4oCdPC9saT48bGk+4oCcVGhlIGJ1c2luZXNzIGhhcyBncm93biwgYnV0IHRoZSB3YXkgd2UgcHJlc2VudCBpdCBoYXNuJ3Qu4oCdPC9saT48bGk+4oCcU29tZXRoaW5nIGlzIHdyb25nLiBJIGp1c3QgY2FuJ3QgcHV0IG15IGZpbmdlciBvbiBpdC7igJ08L2xpPjwvdWw+PHAgc3R5bGU9Im1hcmdpbi10b3A6MS41cmVtIj48c3Ryb25nPlRoYXQncyB0aGUgTG9vay1PdmVyLjwvc3Ryb25nPjwvcD48L2Rpdj4KPC9zZWN0aW9uPgoKPGRpdiBjbGFzcz0iaG93Ij48ZGl2IGNsYXNzPSJob3ctaGVhZCI+PGgyPkhvdyBpdCB3b3JrczwvaDI+PHNwYW4gY2xhc3M9Im1vbm8iPlNlY3Rpb24gMDcg4oCUIFNpbXBsZSDigJQgU2hvdyB1cyB0aGUgYnVzaW5lc3M8L3NwYW4+PC9kaXY+PGRpdiBjbGFzcz0ic3RlcHMiPjxkaXYgY2xhc3M9InN0ZXAiPjxkaXYgY2xhc3M9InN0ZXAtbnVtIj4wMTwvZGl2PjxoND5Zb3Ugc2VuZCBpdDwvaDQ+PHA+V2UgYXNrIGZvciB0aGUgcmVsZXZhbnQgbGlua3MgYW5kIG1hdGVyaWFsLiBUaGF0IG1heSBpbmNsdWRlOjwvcD48dWw+PGxpPldlYnNpdGU8L2xpPjxsaT5Hb29nbGUgbGlzdGluZzwvbGk+PGxpPkNvbXBhbnkgcHJvZmlsZTwvbGk+PGxpPlByb3Bvc2FsPC9saT48bGk+UHJlc2VudGF0aW9uPC9saT48bGk+U29jaWFsIGxpbmtzPC9saT48bGk+QnJhbmQgYXNzZXRzPC9saT48bGk+VmlkZW88L2xpPjxsaT5PdGhlciBjdXN0b21lci1mYWNpbmcgbWF0ZXJpYWw8L2xpPjwvdWw+PHA+WW91IGRvbid0IG5lZWQgdG8gbWFudWZhY3R1cmUgYW55dGhpbmcgbmV3LjwvcD48L2Rpdj48ZGl2IGNsYXNzPSJzdGVwIj48ZGl2IGNsYXNzPSJzdGVwLW51bSI+MDI8L2Rpdj48aDQ+V2UgcmV2aWV3IGl0PC9oND48cD5XZSBleGFtaW5lIHRoZSBtYXRlcmlhbCBhcyBhIHdob2xlLiBOb3QganVzdCB3aGV0aGVyIGVhY2ggdGhpbmcgbG9va3MgZ29vZCBpbmRpdmlkdWFsbHkuIFdlIGxvb2sgYXQgaG93IHRoZSBwaWVjZXMgcmVsYXRlIHRvIGVhY2ggb3RoZXIuPC9wPjwvZGl2PjxkaXYgY2xhc3M9InN0ZXAiPjxkaXYgY2xhc3M9InN0ZXAtbnVtIj4wMzwvZGl2PjxoND5XZSBwcmlvcml0aXNlPC9oND48cD5XZSBpZGVudGlmeTo8L3A+PHA+PHN0cm9uZz5LRUVQPGJyPkZJWDxicj5JTkNPTlNJU1RFTlQ8YnI+TUlTU0lORzxicj5GSVggRklSU1Q8L3N0cm9uZz48L3A+PC9kaXY+PGRpdiBjbGFzcz0ic3RlcCIgc3R5bGU9ImJhY2tncm91bmQ6dmFyKC0tb3JhbmdlKTsgY29sb3I6d2hpdGUiPjxkaXYgY2xhc3M9InN0ZXAtbnVtIiBzdHlsZT0iY29sb3I6d2hpdGUiPjA0PC9kaXY+PGg0PllvdSBnZXQgdGhlIHJldmlldzwvaDQ+PHA+QSBjb25jaXNlIHZpc3VhbCBkb2N1bWVudCB3aXRoIGNsZWFyIHJlY29tbWVuZGF0aW9ucy4gTm8gdmFndWUgYWdlbmN5IGxhbmd1YWdlLiBObyBnaWFudCB3b3Jrc2hvcC4gTm8gY29tcHVsc29yeSBmb2xsb3ctdXAuPC9wPjwvZGl2PjwvZGl2PjwvZGl2PgoKPHNlY3Rpb24gY2xhc3M9Im5leHQiPjxkaXYgY2xhc3M9Im5leHQtbGVmdCI+PHNwYW4gY2xhc3M9Im1vbm8iPlNlY3Rpb24gMDgg4oCUIFdoYXQgaGFwcGVucyBuZXh0PC9zcGFuPjxoMiBzdHlsZT0iZm9udC1zaXplOmNsYW1wKDJyZW0sMy41dncsM3JlbSk7IG1hcmdpbi10b3A6MXJlbSI+TWF5YmUgbm90aGluZy48L2gyPjxwIHN0eWxlPSJtYXJnaW4tdG9wOjFyZW07IGZvbnQtd2VpZ2h0OjcwMCI+QW5kIHRoYXQncyBjb21wbGV0ZWx5IGZpbmUuPC9wPjxwPlRoZSBMb29rLU92ZXIgaXMgYSBzdGFuZGFsb25lIHBpZWNlIG9mIHdvcmsuIFlvdSBjYW4gdGFrZSB0aGUgcmV2aWV3IGFuZDo8L3A+PHVsIHN0eWxlPSJsaXN0LXN0eWxlOm5vbmU7IG1hcmdpbi10b3A6MXJlbSI+PGxpPuKGkiBGaXggdGhpbmdzIGludGVybmFsbHkuPC9saT48bGk+4oaSIFVzZSBhbm90aGVyIHN1cHBsaWVyLjwvbGk+PGxpPuKGkiBXb3JrIHRocm91Z2ggdGhlIHByaW9yaXRpZXMgb3ZlciB0aW1lLjwvbGk+PGxpPuKGkiBEbyBhYnNvbHV0ZWx5IG5vdGhpbmcgZm9yIHRocmVlIG1vbnRocy48L2xpPjwvdWw+PHAgc3R5bGU9Im1hcmdpbi10b3A6MXJlbSI+SXQncyB5b3Vycy48L3A+PC9kaXY+PGRpdiBjbGFzcz0ibmV4dC1yaWdodCI+PGgzIHN0eWxlPSJjb2xvcjp2YXIoLS1wYXBlcikiPk9SLi4uPGJyPldlIGNhbiBmaXggaXQuPC9oMz48cCBzdHlsZT0ibWFyZ2luLXRvcDoxcmVtIj5JZiB0aGUgcmV2aWV3IGlkZW50aWZpZXMgd29yayB0aGF0IHNpdHMgaW5zaWRlIEFLQ0hBTExZJ3MgbGFuZXM6PC9wPjxwIHN0eWxlPSJmb250LWZhbWlseTonU3luZScsc2Fucy1zZXJpZjsgZm9udC13ZWlnaHQ6ODAwOyBsZXR0ZXItc3BhY2luZzouMWVtOyBtYXJnaW4tdG9wOjFyZW07IGNvbG9yOnZhcigtLW9yYW5nZSkiPldFQiDCtyBET0NVTUVOVCDCtyBWSURFTzwvcD48cD53ZSBjYW4gcXVvdGUgdGhlIHJlbGV2YW50IHByb2plY3QuIElmIG11bHRpcGxlIHRoaW5ncyBuZWVkIGF0dGVudGlvbiwgdGhlIHdvcmsgbWF5IGJlY29tZSBhIERvLU92ZXIuPC9wPjwvZGl2Pjwvc2VjdGlvbj4KCjxzZWN0aW9uIGNsYXNzPSJkb292ZXIiPjxkaXY+PHNwYW4gY2xhc3M9Im1vbm8iIHN0eWxlPSJjb2xvcjp3aGl0ZSI+U2VjdGlvbiAwOSDigJQgRG8tT3ZlciDigJQgV2hlbiBpdCdzIG5vdCBqdXN0IG9uZSB0aGluZzwvc3Bhbj48aDIgc3R5bGU9Im1hcmdpbi10b3A6MXJlbSI+VGhlIERvLU92ZXIuPC9oMj48ZGl2IGNsYXNzPSJkb292ZXItcHJpY2UiPmZyb20gJDMsNTAwPC9kaXY+PHA+QSBEby1PdmVyIGlzIGEgbXVsdGktYXNzZXQgcHJvamVjdCBmb3IgYnVzaW5lc3NlcyB3aG9zZSBleHRlcm5hbCBwcmVzZW5jZSBuZWVkcyBtb3JlIHRoYW4gb25lIGlzb2xhdGVkIGZpeC48L3A+PGJyPjxhIGhyZWY9IiMiIGNsYXNzPSJidG4iIHN0eWxlPSJiYWNrZ3JvdW5kOndoaXRlOyBjb2xvcjp2YXIoLS1vcmFuZ2UpOyBib3JkZXItY29sb3I6d2hpdGUiPlRhbGsgYWJvdXQgYSBEby1PdmVyIOKGkjwvYT48cCBzdHlsZT0ibWFyZ2luLXRvcDoxcmVtOyBmb250LXNpemU6LjhyZW07IG9wYWNpdHk6LjgiPklmIHlvdSBwcm9jZWVkIHdpdGggYSBxdWFsaWZ5aW5nIERvLU92ZXIgd2l0aGluIDMwIGRheXMgb2YgeW91ciBMb29rLU92ZXIsIHRoZSAkMjUwIGZlZSBpcyBjcmVkaXRlZCB0b3dhcmQgdGhlIHByb2plY3QuPC9wPjwvZGl2PjxkaXY+PHA+SXQgbWlnaHQgaW5jbHVkZTo8L3A+PHVsPjxsaT5XZWJzaXRlPC9saT48bGk+TWVzc2FnaW5nPC9saT48bGk+Q29tcGFueSBwcm9maWxlPC9saT48bGk+VmlzdWFsIFRpZHktVXA8L2xpPjxsaT5WaWRlbzwvbGk+PGxpPlNlYXJjaCBmb3VuZGF0aW9uczwvbGk+PGxpPkNvcmUgYnVzaW5lc3MgY29sbGF0ZXJhbDwvbGk+PC91bD48cCBzdHlsZT0ibWFyZ2luLXRvcDoxLjVyZW0iPlRoZXJlIGlzIG5vIGZpeGVkIGJ1bmRsZS4gVGhlIHNjb3BlIGZvbGxvd3MgdGhlIHByb2JsZW0uPC9wPjwvZGl2Pjwvc2VjdGlvbj4KCjxzZWN0aW9uIGNsYXNzPSJleGFtcGxlcyI+PGRpdiBjbGFzcz0iZXhhbXBsZXMtaGVhZCI+PGRpdj48c3BhbiBjbGFzcz0ibW9ubyI+U2VjdGlvbiAxMCDigJQgQSBmZXcgZXhhbXBsZXM8L3NwYW4+PGgyIHN0eWxlPSJmb250LXNpemU6Y2xhbXAoMnJlbSw0dncsMy41cmVtKTsgbWFyZ2luLXRvcDouNXJlbSI+V2hhdCB3ZSBtaWdodCBmaW5kPC9oMj48cD5Ob3QgZXZlcnl0aGluZyBuZWVkcyByZXBsYWNpbmcuPC9wPjwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9ImV4LWdyaWQiPjxkaXYgY2xhc3M9ImV4LWNhcmQiPjxoND5FeGFtcGxlIDAxPC9oND48ZGl2IGNsYXNzPSJsaW5lIj48Yj5XZWJzaXRlPC9iPjxzcGFuPmdvb2Q8L3NwYW4+PC9kaXY+PGRpdiBjbGFzcz0ibGluZSI+PGI+QnJhbmQ8L2I+PHNwYW4+Z29vZDwvc3Bhbj48L2Rpdj48ZGl2IGNsYXNzPSJsaW5lIj48Yj5Eb2N1bWVudHM8L2I+PHNwYW4+cG9vcjwvc3Bhbj48L2Rpdj48ZGl2IGNsYXNzPSJsaW5lIj48Yj5NZXNzYWdpbmc8L2I+PHNwYW4+aW5jb25zaXN0ZW50PC9zcGFuPjwvZGl2PjxkaXYgY2xhc3M9InJlYyI+PGI+UmVjb21tZW5kYXRpb248L2I+PGJyPktlZXAgdGhlIHdlYnNpdGUuIFJlYnVpbGQgdGhlIGNvbXBhbnkgcHJvZmlsZS4gU3RhbmRhcmRpc2UgbWVzc2FnaW5nIGFuZCBkb2N1bWVudCBkZXNpZ24uIE5vIHdlYnNpdGUgcHJvamVjdCByZXF1aXJlZC48L2Rpdj48L2Rpdj48ZGl2IGNsYXNzPSJleC1jYXJkIj48aDQ+RXhhbXBsZSAwMjwvaDQ+PGRpdiBjbGFzcz0ibGluZSI+PGI+V2Vic2l0ZTwvYj48c3Bhbj5kYXRlZDwvc3Bhbj48L2Rpdj48ZGl2IGNsYXNzPSJsaW5lIj48Yj5CcmFuZDwvYj48c3Bhbj51c2FibGU8L3NwYW4+PC9kaXY+PGRpdiBjbGFzcz0ibGluZSI+PGI+RG9jdW1lbnRzPC9iPjxzcGFuPmZpbmU8L3NwYW4+PC9kaXY+PGRpdiBjbGFzcz0ibGluZSI+PGI+R29vZ2xlIHByZXNlbmNlPC9iPjxzcGFuPmluY29uc2lzdGVudDwvc3Bhbj48L2Rpdj48ZGl2IGNsYXNzPSJyZWMiPjxiPlJlY29tbWVuZGF0aW9uPC9iPjxicj5XZWJzaXRlIHJlZnJlc2guIFZpc3VhbCB0aWR5LXVwLiBHb29nbGUvc2VhcmNoIGNvcnJlY3Rpb25zLiBObyBmdWxsIHJlYnJhbmQgcmVxdWlyZWQuPC9kaXY+PC9kaXY+PGRpdiBjbGFzcz0iZXgtY2FyZCI+PGg0PkV4YW1wbGUgMDM8L2g0PjxkaXYgY2xhc3M9ImxpbmUiPjxiPldlYnNpdGU8L2I+PHNwYW4+d2Vhazwvc3Bhbj48L2Rpdj48ZGl2IGNsYXNzPSJsaW5lIj48Yj5Eb2N1bWVudHM8L2I+PHNwYW4+d2Vhazwvc3Bhbj48L2Rpdj48ZGl2IGNsYXNzPSJsaW5lIj48Yj5CcmFuZCBhcHBsaWNhdGlvbjwvYj48c3Bhbj5pbmNvbnNpc3RlbnQ8L3NwYW4+PC9kaXY+PGRpdiBjbGFzcz0ibGluZSI+PGI+VmlkZW88L2I+PHNwYW4+bm9uZXhpc3RlbnQ8L3NwYW4+PC9kaXY+PGRpdiBjbGFzcz0icmVjIj48Yj5SZWNvbW1lbmRhdGlvbjwvYj48YnI+VGhpcyBpcyBwcm9iYWJseSBhIERvLU92ZXIuIFByaW9yaXRpc2U6IE1lc3NhZ2luZywgV2Vic2l0ZSwgQ29tcGFueSBwcm9maWxlLCBWaXN1YWwgY29uc2lzdGVuY3ksIFZpZGVvIGxhdGVyLiBCZWNhdXNlIHByaW9yaXR5IG1hdHRlcnMgbW9yZSB0aGFuIGRvaW5nIGV2ZXJ5dGhpbmcgYXQgb25jZS48L2Rpdj48L2Rpdj48L2Rpdj48L3NlY3Rpb24+Cgo8c2VjdGlvbiBjbGFzcz0id2h5cHJpY2UiPjxkaXY+PHNwYW4gY2xhc3M9Im1vbm8iIHN0eWxlPSJjb2xvcjp2YXIoLS1vcmFuZ2UpIj5TZWN0aW9uIDExIOKAlCBXaHkgJDI1MD88L3NwYW4+PGgyIHN0eWxlPSJtYXJnaW4tdG9wOjFyZW0iPkJlY2F1c2UganVkZ2VtZW50IGhhcyB2YWx1ZS48L2gyPjwvZGl2PjxkaXY+PHA+WW91J3JlIG5vdCBidXlpbmcgYSBjaGVja2xpc3QuPC9wPjxwPllvdSdyZSBwYXlpbmcgZm9yIHNvbWVib2R5IHRvIGxvb2sgYWNyb3NzIHRoZSB3aG9sZSBleHRlcm5hbCBidXNpbmVzcyBwcmVzZW5jZSBhbmQgdGVsbCB5b3U6PC9wPjxwPjxzdHJvbmc+d2hhdCBtYXR0ZXJzLDxicj53aGF0IGRvZXNuJ3QsPGJyPndoYXQncyBhY3R1YWxseSB3cm9uZyw8YnI+YW5kIHdoYXQgd2UnZCBkbyBmaXJzdC48L3N0cm9uZz48L3A+PHAgc3R5bGU9Im1hcmdpbi10b3A6MXJlbSI+VGhhdCBjYW4gc2F2ZSBjb25zaWRlcmFibHkgbW9yZSB0aGFuICQyNTAgaWYgaXQgc3RvcHMgeW91IHJlYnVpbGRpbmcgdGhlIHdyb25nIHRoaW5nLjwvcD48YnI+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6J1N5bmUnLHNhbnMtc2VyaWY7IGZvbnQtd2VpZ2h0OjgwMDsgZm9udC1zaXplOjEuNXJlbSI+VGhlIExvb2stT3ZlciDigJQgJDI1MDwvZGl2Pjxicj48YSBocmVmPSIjIiBjbGFzcz0iYnRuIGJ0bi1vcmFuZ2UiPkdldCBzdGFydGVkIOKGkjwvYT48L2Rpdj48L3NlY3Rpb24+Cgo8c2VjdGlvbiBjbGFzcz0iZmFxIj48c3BhbiBjbGFzcz0ibW9ubyI+U2VjdGlvbiAxMiDigJQgRkFRPC9zcGFuPjxoMiBzdHlsZT0iZm9udC1zaXplOmNsYW1wKDJyZW0sNHZ3LDNyZW0pOyBtYXJnaW4tdG9wOjFyZW0iPkJlZm9yZSB3ZSBsb29rLjwvaDI+PGRpdiBjbGFzcz0iZmFxLWdyaWQiPjxkaXYgY2xhc3M9ImZhcS1pdGVtIj48Yj5Ib3cgbXVjaCBtYXRlcmlhbCBjYW4gSSBzZW5kPzwvYj48cD5Fbm91Z2ggZm9yIHVzIHRvIHVuZGVyc3RhbmQgdGhlIGNvcmUgZXh0ZXJuYWwgcHJlc2VuY2UuIElmIHRoZSBidXNpbmVzcyBoYXMgYW4gdW51c3VhbGx5IGxhcmdlIG51bWJlciBvZiBicmFuZHMsIHdlYnNpdGVzIG9yIG1hdGVyaWFscywgd2UnbGwgY29uZmlybSB3aGV0aGVyIHRoZSBzdGFuZGFyZCBMb29rLU92ZXIgc2NvcGUgaXMgYXBwcm9wcmlhdGUgYmVmb3JlIGJlZ2lubmluZy48L3A+PC9kaXY+PGRpdiBjbGFzcz0iZmFxLWl0ZW0iPjxiPklzIHRoaXMgYSBmdWxsIGJyYW5kIGF1ZGl0PzwvYj48cD5Oby4gSXQgaXMgYSBCdXNpbmVzcyBQcmVzZW5jZSAmIENvaGVzaW9uIFJldmlldywgbm90IGEgZnVsbCBzdHJhdGVnaWMgYnJhbmQgYXVkaXQuPC9wPjwvZGl2PjxkaXYgY2xhc3M9ImZhcS1pdGVtIj48Yj5XaWxsIHlvdSByZXZpZXcgb3VyIGNvbXBldGl0b3JzPzwvYj48cD5Ob3QgYXMgc3RhbmRhcmQuIFRoZSBmb2N1cyBpcyB5b3VyIGN1cnJlbnQgZXh0ZXJuYWwgcHJlc2VuY2UuIENvbXBldGl0aXZlIGFuYWx5c2lzIGNhbiBiZSBzY29wZWQgc2VwYXJhdGVseSBpZiBnZW51aW5lbHkgdXNlZnVsLjwvcD48L2Rpdj48ZGl2IGNsYXNzPSJmYXEtaXRlbSI+PGI+V2lsbCB5b3UgcmVkZXNpZ24gYW55dGhpbmcgZHVyaW5nIHRoZSBMb29rLU92ZXI/PC9iPjxwPk5vLiBUaGUgTG9vay1PdmVyIGlkZW50aWZpZXMgYW5kIHByaW9yaXRpc2VzLiBEZXNpZ24gYW5kIHByb2R1Y3Rpb24gYXJlIHNlcGFyYXRlIHByb2plY3RzLjwvcD48L2Rpdj48ZGl2IGNsYXNzPSJmYXEtaXRlbSI+PGI+RG8gSSBoYXZlIHRvIGhpcmUgQUtDSEFMTFkgYWZ0ZXJ3YXJkPzwvYj48cD5Oby48L3A+PC9kaXY+PGRpdiBjbGFzcz0iZmFxLWl0ZW0iPjxiPldoYXQgaWYgZXZlcnl0aGluZyBpcyBhY3R1YWxseSBmaW5lPzwvYj48cD5UaGVuIHdlJ2xsIHRlbGwgeW91LiBBIHJldmlldyB0aGF0IGNvbmNsdWRlcyDigJxkb24ndCBzcGVuZCBtb25leSBjaGFuZ2luZyB0aGlz4oCdIGlzIHN0aWxsIHVzZWZ1bC48L3A+PC9kaXY+PGRpdiBjbGFzcz0iZmFxLWl0ZW0iPjxiPkhvdyBxdWlja2x5IGRvIEkgcmVjZWl2ZSBpdD88L2I+PHA+WW91ciBjb25maXJtZWQgdHVybmFyb3VuZCBpcyBwcm92aWRlZCBiZWZvcmUgdGhlIHByb2plY3QgYmVnaW5zLjwvcD48L2Rpdj48ZGl2IGNsYXNzPSJmYXEtaXRlbSI+PGI+Q2FuIHRoZSAkMjUwIGJlIHVzZWQgdG93YXJkIG90aGVyIEFLQ0hBTExZIHdvcms/PC9iPjxwPkl0IG1heSBiZSBjcmVkaXRlZCB0b3dhcmQgYSBxdWFsaWZ5aW5nIERvLU92ZXIgY29tbWVuY2VkIHdpdGhpbiAzMCBkYXlzLjwvcD48L2Rpdj48L2Rpdj48L3NlY3Rpb24+Cgo8c2VjdGlvbiBjbGFzcz0iZmluYWwiIGlkPSJnZXQiPjxkaXY+PHNwYW4gY2xhc3M9Im1vbm8iPkZpbmFsIENUQSDigJQgVGhlIExvb2stT3Zlcjwvc3Bhbj48aDI+U3RvcCBndWVzc2luZy48L2gyPjxwIHN0eWxlPSJtYXJnaW4tdG9wOjFyZW07IGZvbnQtc2l6ZToxLjJyZW0iPklmIHNvbWV0aGluZyBhYm91dCB0aGUgd2F5IHRoZSBidXNpbmVzcyBwcmVzZW50cyBpdHNlbGYgZmVlbHMgd3JvbmcsIGxldCdzIHdvcmsgb3V0IHdoYXQgYmVmb3JlIHlvdSBzdGFydCByZXBsYWNpbmcgdGhpbmdzLjwvcD48cCBzdHlsZT0iZm9udC1mYW1pbHk6J1N5bmUnLHNhbnMtc2VyaWY7IGZvbnQtd2VpZ2h0OjgwMDsgZm9udC1zaXplOjJyZW07IG1hcmdpbi10b3A6MXJlbSI+JDI1MC48L3A+PC9kaXY+PGRpdiBzdHlsZT0iZGlzcGxheTpmbGV4OyBmbGV4LWRpcmVjdGlvbjpjb2x1bW47IGp1c3RpZnktY29udGVudDpjZW50ZXIiPjxhIGhyZWY9IiMiIGNsYXNzPSJidG4gYnRuLWJsYWNrIiBzdHlsZT0iZm9udC1zaXplOjEuMnJlbTsgcGFkZGluZzoxLjVyZW0gMi4ycmVtOyBqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtYmV0d2VlbiI+TG9vayBvdmVyIG15IGJ1c2luZXNzIOKGkjwvYT48cCBjbGFzcz0ibW9ubyIgc3R5bGU9Im1hcmdpbi10b3A6MS41cmVtOyBvcGFjaXR5Oi42Ij5EaWFnbm9zdGljLCBub3Qgc2FsZXN5LiBObyA0MC1wYWdlIGRlY2suIEp1c3Qgd2hhdCBtYXR0ZXJzLjwvcD48L2Rpdj48L3NlY3Rpb24+Cgo8Zm9vdGVyPjxzcGFuPsKpIDIwMjYgQUtDSEFMTFkuIOKAlCBUaGUgTG9vay1PdmVyIOKAlCAkMjUwPC9zcGFuPjxzcGFuPkJlY2F1c2Ug4oCcd2UgbmVlZCBhIG5ldyB3ZWJzaXRl4oCdIGlzbid0IGFsd2F5cyB0aGUgYW5zd2VyLjwvc3Bhbj48L2Zvb3Rlcj4KPC9ib2R5Pgo8L2h0bWw+Cg==">The Look-Over</a>
-    <a href="index-tight.html#work">Work</a>
-  </div>
-  <div>
-    <span class="mono">Contact</span>
-    <p>hello@akchally.com<br>Remote studio</p>
-  </div>
-  <div class="foot-bottom">
-    <span>© 2026 AKCHALLY.</span>
-    <span>No retainer bollocks · No brief theatre · Just done properly.</span>
-  </div>
+  <div><div class="foot-logo">akchally<span>.</span></div><p style="margin-top:.85rem; font-weight:500">Make your business look like it actually should.</p><p class="mono">Web · Document · Video</p></div>
+  <div><span class="mono">Navigate</span><a href="index.html">Home</a><a href="web.html">Web / 01</a><a href="document.html">Document / 02</a><a href="video.html">Video / 03</a></div>
+  <div><span class="mono">Contact</span><p style="font-size:.82rem; margin-top:.5rem">hello@akchally.com<br>Remote studio · All pricing in USD<br>Remote means remote</p></div>
+  <div class="foot-bottom"><span>© 2026 AKCHALLY.</span><span>No crew at 6am · No brief theatre · Just done properly.</span></div>
 </footer>
 
 </body>
