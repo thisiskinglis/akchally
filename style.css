@@ -511,3 +511,29 @@ footer a{display:block; margin:0.255rem 0; font-size:0.765rem}
 }
 /* If your source image is portrait and looks blown up, change to this: */
 /* .work-img img{object-fit:contain; background:#111} */
+
+/* ===== NEW SIMPLIFIED DOCUMENT PAGE ADDITIONS ===== */
+.choose-grid{display:grid; grid-template-columns:1fr 1fr; border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%}
+.choose-col{padding:0; border-right:1.5px solid var(--fg); display:flex; flex-direction:column}
+.choose-col:last-child{border-right:none}
+.choose-head{padding:2.5vw var(--gutter) 1.5vw; border-bottom:1.5px solid var(--fg); background:var(--paper)}
+.choose-head h3{font-size:clamp(1.4rem,2.2vw,1.9rem); line-height:.9; margin-top:.4rem}
+.choose-head p{font-size:.78rem; opacity:.7; margin-top:.6rem; line-height:1.5; max-width:36ch}
+.choose-prices{display:flex; flex-direction:column}
+.price-btn{display:flex; justify-content:space-between; align-items:center; padding:1.2vw var(--gutter); border-bottom:1.5px solid var(--fg); font-family:'Syne',sans-serif; font-weight:700; font-size:.85rem; text-transform:uppercase; transition:.2s; background:var(--white); cursor:pointer}
+.price-btn:last-child{border-bottom:none}
+.price-btn .left small{display:block; font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:.62rem; text-transform:none; opacity:.6; margin-top:.15rem; line-height:1.3; max-width:28ch}
+.price-btn:hover{background:var(--fg); color:var(--bg)}
+.price-btn:hover .right{color:var(--orange)}
+.choose-foot{padding:.9rem var(--gutter); font-size:.68rem; opacity:.6; border-top:1.5px solid var(--fg); border-bottom:1.5px solid var(--fg); max-width:var(--page-max); margin:0 auto; width:100%; background:var(--bg)}
+.step-simple{padding:2.8vw var(--gutter); border-bottom:1.5px solid var(--fg); display:grid; grid-template-columns:.18fr .82fr; gap:3vw; max-width:var(--page-max); margin:0 auto; width:100%}
+.step-simple .step-num{font-family:'Instrument Serif',serif; font-size:clamp(2.8rem,4.5vw,4rem); line-height:.9; color:var(--orange)}
+.step-simple h3{font-size:clamp(1.2rem,1.8vw,1.5rem); margin-bottom:.6rem}
+.step-simple p{font-size:.85rem; line-height:1.6; opacity:.85; max-width:52ch; margin-bottom:.5rem}
+.step-simple ul{list-style:none; margin:.6rem 0}
+.step-simple li{font-size:.82rem; padding:.2rem 0}
+.step-simple li::before{content:"→ "; color:var(--orange)}
+.send-list{padding:2.2vw var(--gutter); border-bottom:1.5px solid var(--fg); background:var(--white); max-width:var(--page-max); margin:0 auto; width:100%}
+.send-tags{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem}
+.send-tags span{border:1px solid var(--fg); padding:.45rem .8rem; font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; background:var(--paper)}
+@media(max-width:833px){.choose-grid,.step-simple{grid-template-columns:1fr}.choose-col{border-right:none; border-bottom:1.5px solid var(--fg)}}
