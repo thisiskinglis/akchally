@@ -67,7 +67,20 @@ nav{position:sticky; top:0; z-index:50; display:flex; justify-content:space-betw
   letter-spacing:-0.06em;
 }
 
-.marquee{border-bottom:1.5px solid var(--fg); overflow:hidden; white-space:nowrap; padding:0.765rem 0; background:var(--fg); color:var(--bg); width:100%; max-width:85vw}
+.marquee{
+  border-top:1.5px solid var(--fg);
+  border-bottom:1.5px solid var(--fg);
+  overflow:hidden;
+  white-space:nowrap;
+  padding:0.765rem 0;
+  background:var(--fg);
+  color:var(--bg);
+  width:100vw;
+  max-width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  display:block;
+}
 .marquee-inner{display:flex; animation:marq 28s linear infinite; gap:2.55rem; width:max-content}
 .marquee span{font-family:'Syne', sans-serif; font-weight:800; font-size:0.935rem; letter-spacing:.08em; text-transform:uppercase}
 .marquee span i{color:var(--orange); font-style:normal; margin:0 0.425rem}
