@@ -454,3 +454,8 @@ footer a{display:block; margin:0.255rem 0; font-size:0.765rem}
   .output-block h3{font-size:15.3vw}
   .ex-grid{grid-template-columns:1fr}
 }
+
+
+/* Image support for work cards - add your images */
+.work-img img, .work-spread img, .work-embed img{width:100%; height:100%; object-fit:cover; display:block}
+.work-img{ background:#111; } /* fallback if no image */
