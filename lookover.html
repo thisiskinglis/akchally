@@ -3,70 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE LOOK-OVER — AKCHALLY.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<title>THE LOOK-OVER — Business Presence & Cohesion Review — akchally.</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  .output-5{display:grid; grid-template-columns:repeat(5,1fr); border-top:1.5px solid var(--fg); border-bottom:1.5px solid var(--fg)}
+  .output-5 > div{padding:2.2vw var(--gutter); border-right:1.5px solid var(--fg); min-height:220px}
+  .output-5 > div:last-child{border-right:none}
+  .output-5 h3{font-size:clamp(1.8rem,3vw,2.6rem); line-height:.9; margin-bottom:.8rem}
+  .output-5 p{font-size:.78rem; line-height:1.6; opacity:.9}
+  .output-5 .mono{margin-bottom:.6rem; display:block}
+  .keep{background:var(--white)}
+  .fix{background:var(--orange); color:white}
+  .incon{background:var(--fg); color:var(--bg)}
+  .miss{background:#2A0C07; color:var(--paper)}
+  .fixfirst{background:#5A2E1A; color:var(--paper)}
+  @media(max-width:1000px){.output-5{grid-template-columns:repeat(2,1fr)}.output-5 > div{border-bottom:1.5px solid var(--fg)}.output-5 > div:nth-child(even){border-right:none}}
+  @media(max-width:600px){.output-5{grid-template-columns:1fr}.output-5 > div{border-right:none}}
+  .checklist{columns:2; column-gap:2rem; list-style:none; font-size:.78rem; line-height:2}
+  .checklist li::before{content:"→ "; color:var(--orange)}
+  @media(max-width:600px){.checklist{columns:1}}
+</style>
 </head>
 <body>
-<script src="assets/nav.js"></script>
 
+<!-- ================= NAV ================= -->
+<nav>
+  <a href="index-tight.html" class="logo">akchally<span class="dot"></span></a>
+  <div class="nav-links">
+    <a href="web-tight.html">Web</a>
+    <a href="document-tight.html">Document</a>
+    <a href="video-tight.html">Video</a>
+    <a href="lookover-tight.html" style="text-decoration:underline; text-underline-offset:4px">The Look-Over</a>
+    <a href="index-tight.html#work">Work</a>
+    <a href="#contact" class="btn btn-black" style="padding:.6rem 1rem; margin-left:.8rem">Start Something</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="big-bg-text">akchally.</div>
+  <div class="big-bg-text">look</div>
   <div class="hero-top">
+
     <div class="hero-left">
-      <span class="mono">The Look-Over — Business Presence & Cohesion Review</span>
-      <h1>Something feels <span>off.</span></h1>
-      <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(1.2rem,2vw,1.6rem); margin-top:1.5rem; max-width:24ch; line-height:1.2">Maybe the website is dated. Maybe the company profile looks disconnected from everything else. Maybe the logo is fine, the colours are fine, the social pages are fine — but somehow none of it feels like the same business.</div>
+      <span class="mono">THE LOOK-OVER — Business Presence & Cohesion Review</span>
+
+      <h1 style="margin-top:1.2rem; max-width:14ch">
+        Something <i class="accent">feels off.</i>
+      </h1>
+
+      <div class="hero-copy">
+        <p>Maybe the website is dated.</p>
+        <p>Maybe the company profile looks disconnected from everything else.</p>
+        <p>Maybe the logo, colours and social pages are all technically fine — but somehow none of it feels like the same business.</p>
+        <p style="margin-top:1rem"><b>You know something isn't right. You just don't know what.</b></p>
+
+        <div style="margin-top:1.5rem">
+          <div style="font-family:'Instrument Serif',serif; font-size:3.2rem; line-height:.9">$250</div>
+          <p class="mono" style="margin-top:.4rem; opacity:.6">A focused review of how your business currently presents itself externally.</p>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-black">Get a Look-Over →</a>
+      </div>
     </div>
+
     <div class="hero-right">
-      <p>You know something isn't right. You just don't know what.</p>
-      <p><strong>That's what the Look-Over is for.</strong></p>
-      <div class="hero-price">$250<b>A focused Business Presence & Cohesion Review of how your business currently presents itself externally.</b></div>
-      <a href="#get" class="btn btn-black" style="font-size:1rem; padding:1.2rem 2.2rem">Get a Look-Over →</a>
+      <div class="hero-note" style="background:var(--fg); color:var(--bg); border-color:var(--fg); transform:rotate(-.6deg)">
+        <span class="mono" style="color:var(--orange)">Does the business look like one business?</span>
+        <p style="margin-top:.6rem; font-size:.8rem; line-height:1.6; color:var(--bg); opacity:.9">
+          We review the places where people encounter you and ask one simple question:<br><br>
+          <i style="font-family:'Instrument Serif',serif; font-size:1.1rem; color:var(--bg)">Does this all belong together?</i>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= DOES THE BUSINESS LOOK LIKE ONE BUSINESS ================= -->
+<section class="sec-02">
+
+  <div class="sec-02-left">
+    <span class="mono">The Review</span>
+    <h2>Does the business look like one business?</h2>
+  </div>
+
+  <div class="sec-02-right">
+    <p>Depending on what exists, we look at:</p>
+    <ul class="checklist">
+      <li>Website</li>
+      <li>Logo and visual identity</li>
+      <li>Typography and colour</li>
+      <li>Messaging</li>
+      <li>Google/search presentation</li>
+      <li>Company profile</li>
+      <li>Proposals</li>
+      <li>Presentations</li>
+      <li>Brochures</li>
+      <li>Imagery</li>
+      <li>Video</li>
+      <li>Overall consistency</li>
+    </ul>
+    <p style="margin-top:1.5rem; font-size:.78rem; opacity:.7">Not to find faults for the sake of it. To work out what is helping, what is hurting and what actually needs attention.</p>
+  </div>
+
+</section>
+
+<!-- ================= WHAT YOU GET ================= -->
+<div class="sec-03-head">
+  <div>
+    <span class="mono">What You Get</span>
+    <h2>No 40-page strategy deck.</h2>
+    <p class="mono" style="text-transform:none; opacity:.6; margin-top:.4rem">You get a concise visual review organised into five areas.</p>
+  </div>
+</div>
+
+<div class="output-5">
+
+  <div class="keep">
+    <span class="mono" style="color:var(--orange)">01</span>
+    <h3>Keep.</h3>
+    <p>What's already working.</p>
+  </div>
+
+  <div class="fix">
+    <span class="mono">02</span>
+    <h3>Fix.</h3>
+    <p>What's weakening the presentation.</p>
+  </div>
+
+  <div class="incon">
+    <span class="mono" style="color:var(--orange)">03</span>
+    <h3>Inconsistent.</h3>
+    <p>What doesn't belong together.</p>
+  </div>
+
+  <div class="miss">
+    <span class="mono" style="color:var(--orange)">04</span>
+    <h3>Missing.</h3>
+    <p>What's obviously absent.</p>
+  </div>
+
+  <div class="fixfirst">
+    <span class="mono" style="color:var(--orange)">05</span>
+    <h3>Fix First.</h3>
+    <p>What we'd prioritise.</p>
+  </div>
+
+</div>
+
+<p class="mono" style="max-width:var(--page-max); margin:0 auto; padding:1rem var(--gutter); opacity:.6">
+  That's the output. Clear enough to act on.
+</p>
+
+<!-- ================= WHY THIS EXISTS ================= -->
+<section class="sec-02" style="background:var(--white)">
+
+  <div class="sec-02-left">
+    <span class="mono">Why This Exists</span>
+    <h2>Because "we need a new website" isn't always the answer.</h2>
+  </div>
+
+  <div class="sec-02-right">
+    <p>Sometimes the website is fine. Sometimes the real issue is the company profile. Or the messaging. Or the imagery. Or the Google presence. Or the fact that every customer-facing asset has been made separately over five years.</p>
+    <p><b>If you replace the wrong thing, you've spent money without fixing the actual problem.</b></p>
+    <p>The Look-Over exists to identify what actually needs changing first.</p>
+  </div>
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<div class="how-head">
+  <div>
+    <span class="mono">How It Works</span>
+  </div>
+</div>
+
+<section class="steps" style="display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1.5px solid var(--fg)">
+
+  <div style="padding:2vw var(--gutter); border-right:1.5px solid var(--fg)">
+    <div class="split-num">01</div>
+    <h3 style="font-size:1rem">You send it.</h3>
+    <p style="font-size:.75rem; opacity:.8">We ask for the relevant links and material. Website. Documents. Brand assets. Search presence. Video where relevant.</p>
+  </div>
+
+  <div style="padding:2vw var(--gutter); border-right:1.5px solid var(--fg)">
+    <div class="split-num">02</div>
+    <h3 style="font-size:1rem">We review it.</h3>
+    <p style="font-size:.75rem; opacity:.8">We look at the external presence as a whole. Not just whether each individual piece looks good.</p>
+  </div>
+
+  <div style="padding:2vw var(--gutter); border-right:1.5px solid var(--fg)">
+    <div class="split-num">03</div>
+    <h3 style="font-size:1rem">We prioritise.</h3>
+    <p style="font-size:.75rem; opacity:.8"><b>KEEP · FIX · INCONSISTENT · MISSING · FIX FIRST</b></p>
+  </div>
+
+  <div style="padding:2vw var(--gutter)">
+    <div class="split-num">04</div>
+    <h3 style="font-size:1rem">You get the review.</h3>
+    <p style="font-size:.75rem; opacity:.8">A concise visual document with clear recommendations. No giant workshop. No compulsory follow-up.</p>
+  </div>
+
+</section>
+
+<!-- ================= WHAT HAPPENS NEXT ================= -->
+<section class="sec-02">
+
+  <div class="sec-02-left">
+    <span class="mono">What Happens Next?</span>
+    <h2>Maybe nothing.</h2>
+  </div>
+
+  <div class="sec-02-right">
+    <p>You can take the review and:</p>
+    <ul style="list-style:none; font-size:.85rem; line-height:2">
+      <li>→ Fix things internally.</li>
+      <li>→ Use another supplier.</li>
+      <li>→ Work through the priorities later.</li>
+      <li>→ Do absolutely nothing for a while.</li>
+    </ul>
+    <p style="font-weight:700">It's yours.</p>
+
+    <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid rgba(0,0,0,.1)">
+      <p><b>Or we can fix it.</b></p>
+      <p>If the work sits inside: <b>WEB · DOCUMENT · VIDEO</b> we can quote the relevant project.</p>
+      <p>If several things need attention, we may recommend a broader combined scope.</p>
+      <p style="font-size:.75rem; opacity:.6">No forced bundle.</p>
     </div>
   </div>
+
 </section>
 
-<section class="looking">
-  <div><span class="mono">Section 02 — What we're looking for</span><h2 style="margin-top:1rem">Does the business look like one business?</h2><p style="margin-top:1rem">We review the places where people encounter you and ask one simple question:</p><p style="font-weight:700; font-size:1.2rem; margin-top:1rem">Does this all belong together?</p></div>
+<!-- ================= FINAL CTA ================= -->
+<section class="final" id="contact" style="background:var(--fg); color:var(--bg)">
+
   <div>
-    <p>Depending on what exists, we look at:</p>
-    <ul><li>Website</li><li>Logo and visual identity</li><li>Typography and colour</li><li>Messaging</li><li>Google/search presentation</li><li>Company profile</li><li>Proposals</li><li>Presentations</li><li>Brochures</li><li>Imagery</li><li>Video</li><li>Overall consistency</li></ul>
+    <span class="mono" style="color:var(--orange)">The Look-Over</span>
+    <h2 style="color:var(--bg)">Stop <i style="color:var(--orange)">guessing.</i></h2>
+    <p style="margin-top:1rem; max-width:38ch; opacity:.8; color:var(--bg)">
+      If something about the way your business presents itself feels wrong, work out what before you start replacing things.
+    </p>
   </div>
+
+  <div class="final-right">
+    <div style="font-family:'Instrument Serif',serif; font-size:3.2rem; line-height:.9; color:var(--bg)">$250</div>
+    <div style="margin-top:1.5rem">
+      <a href="#contact" class="btn btn-black" style="background:var(--bg); color:var(--fg); border-color:var(--bg); font-size:0.9rem; padding:1.2rem 2rem">
+        Look Over My Business →
+      </a>
+    </div>
+  </div>
+
 </section>
 
-<div class="output-intro"><h2>What you get</h2><span class="mono">Section 03 — The Output — No 40-page strategy deck</span></div>
-
-<section>
-  <div class="output-block keep"><h3>KEEP.</h3><div class="desc"><h4>What's already working.</h4><p>The things we would leave alone.</p></div></div>
-  <div class="output-block fix"><h3>FIX.</h3><div class="desc"><h4>What's weakening the presentation.</h4><p>Not necessarily broken. Just not helping.</p></div></div>
-  <div class="output-block inconsistent"><h3>INCONSISTENT.</h3><div class="desc"><h4>Where the business stops looking like one coherent business.</h4><p>Different fonts. Different tone. Different colours.</p></div></div>
-  <div class="output-block missing"><h3>MISSING.</h3><div class="desc"><h4>The obvious gaps.</h4><p>Things customers should be able to find but can't.</p></div></div>
-  <div class="output-block fixfirst"><h3>FIX FIRST.</h3><div class="desc"><h4>The priority order.</h4><p>Because not everything needs fixing at once.</p></div></div>
-</section>
-
-<section class="why">
-  <div><h2>Because “we need a new website” <i>isn't always the answer.</i></h2></div>
+<!-- ================= FOOTER ================= -->
+<footer>
   <div>
-    <p>Sometimes the website is actually fine.</p><p>Sometimes the real issue is the:</p><p><strong>company profile,<br>messaging,<br>Google presence,<br>imagery,<br>visual identity,</strong></p><p>If you replace the wrong thing, you've spent money without fixing the actual problem.</p>
+    <div class="foot-logo">akchally<span>.</span></div>
+    <p style="margin-top:0.85rem; font-weight:500">Make your business look like it actually should.</p>
+    <p class="mono">Web · Document · Video</p>
+    <p style="margin-top:1.7rem; font-size:.68rem; opacity:.6">Remote studio · Working internationally<br>All pricing in USD</p>
   </div>
-</section>
+  <div>
+    <span class="mono">Navigate</span>
+    <a href="index-tight.html">Home</a>
+    <a href="web-tight.html">Web</a>
+    <a href="document-tight.html">Document</a>
+    <a href="video-tight.html">Video</a>
+    <a href="lookover-tight.html">The Look-Over</a>
+    <a href="index-tight.html#work">Work</a>
+  </div>
+  <div>
+    <span class="mono">Contact</span>
+    <p>hello@akchally.com<br>Remote studio</p>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 AKCHALLY.</span>
+    <span>No retainer bollocks · No brief theatre · Just done properly.</span>
+  </div>
+</footer>
 
-<section class="split">
-  <div class="split-left"><span class="mono">Section 05 — What it is not</span><h3>A useful distinction</h3><p><strong>This is not brand strategy.</strong></p><ul><li>Customer research</li><li>Market positioning studies</li><li>Competitor strategy</li><li>Brand architecture</li></ul></div>
-  <div class="split-right"><span class="mono">Section 06 — Who it's for</span><h3>A good fit if...</h3><ul class="good-fit"><li>“Our website isn't terrible, but it doesn't feel right.”</li><li>“Everything looks like it was made by different people.”</li><li>“Our company profile is embarrassing.”</li><li>“Something is wrong. I just can't put my finger on it.”</li></ul></div>
-</section>
-
-<div class="how"><div class="how-head"><h2>How it works</h2><span class="mono">Section 07 — Simple — Show us the business</span></div><div class="steps"><div class="step"><div class="step-num">01</div><h4>You send it</h4><p>We ask for the relevant links and material.</p></div><div class="step"><div class="step-num">02</div><h4>We review it</h4><p>We examine the material as a whole.</p></div><div class="step"><div class="step-num">03</div><h4>We prioritise</h4><p>KEEP<br>FIX<br>INCONSISTENT<br>MISSING<br>FIX FIRST</p></div><div class="step" style="background:var(--orange); color:white"><div class="step-num" style="color:white">04</div><h4>You get the review</h4><p>A concise visual document with clear recommendations.</p></div></div></div>
-
-<section class="next"><div class="next-left"><span class="mono">Section 08 — What happens next</span><h2>Maybe nothing.</h2></div><div class="next-right"><h3>OR... We can fix it.</h3><p style="font-family:'Syne',sans-serif; font-weight:800; color:var(--orange)">WEB · DOCUMENT · VIDEO</p></div></section>
-
-<section class="doover"><div><span class="mono" style="color:white">Section 09 — Do-Over</span><h2>The Do-Over.</h2><div class="doover-price">from $3,500</div></div><div><p>It might include:</p><ul><li>Website</li><li>Messaging</li><li>Company profile</li><li>Video</li></ul></div></section>
-
-<section class="final" id="get"><div><span class="mono">Final CTA — The Look-Over</span><h2>Stop guessing.</h2><p style="font-family:'Syne',sans-serif; font-weight:800; font-size:2rem; margin-top:1rem">$250.</p></div><div style="display:flex; flex-direction:column; justify-content:center"><a href="index.html#contact" class="btn btn-black" style="font-size:1.2rem; padding:1.5rem 2.2rem;">Look over my business →</a></div></section>
-
-<footer><div><div class="foot-logo">akchally<span>.</span></div></div><div><span class="mono">Navigate</span><a href="web.html">Web</a><a href="document.html">Document</a><a href="video.html">Video</a><a href="lookover.html">The Look-Over</a></div><div class="foot-bottom"><span>© 2026 AKCHALLY. — The Look-Over — $250</span></div></footer>
 </body>
 </html>
