@@ -1,26 +1,56 @@
-<div id="thankyou">
-  <h1>Payment confirmed.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Confirmed — akchally</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:#0a0a0a;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+ .wrap{max-width:560px;width:100%}
+ .eyebrow{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#FF5A1F;margin-bottom:24px}
+  h1{font-size:48px;line-height:0.9;letter-spacing:-0.03em;margin-bottom:16px}
+  h2{font-size:20px;font-weight:400;color:#888;margin-bottom:40px;line-height:1.4}
+ .card{background:#141414;border:1px solid #222;border-radius:16px;padding:32px;margin-bottom:24px}
+ .label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#666;margin-bottom:16px}
+ .steps{list-style:none}
+ .steps li{display:flex;gap:12px;margin-bottom:16px;font-size:15px;line-height:1.5;color:#ccc}
+ .steps span.num{background:#FF5A1F;color:#000;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px}
+ .cta{display:block;width:100%;background:#FF5A1F;color:#000;text-align:center;padding:18px 24px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;margin-top:8px}
+ .fallback{text-align:center;margin-top:20px;font-size:13px;color:#666}
+ .fallback a{color:#888;text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">akchally.com — payment confirmed</div>
+  <h1>You're in.</h1>
   <h2 id="product-name"></h2>
-  <div id="next-steps"></div>
-  <a id="intake-btn" href="#">START INTAKE →</a>
+  <div class="card">
+    <div class="label">What happens next</div>
+    <ul class="steps" id="steps"></ul>
+    <a id="cta" class="cta" href="#" target="_blank">START MY INTAKE →</a>
+  </div>
+  <div class="fallback">Trouble uploading? Email to <a href="mailto:hello@akchally.com">hello@akchally.com</a> — receipt sent via Stripe.</div>
 </div>
-
 <script>
-const params = new URLSearchParams(window.location.search);
-const product = params.get('product') || 'positioning';
-
-const config = {
-  '1pg-website': { name: '1-Page Website', text: '1. Domain + hosting access<br>2. Content + inspo sites<br>3. 3-day build', link: 'YOUR_TALLY_WEBSITE_LINK' },
-  '4pg-website': { name: '4-Page Website', text: '1. Domain + hosting<br>2. Pages + content<br>3. 5-day build', link: 'YOUR_TALLY_WEBSITE_LINK' },
-  '5pg-website': { name: '5-Page Website', text: '1. Domain + hosting<br>2. Pages + content<br>3. 5-7 day build', link: 'YOUR_TALLY_WEBSITE_LINK' },
-  '1pg-doc': { name: '1-Page Document Rewrite', text: '1. Upload current CV<br>2. Target role<br>3. 2-3 day turnaround', link: 'YOUR_TALLY_DOC_LINK' },
-  '3pg-doc': { name: '3-Page Document Bundle', text: '1. Upload CV + LinkedIn<br>2. Target roles<br>3. 3-4 day turnaround', link: 'YOUR_TALLY_DOC_LINK' },
-  'positioning': { name: 'Professional Positioning', text: '1. Upload CV + LinkedIn<br>2. Target role + seniority<br>3. Architecture in 3-4 days', link: 'YOUR_TALLY_POSITIONING_LINK' },
-  'complete': { name: 'Complete + Personal Site', text: '1. CV + LinkedIn + target role<br>2. Domain preference<br>3. Docs + site in 5-7 days', link: 'YOUR_TALLY_POSITIONING_LINK' }
+const CONFIG = {
+  '1pg-website': { name: '1-Page Website', steps: ['Stripe receipt sent to your email','Upload domain, content + inspo sites','Build starts — 3 day turnaround'], link: 'https://tally.so/r/Bzo6MQ' },
+  '4pg-website': { name: '4-Page Website', steps: ['Stripe receipt sent','Upload domain, pages + content','Build starts — 5 day turnaround'], link: 'https://tally.so/r/Bzo6MQ' },
+  '5pg-website': { name: '5-Page Website', steps: ['Stripe receipt sent','Upload domain, pages + full content','Build starts — 5-7 day turnaround'], link: 'https://tally.so/r/Bzo6MQ' },
+  '1pg-doc': { name: '1-Page Document Rewrite', steps: ['Stripe receipt sent','Upload current CV + LinkedIn + target role','Rewrite in 2-3 days'], link: 'https://tally.so/r/5B0ryo' },
+  '3pg-doc': { name: '3-Page Document Bundle', steps: ['Stripe receipt sent','Upload CV + LinkedIn + target roles','Bundle in 3-4 days'], link: 'https://tally.so/r/5B0ryo' },
+  'positioning': { name: 'Professional Positioning', steps: ['Stripe receipt sent','2-min intake: CV + LinkedIn + target role','Architecture + docs in 3-4 days'], link: 'https://tally.so/r/7R0jBP' },
+  'complete': { name: 'Complete + Personal Site', steps: ['Stripe receipt sent','Intake: CV + LinkedIn + domain preference','Docs + personal site in 5-7 days'], link: 'https://tally.so/r/7R0jBP' }
 };
-
-const data = config[product] || config['positioning'];
-document.getElementById('product-name').innerText = data.name;
-document.getElementById('next-steps').innerHTML = data.text;
-document.getElementById('intake-btn').href = data.link;
+function load(){
+  const code = new URLSearchParams(window.location.search).get('product') || 'positioning';
+  const d = CONFIG[code] || CONFIG['positioning'];
+  document.getElementById('product-name').innerText = d.name;
+  document.getElementById('steps').innerHTML = d.steps.map((t,i)=>`<li><span class="num">${i+1}</span><span>${t}</span></li>`).join('');
+  document.getElementById('cta').href = d.link;
+}
+load();
 </script>
+</body>
+</html>
